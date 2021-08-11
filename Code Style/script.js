@@ -1,4 +1,11 @@
-'use strict'
+"use strict";
 // Please don't delete the 'use strict' line above
 
 // Pokemon Selector
+
+/* 
+DOES ANYONE KNOW HOW TO PROGRAM STUFF?
+
+
+
+*/
