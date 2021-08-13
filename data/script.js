@@ -11,3 +11,5 @@ DOES ANYONE KNOW HOW TO PROGRAM STUFF?
 
 
 */
+
+alert("Test alert.")
