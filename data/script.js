@@ -1,15 +1,30 @@
 "use strict";
 // Please don't delete the 'use strict' line above
 
-// Pokemon Selector
+let theID, theNumber, theName;
 
-/* 
-DOES ANYONE KNOW HOW TO PROGRAM STUFF?
+//Connects API file!
+fetch("/data/pokemonData.json") // fetch creates a Promise
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    // makes the entire object show up in the log
+    console.log(data);
+    theID = data.pokemon[0].id;
+    theNumber = data.pokemon[0].num;
+    theName = data.pokemon[0].name;
 
+    // gets the first pokemon's details. This is an example, I don't think we can use it like this here.
+    console.log(theID);
+    console.log(theNumber);
+    console.log(theName);
+  });
 
-// I sure would like to
+// How to access data
 
-
-*/
-
-alert("Test alert.")
+//cleaner but idk if I want to use it yet
+/* fetch("data/pokemonAPI.json")
+  .then((response) => response.json()) // fetch creates a Promise
+  .then((data) => console.log(data)) // makes the entire object show up in the log
+  .catch((error) => console.log(error)); */
