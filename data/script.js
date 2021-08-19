@@ -29,3 +29,4 @@ fetch("/data/pokemonData.json") // fetch creates a Promise
   .then((response) => response.json()) // fetch creates a Promise
   .then((data) => console.log(data)) // makes the entire object show up in the log
   .catch((error) => console.log(error)); */
+
