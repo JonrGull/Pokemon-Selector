@@ -846,6 +846,7 @@
       "spawn_time": "01:12",
       "multipliers": [1.64, 1.7],
       "weaknesses": ["Ground", "Psychic"],
+      "japanese_name": "ニドラン♂",
       "next_evolution": [
         {
           "num": "033",
@@ -873,6 +874,7 @@
       "spawn_time": "09:02",
       "multipliers": [1.83],
       "weaknesses": ["Ground", "Psychic"],
+      "japanese_name": "ニドリーノ",
       "prev_evolution": [
         {
           "num": "032",
@@ -901,6 +903,7 @@
       "spawn_time": "12:16",
       "multipliers": null,
       "weaknesses": ["Water", "Ice", "Ground", "Psychic"],
+      "japanese_name": "ニドキング",
       "prev_evolution": [
         {
           "num": "032",
@@ -928,6 +931,7 @@
       "spawn_time": "03:30",
       "multipliers": [2.03, 2.14],
       "weaknesses": ["Fighting"],
+      "japanese_name": "ピッピ",
       "next_evolution": [
         {
           "num": "036",
@@ -950,6 +954,7 @@
       "spawn_time": "03:29",
       "multipliers": null,
       "weaknesses": ["Fighting"],
+      "japanese_name": "ピクシー",
       "prev_evolution": [
         {
           "num": "035",
@@ -973,6 +978,7 @@
       "spawn_time": "13:43",
       "multipliers": [2.74, 2.81],
       "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "ピクシー",
       "next_evolution": [
         {
           "num": "038",
