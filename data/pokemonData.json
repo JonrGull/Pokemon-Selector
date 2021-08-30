@@ -1025,6 +1025,7 @@
       "spawn_time": "08:46",
       "multipliers": [1.85],
       "weaknesses": ["Fighting"],
+      "japanese_name": "プリン",
       "next_evolution": [
         {
           "num": "040",
@@ -1047,6 +1048,7 @@
       "spawn_time": "12:28",
       "multipliers": null,
       "weaknesses": ["Fighting"],
+      "japanese_name": "プクリン",
       "prev_evolution": [
         {
           "num": "039",
@@ -1070,6 +1072,7 @@
       "spawn_time": "12:28",
       "multipliers": [2.6, 3.67],
       "weaknesses": ["Electric", "Ice", "Psychic", "Rock"],
+      "japanese_name": "ズバット",
       "next_evolution": [
         {
           "num": "042",
@@ -1092,6 +1095,7 @@
       "spawn_time": "02:15",
       "multipliers": null,
       "weaknesses": ["Electric", "Ice", "Psychic", "Rock"],
+      "japanese_name": "ゴルバット",
       "prev_evolution": [
         {
           "num": "041",
@@ -1115,6 +1119,7 @@
       "spawn_time": "03:58",
       "multipliers": [1.5],
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "ナゾノクサ",
       "next_evolution": [
         {
           "num": "044",
@@ -1142,6 +1147,7 @@
       "spawn_time": "11:33",
       "multipliers": [1.49],
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "クサイハナ",
       "prev_evolution": [
         {
           "num": "043",
@@ -1170,6 +1176,7 @@
       "spawn_time": "23:58",
       "multipliers": null,
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "ラフレシア",
       "prev_evolution": [
         {
           "num": "043",
@@ -1197,6 +1204,7 @@
       "spawn_time": "01:42",
       "multipliers": [2.02],
       "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Rock"],
+      "japanese_name": "パラス",
       "next_evolution": [
         {
           "num": "047",
@@ -1219,6 +1227,7 @@
       "spawn_time": "01:22",
       "multipliers": null,
       "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Rock"],
+      "japanese_name": "パラセクト",
       "prev_evolution": [
         {
           "num": "046",
@@ -1242,6 +1251,7 @@
       "spawn_time": "02:31",
       "multipliers": [1.86, 1.9],
       "weaknesses": ["Fire", "Flying", "Psychic", "Rock"],
+      "japanese_name": "コンパン",
       "next_evolution": [
         {
           "num": "049",
@@ -1264,6 +1274,7 @@
       "spawn_time": "23:40",
       "multipliers": null,
       "weaknesses": ["Fire", "Flying", "Psychic", "Rock"],
+      "japanese_name": "モルフォン",
       "prev_evolution": [
         {
           "num": "048",
@@ -1287,6 +1298,7 @@
       "spawn_time": "02:22",
       "multipliers": [2.69],
       "weaknesses": ["Water", "Grass", "Ice"],
+      "japanese_name": "ディグダ",
       "next_evolution": [
         {
           "num": "051",
@@ -1309,6 +1321,7 @@
       "spawn_time": "12:37",
       "multipliers": null,
       "weaknesses": ["Water", "Grass", "Ice"],
+      "japanese_name": "ダグトリオ",
       "prev_evolution": [
         {
           "num": "050",
