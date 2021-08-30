@@ -441,6 +441,7 @@
       "spawn_time": "01:34",
       "multipliers": [1.71, 1.92],
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "ポッポ",
       "next_evolution": [
         {
           "num": "017",
@@ -468,6 +469,7 @@
       "spawn_time": "01:30",
       "multipliers": [1.79],
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "ピジョン",
       "prev_evolution": [
         {
           "num": "016",
@@ -496,6 +498,7 @@
       "spawn_time": "01:50",
       "multipliers": null,
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "ピジョット",
       "prev_evolution": [
         {
           "num": "016",
