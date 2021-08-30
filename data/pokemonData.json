@@ -16,6 +16,7 @@
       "spawn_time": "20:00",
       "multipliers": [1.58],
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "フシギダネ",
       "next_evolution": [
         {
           "num": "002",
@@ -43,6 +44,7 @@
       "spawn_time": "07:00",
       "multipliers": [1.2, 1.6],
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "フシギソウ",
       "prev_evolution": [
         {
           "num": "001",
@@ -71,6 +73,7 @@
       "spawn_time": "11:30",
       "multipliers": null,
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "フシギバナ",
       "prev_evolution": [
         {
           "num": "001",
@@ -98,6 +101,7 @@
       "spawn_time": "08:45",
       "multipliers": [1.65],
       "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "ヒトカゲ",
       "next_evolution": [
         {
           "num": "005",
@@ -125,6 +129,7 @@
       "spawn_time": "19:00",
       "multipliers": [1.79],
       "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "リザード",
       "prev_evolution": [
         {
           "num": "004",
@@ -153,6 +158,7 @@
       "spawn_time": "13:34",
       "multipliers": null,
       "weaknesses": ["Water", "Electric", "Rock"],
+      "japanese_name": "リザードン",
       "prev_evolution": [
         {
           "num": "004",
@@ -180,6 +186,7 @@
       "spawn_time": "04:25",
       "multipliers": [2.1],
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "ゼニガメ",
       "next_evolution": [
         {
           "num": "008",
@@ -207,6 +214,7 @@
       "spawn_time": "07:02",
       "multipliers": [1.4],
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "カメール",
       "prev_evolution": [
         {
           "num": "007",
@@ -235,6 +243,7 @@
       "spawn_time": "00:06",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "カメックス",
       "prev_evolution": [
         {
           "num": "007",
@@ -262,6 +271,7 @@
       "spawn_time": "16:35",
       "multipliers": [1.05],
       "weaknesses": ["Fire", "Flying", "Rock"],
+      "japanese_name": "キャタピー",
       "next_evolution": [
         {
           "num": "011",
@@ -289,6 +299,7 @@
       "spawn_time": "02:11",
       "multipliers": [3.55, 3.79],
       "weaknesses": ["Fire", "Flying", "Rock"],
+      "japanese_name": "トランセル",
       "prev_evolution": [
         {
           "num": "010",
@@ -317,6 +328,7 @@
       "spawn_time": "05:23",
       "multipliers": null,
       "weaknesses": ["Fire", "Electric", "Ice", "Flying", "Rock"],
+      "japanese_name": "バタフリー",
       "prev_evolution": [
         {
           "num": "010",
@@ -344,6 +356,7 @@
       "spawn_time": "02:21",
       "multipliers": [1.01, 1.09],
       "weaknesses": ["Fire", "Flying", "Psychic", "Rock"],
+      "japanese_name": "ビードル",
       "next_evolution": [
         {
           "num": "014",
@@ -371,6 +384,7 @@
       "spawn_time": "02:30",
       "multipliers": [3.01, 3.41],
       "weaknesses": ["Fire", "Flying", "Psychic", "Rock"],
+      "japanese_name": "コクーン",
       "prev_evolution": [
         {
           "num": "013",
@@ -399,6 +413,7 @@
       "spawn_time": "04:50",
       "multipliers": null,
       "weaknesses": ["Fire", "Flying", "Psychic", "Rock"],
+      "japanese_name": "スピアー",
       "prev_evolution": [
         {
           "num": "013",
