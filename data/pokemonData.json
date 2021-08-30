@@ -978,7 +978,7 @@
       "spawn_time": "13:43",
       "multipliers": [2.74, 2.81],
       "weaknesses": ["Water", "Ground", "Rock"],
-      "japanese_name": "ピクシー",
+      "japanese_name": "ロコン",
       "next_evolution": [
         {
           "num": "038",
@@ -1001,6 +1001,7 @@
       "spawn_time": "01:32",
       "multipliers": null,
       "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "キュウコン",
       "prev_evolution": [
         {
           "num": "037",
