@@ -573,6 +573,7 @@
       "spawn_time": "12:25",
       "multipliers": [2.66, 2.68],
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "オニスズメ",
       "next_evolution": [
         {
           "num": "022",
@@ -595,6 +596,7 @@
       "spawn_time": "01:11",
       "multipliers": null,
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "オニドリル",
       "prev_evolution": [
         {
           "num": "021",
@@ -618,6 +620,7 @@
       "spawn_time": "12:20",
       "multipliers": [2.21, 2.27],
       "weaknesses": ["Ground", "Psychic"],
+      "japanese_name": "アーボ",
       "next_evolution": [
         {
           "num": "024",
@@ -640,6 +643,7 @@
       "spawn_time": "01:50",
       "multipliers": null,
       "weaknesses": ["Ground", "Psychic"],
+      "japanese_name": "アーボック",
       "prev_evolution": [
         {
           "num": "023",
