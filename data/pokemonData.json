@@ -526,6 +526,7 @@
       "spawn_time": "01:55",
       "multipliers": [2.55, 2.73],
       "weaknesses": ["Fighting"],
+      "japanese_name": "コラッタ",
       "next_evolution": [
         {
           "num": "020",
@@ -548,6 +549,7 @@
       "spawn_time": "01:56",
       "multipliers": null,
       "weaknesses": ["Fighting"],
+      "japanese_name": "ラッタ",
       "prev_evolution": [
         {
           "num": "019",
