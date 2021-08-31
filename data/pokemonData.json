@@ -1896,6 +1896,7 @@
       "spawn_time": "23:36",
       "multipliers": null,
       "weaknesses": ["Electric", "Ground", "Psychic"],
+      "japanese_name": "ドククラゲ",
       "prev_evolution": [
         {
           "num": "072",
@@ -1919,6 +1920,7 @@
       "spawn_time": "12:40",
       "multipliers": [1.75, 1.76],
       "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "japanese_name": "イシツブテ",
       "next_evolution": [
         {
           "num": "075",
@@ -1946,6 +1948,7 @@
       "spawn_time": "04:53",
       "multipliers": [1.64, 1.72],
       "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "japanese_name": "ゴローン",
       "prev_evolution": [
         {
           "num": "074",
@@ -1974,6 +1977,7 @@
       "spawn_time": "12:16",
       "multipliers": null,
       "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "japanese_name": "ゴローニャ",
       "prev_evolution": [
         {
           "num": "074",
@@ -2001,6 +2005,7 @@
       "spawn_time": "02:50",
       "multipliers": [1.48, 1.5],
       "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "ポニータ",
       "next_evolution": [
         {
           "num": "078",
@@ -2023,6 +2028,7 @@
       "spawn_time": "04:00",
       "multipliers": null,
       "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "ギャロップ",
       "prev_evolution": [
         {
           "num": "077",
@@ -2046,6 +2052,7 @@
       "spawn_time": "07:12",
       "multipliers": [2.21],
       "weaknesses": ["Electric", "Grass", "Bug", "Ghost", "Dark"],
+      "japanese_name": "ヤドン",
       "next_evolution": [
         {
           "num": "080",
@@ -2068,6 +2075,7 @@
       "spawn_time": "02:56",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass", "Bug", "Ghost", "Dark"],
+      "japanese_name": "ヤドラン",
       "prev_evolution": [
         {
           "num": "079",
