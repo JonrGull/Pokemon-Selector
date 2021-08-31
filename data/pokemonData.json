@@ -1345,6 +1345,7 @@
       "spawn_time": "02:54",
       "multipliers": [1.98],
       "weaknesses": ["Fighting"],
+      "japanese_name": "ニャース",
       "next_evolution": [
         {
           "num": "053",
@@ -1367,6 +1368,7 @@
       "spawn_time": "02:44",
       "multipliers": null,
       "weaknesses": ["Fighting"],
+      "japanese_name": "ペルシアン",
       "prev_evolution": [
         {
           "num": "052",
@@ -1390,6 +1392,7 @@
       "spawn_time": "03:41",
       "multipliers": [2.27],
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "コダック",
       "next_evolution": [
         {
           "num": "055",
@@ -1412,6 +1415,7 @@
       "spawn_time": "23:06",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "ゴルダック",
       "prev_evolution": [
         {
           "num": "054",
@@ -1435,6 +1439,7 @@
       "spawn_time": "12:52",
       "multipliers": [2.17, 2.28],
       "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "japanese_name": "マンキー",
       "next_evolution": [
         {
           "num": "057",
@@ -1457,6 +1462,7 @@
       "spawn_time": "12:33",
       "multipliers": null,
       "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "japanese_name": "オコリザル",
       "prev_evolution": [
         {
           "num": "056",
