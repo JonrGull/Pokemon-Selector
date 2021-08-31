@@ -1731,6 +1731,7 @@
       "spawn_time": "10:32",
       "multipliers": [1.7],
       "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "japanese_name": "ゴーリキー",
       "prev_evolution": [
         {
           "num": "066",
@@ -1759,6 +1760,7 @@
       "spawn_time": "02:55",
       "multipliers": null,
       "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "japanese_name": "カイリキー",
       "prev_evolution": [
         {
           "num": "066",
@@ -1786,6 +1788,7 @@
       "spawn_time": "04:10",
       "multipliers": [1.57],
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "マダツボミ",
       "next_evolution": [
         {
           "num": "070",
