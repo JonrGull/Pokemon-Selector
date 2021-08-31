@@ -1816,6 +1816,7 @@
       "spawn_time": "09:45",
       "multipliers": [1.59],
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "ウツドン",
       "prev_evolution": [
         {
           "num": "069",
@@ -1844,6 +1845,7 @@
       "spawn_time": "12:19",
       "multipliers": null,
       "weaknesses": ["Fire", "Ice", "Flying", "Psychic"],
+      "japanese_name": "ウツボット",
       "prev_evolution": [
         {
           "num": "069",
@@ -1871,6 +1873,7 @@
       "spawn_time": "03:20",
       "multipliers": [2.52],
       "weaknesses": ["Electric", "Ground", "Psychic"],
+      "japanese_name": "メノクラゲ",
       "next_evolution": [
         {
           "num": "073",
