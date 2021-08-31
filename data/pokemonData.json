@@ -2099,6 +2099,7 @@
       "spawn_time": "04:04",
       "multipliers": [2.16, 2.17],
       "weaknesses": ["Fire", "Water", "Ground"],
+      "japanese_name": "コイル",
       "next_evolution": [
         {
           "num": "082",
