@@ -2122,6 +2122,7 @@
       "spawn_time": "15:25",
       "multipliers": null,
       "weaknesses": ["Fire", "Water", "Ground"],
+      "japanese_name": "レアコイル",
       "prev_evolution": [
         {
           "num": "081",
@@ -2143,7 +2144,8 @@
       "avg_spawns": 2.12,
       "spawn_time": "01:09",
       "multipliers": null,
-      "weaknesses": ["Electric", "Rock"]
+      "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "カモネギ"
     },
     {
       "id": 84,
