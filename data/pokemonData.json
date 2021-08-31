@@ -2434,7 +2434,8 @@
       "avg_spawns": 10,
       "spawn_time": "01:18",
       "multipliers": null,
-      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"]
+      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "japanese_name": "イワーク"
     },
     {
       "id": 96,
@@ -2452,6 +2453,7 @@
       "spawn_time": "01:51",
       "multipliers": [2.08, 2.09],
       "weaknesses": ["Bug", "Ghost", "Dark"],
+      "japanese_name": "スリープ",
       "next_evolution": [
         {
           "num": "097",
@@ -2474,6 +2476,7 @@
       "spawn_time": "02:17",
       "multipliers": null,
       "weaknesses": ["Bug", "Ghost", "Dark"],
+      "japanese_name": "スリーパー",
       "prev_evolution": [
         {
           "num": "096",
@@ -2497,6 +2500,7 @@
       "spawn_time": "03:33",
       "multipliers": [2.36, 2.4],
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "クラブ",
       "next_evolution": [
         {
           "num": "099",
@@ -2519,6 +2523,7 @@
       "spawn_time": "03:44",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "キングラー",
       "prev_evolution": [
         {
           "num": "098",
@@ -2542,6 +2547,7 @@
       "spawn_time": "04:36",
       "multipliers": [2.01, 2.02],
       "weaknesses": ["Ground"],
+      "japanese_name": "ビリリダマ",
       "next_evolution": [
         {
           "num": "101",
@@ -2564,6 +2570,7 @@
       "spawn_time": "04:10",
       "multipliers": null,
       "weaknesses": ["Ground"],
+      "japanese_name": "マルマイン",
       "prev_evolution": [
         {
           "num": "100",
