@@ -2233,6 +2233,7 @@
       "spawn_time": "06:04",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass", "Fighting", "Rock"],
+      "japanese_name": "ジュゴン",
       "prev_evolution": [
         {
           "num": "086",
@@ -2256,6 +2257,7 @@
       "spawn_time": "15:11",
       "multipliers": [2.44],
       "weaknesses": ["Ground", "Psychic"],
+      "japanese_name": "ベトベター",
       "next_evolution": [
         {
           "num": "089",
@@ -2278,6 +2280,7 @@
       "spawn_time": "01:28",
       "multipliers": null,
       "weaknesses": ["Ground", "Psychic"],
+      "japanese_name": "ベトベトン",
       "prev_evolution": [
         {
           "num": "088",
@@ -2301,6 +2304,7 @@
       "spawn_time": "07:39",
       "multipliers": [2.65],
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "シェルダー",
       "next_evolution": [
         {
           "num": "091",
