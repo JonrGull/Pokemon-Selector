@@ -2327,6 +2327,7 @@
       "spawn_time": "02:33",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass", "Fighting", "Rock"],
+      "japanese_name": "パルシェン",
       "prev_evolution": [
         {
           "num": "090",
@@ -2350,6 +2351,7 @@
       "spawn_time": "04:21",
       "multipliers": [1.78],
       "weaknesses": ["Ground", "Psychic", "Ghost", "Dark"],
+      "japanese_name": "ゴース",
       "next_evolution": [
         {
           "num": "093",
@@ -2377,6 +2379,7 @@
       "spawn_time": "00:10",
       "multipliers": [1.56, 1.8],
       "weaknesses": ["Ground", "Psychic", "Ghost", "Dark"],
+      "japanese_name": "ゴースト",
       "prev_evolution": [
         {
           "num": "092",
@@ -2405,6 +2408,7 @@
       "spawn_time": "03:55",
       "multipliers": null,
       "weaknesses": ["Ground", "Psychic", "Ghost", "Dark"],
+      "japanese_name": "ゲンガー",
       "prev_evolution": [
         {
           "num": "092",
