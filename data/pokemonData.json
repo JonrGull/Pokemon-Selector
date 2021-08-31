@@ -2163,6 +2163,7 @@
       "spawn_time": "05:10",
       "multipliers": [2.19, 2.24],
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "ドードー",
       "next_evolution": [
         {
           "num": "085",
@@ -2185,6 +2186,7 @@
       "spawn_time": "02:12",
       "multipliers": null,
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "ドードリオ",
       "prev_evolution": [
         {
           "num": "084",
@@ -2208,6 +2210,7 @@
       "spawn_time": "06:46",
       "multipliers": [1.04, 1.96],
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "パウワウ",
       "next_evolution": [
         {
           "num": "087",
