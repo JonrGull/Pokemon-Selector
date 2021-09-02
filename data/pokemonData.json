@@ -3225,6 +3225,7 @@
       "spawn_time": "05:32",
       "multipliers": [2.02, 2.64],
       "weaknesses": ["Fighting"],
+      "japanese_name": "イーブイ",
       "next_evolution": [
         {
           "num": "134",
@@ -3255,6 +3256,7 @@
       "spawn_time": "10:54",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "シャワーズ",
       "prev_evolution": [
         {
           "num": "133",
@@ -3277,6 +3279,7 @@
       "spawn_time": "02:30",
       "multipliers": null,
       "weaknesses": ["Ground"],
+      "japanese_name": "サンダース",
       "prev_evolution": [
         {
           "num": "133",
@@ -3299,6 +3302,7 @@
       "spawn_time": "07:02",
       "multipliers": null,
       "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "ブースター",
       "prev_evolution": [
         {
           "num": "133",
@@ -3320,7 +3324,8 @@
       "avg_spawns": 1.2,
       "spawn_time": "02:49",
       "multipliers": null,
-      "weaknesses": ["Fighting"]
+      "weaknesses": ["Fighting"],
+      "japanese_name": "ポリゴン"
     },
     {
       "id": 138,
@@ -3338,6 +3343,7 @@
       "spawn_time": "10:23",
       "multipliers": [2.12],
       "weaknesses": ["Electric", "Grass", "Fighting", "Ground"],
+      "japanese_name": "オムナイト",
       "next_evolution": [
         {
           "num": "139",
@@ -3360,6 +3366,7 @@
       "spawn_time": "05:04",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass", "Fighting", "Ground"],
+      "japanese_name": "オムスター",
       "prev_evolution": [
         {
           "num": "138",
@@ -3383,6 +3390,7 @@
       "spawn_time": "00:05",
       "multipliers": [1.97, 2.37],
       "weaknesses": ["Electric", "Grass", "Fighting", "Ground"],
+      "japanese_name": "カブト",
       "next_evolution": [
         {
           "num": "141",
