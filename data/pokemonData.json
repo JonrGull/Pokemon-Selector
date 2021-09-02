@@ -3413,6 +3413,7 @@
       "spawn_time": "23:40",
       "multipliers": null,
       "weaknesses": ["Electric", "Grass", "Fighting", "Ground"],
+      "japanese_name": "カブトプス",
       "prev_evolution": [
         {
           "num": "140",
@@ -3434,7 +3435,8 @@
       "avg_spawns": 1.8,
       "spawn_time": "23:40",
       "multipliers": null,
-      "weaknesses": ["Water", "Electric", "Ice", "Rock", "Steel"]
+      "weaknesses": ["Water", "Electric", "Ice", "Rock", "Steel"],
+      "japanese_name": "プテラ"
     },
     {
       "id": 143,
@@ -3450,7 +3452,8 @@
       "avg_spawns": 1.6,
       "spawn_time": "23:40",
       "multipliers": null,
-      "weaknesses": ["Fighting"]
+      "weaknesses": ["Fighting"],
+      "japanese_name": "カビゴン"
     },
     {
       "id": 144,
@@ -3466,7 +3469,8 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Fire", "Electric", "Rock", "Steel"]
+      "weaknesses": ["Fire", "Electric", "Rock", "Steel"],
+      "japanese_name": "フリーザー"
     },
     {
       "id": 145,
@@ -3482,7 +3486,8 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Ice", "Rock"]
+      "weaknesses": ["Ice", "Rock"],
+      "japanese_name": "サンダー"
     },
     {
       "id": 146,
@@ -3498,7 +3503,8 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Water", "Electric", "Rock"]
+      "weaknesses": ["Water", "Electric", "Rock"],
+      "japanese_name": "ファイヤー"
     },
     {
       "id": 147,
@@ -3516,6 +3522,7 @@
       "spawn_time": "06:41",
       "multipliers": [1.83, 1.84],
       "weaknesses": ["Ice", "Dragon", "Fairy"],
+      "japanese_name": "ミニリュウ",
       "next_evolution": [
         {
           "num": "148",
@@ -3543,6 +3550,7 @@
       "spawn_time": "11:57",
       "multipliers": [2.05],
       "weaknesses": ["Ice", "Dragon", "Fairy"],
+      "japanese_name": "ハクリュー",
       "prev_evolution": [
         {
           "num": "147",
@@ -3571,6 +3579,7 @@
       "spawn_time": "23:38",
       "multipliers": null,
       "weaknesses": ["Ice", "Rock", "Dragon", "Fairy"],
+      "japanese_name": "カイリュー",
       "prev_evolution": [
         {
           "num": "147",
@@ -3596,7 +3605,8 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"]
+      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "japanese_name": "ミュウツー"
     },
     {
       "id": 151,
@@ -3612,7 +3622,8 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"]
+      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "japanese_name": "ミュウ"
     }
   ]
 }
