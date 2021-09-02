@@ -3125,7 +3125,8 @@
       "avg_spawns": 12,
       "spawn_time": "00:37",
       "multipliers": null,
-      "weaknesses": ["Fighting"]
+      "weaknesses": ["Fighting"],
+      "japanese_name": "ケンタロス"
     },
     {
       "id": 129,
@@ -3143,6 +3144,7 @@
       "spawn_time": "14:26",
       "multipliers": [10.1, 11.8],
       "weaknesses": ["Electric", "Grass"],
+      "japanese_name": "コイキング",
       "next_evolution": [
         {
           "num": "130",
@@ -3165,6 +3167,7 @@
       "spawn_time": "02:15",
       "multipliers": null,
       "weaknesses": ["Electric", "Rock"],
+      "japanese_name": "ギャラドス",
       "prev_evolution": [
         {
           "num": "129",
@@ -3186,7 +3189,8 @@
       "avg_spawns": 0.6,
       "spawn_time": "08:59",
       "multipliers": null,
-      "weaknesses": ["Electric", "Grass", "Fighting", "Rock"]
+      "weaknesses": ["Electric", "Grass", "Fighting", "Rock"],
+      "japanese_name": "ラプラス"
     },
     {
       "id": 132,
@@ -3202,7 +3206,8 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Fighting"]
+      "weaknesses": ["Fighting"],
+      "japanese_name": "メタモン"
     },
     {
       "id": 133,
