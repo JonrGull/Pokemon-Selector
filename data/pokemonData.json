@@ -2594,6 +2594,7 @@
       "spawn_time": "09:09",
       "multipliers": [2.7, 3.18],
       "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Ghost", "Dark"],
+      "japanese_name": "タマタマ",
       "next_evolution": [
         {
           "num": "103",
@@ -2616,6 +2617,7 @@
       "spawn_time": "12:34",
       "multipliers": null,
       "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Ghost", "Dark"],
+      "japanese_name": "ナッシー",
       "prev_evolution": [
         {
           "num": "102",
@@ -2639,6 +2641,7 @@
       "spawn_time": "01:51",
       "multipliers": [1.67],
       "weaknesses": ["Water", "Grass", "Ice"],
+      "japanese_name": "カラカラ",
       "next_evolution": [
         {
           "num": "105",
@@ -2661,6 +2664,7 @@
       "spawn_time": "03:59",
       "multipliers": null,
       "weaknesses": ["Water", "Grass", "Ice"],
+      "japanese_name": "ガラガラ",
       "prev_evolution": [
         {
           "num": "104",
@@ -2682,6 +2686,7 @@
       "avg_spawns": 2,
       "spawn_time": "03:59",
       "multipliers": null,
+      "japanese_name": "サワムラー",
       "weaknesses": ["Flying", "Psychic", "Fairy"]
     },
     {
@@ -2698,6 +2703,7 @@
       "avg_spawns": 2.2,
       "spawn_time": "05:58",
       "multipliers": null,
+      "japanese_name": "エビワラー",
       "weaknesses": ["Flying", "Psychic", "Fairy"]
     },
     {
