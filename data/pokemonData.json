@@ -3023,7 +3023,8 @@
       "avg_spawns": 0.31,
       "spawn_time": "01:51",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"]
+      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "japanese_name": "バリヤード"
     },
     {
       "id": 123,
@@ -3039,7 +3040,8 @@
       "avg_spawns": 14,
       "spawn_time": "05:43",
       "multipliers": null,
-      "weaknesses": ["Fire", "Electric", "Ice", "Flying", "Rock"]
+      "weaknesses": ["Fire", "Electric", "Ice", "Flying", "Rock"],
+      "japanese_name": "ストライク"
     },
     {
       "id": 124,
@@ -3055,7 +3057,8 @@
       "avg_spawns": 35,
       "spawn_time": "05:41",
       "multipliers": null,
-      "weaknesses": ["Fire", "Bug", "Rock", "Ghost", "Dark", "Steel"]
+      "weaknesses": ["Fire", "Bug", "Rock", "Ghost", "Dark", "Steel"],
+      "japanese_name": "ルージュラ"
     },
     {
       "id": 125,
@@ -3071,7 +3074,8 @@
       "avg_spawns": 7.4,
       "spawn_time": "04:28",
       "multipliers": null,
-      "weaknesses": ["Ground"]
+      "weaknesses": ["Ground"],
+      "japanese_name": "エレブー"
     },
     {
       "id": 126,
@@ -3087,7 +3091,8 @@
       "avg_spawns": 10,
       "spawn_time": "20:36",
       "multipliers": null,
-      "weaknesses": ["Water", "Ground", "Rock"]
+      "weaknesses": ["Water", "Ground", "Rock"],
+      "japanese_name": "ブーバー"
     },
     {
       "id": 127,
@@ -3103,7 +3108,8 @@
       "avg_spawns": 99,
       "spawn_time": "03:25",
       "multipliers": null,
-      "weaknesses": ["Fire", "Flying", "Rock"]
+      "weaknesses": ["Fire", "Flying", "Rock"],
+      "japanese_name": "カイロス"
     },
     {
       "id": 128,
