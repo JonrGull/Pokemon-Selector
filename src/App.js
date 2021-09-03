@@ -6,10 +6,9 @@ function App() {
 
   return (
     <div>
-      <h1>Is state important to know? Yes</h1>
+      <h1>Yo this is React! Testing testing.</h1>
     </div>
   );
 }
 
 export default App;
-
