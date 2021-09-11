@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <h1>Yo this is React! Testing testing.</h1>
+      <h1>Pokemon Selector</h1>
     </div>
   );
 }
