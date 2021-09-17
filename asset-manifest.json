@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/react-pokemon-selector/static/css/main.88337890.chunk.css",
-    "main.js": "/react-pokemon-selector/static/js/main.e63c904d.chunk.js",
-    "main.js.map": "/react-pokemon-selector/static/js/main.e63c904d.chunk.js.map",
-    "runtime-main.js": "/react-pokemon-selector/static/js/runtime-main.60302963.js",
-    "runtime-main.js.map": "/react-pokemon-selector/static/js/runtime-main.60302963.js.map",
-    "static/js/2.c9699ae1.chunk.js": "/react-pokemon-selector/static/js/2.c9699ae1.chunk.js",
-    "static/js/2.c9699ae1.chunk.js.map": "/react-pokemon-selector/static/js/2.c9699ae1.chunk.js.map",
-    "static/js/3.dd157172.chunk.js": "/react-pokemon-selector/static/js/3.dd157172.chunk.js",
-    "static/js/3.dd157172.chunk.js.map": "/react-pokemon-selector/static/js/3.dd157172.chunk.js.map",
-    "index.html": "/react-pokemon-selector/index.html",
-    "static/css/main.88337890.chunk.css.map": "/react-pokemon-selector/static/css/main.88337890.chunk.css.map",
-    "static/js/2.c9699ae1.chunk.js.LICENSE.txt": "/react-pokemon-selector/static/js/2.c9699ae1.chunk.js.LICENSE.txt"
+    "main.css": "/JonrGull/Pokemon-Selector/static/css/main.88337890.chunk.css",
+    "main.js": "/JonrGull/Pokemon-Selector/static/js/main.e63c904d.chunk.js",
+    "main.js.map": "/JonrGull/Pokemon-Selector/static/js/main.e63c904d.chunk.js.map",
+    "runtime-main.js": "/JonrGull/Pokemon-Selector/static/js/runtime-main.d5466125.js",
+    "runtime-main.js.map": "/JonrGull/Pokemon-Selector/static/js/runtime-main.d5466125.js.map",
+    "static/js/2.c9699ae1.chunk.js": "/JonrGull/Pokemon-Selector/static/js/2.c9699ae1.chunk.js",
+    "static/js/2.c9699ae1.chunk.js.map": "/JonrGull/Pokemon-Selector/static/js/2.c9699ae1.chunk.js.map",
+    "static/js/3.dd157172.chunk.js": "/JonrGull/Pokemon-Selector/static/js/3.dd157172.chunk.js",
+    "static/js/3.dd157172.chunk.js.map": "/JonrGull/Pokemon-Selector/static/js/3.dd157172.chunk.js.map",
+    "index.html": "/JonrGull/Pokemon-Selector/index.html",
+    "static/css/main.88337890.chunk.css.map": "/JonrGull/Pokemon-Selector/static/css/main.88337890.chunk.css.map",
+    "static/js/2.c9699ae1.chunk.js.LICENSE.txt": "/JonrGull/Pokemon-Selector/static/js/2.c9699ae1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.60302963.js",
+    "static/js/runtime-main.d5466125.js",
     "static/js/2.c9699ae1.chunk.js",
     "static/css/main.88337890.chunk.css",
     "static/js/main.e63c904d.chunk.js"
