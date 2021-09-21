@@ -13,7 +13,11 @@ export default function App() {
     <div className="App">
       <h1>Pokemon Selector!</h1>
       {pokemonData &&
-        pokemonData.map((poke) => <p key={poke.id}>{poke.name}</p>)}
+        pokemonData.map((poke) => (
+          <p key={poke.id}>
+            #{poke.id} | {poke.name}
+          </p>
+        ))}
     </div>
   );
 }
