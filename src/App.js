@@ -16,6 +16,7 @@ export default function App() {
         pokemonData.map((poke) => (
           <p key={poke.id}>
             #{poke.id} | {poke.name}
+            <img src={poke.img} alt="Pokemon Images"></img>
           </p>
         ))}
     </div>
