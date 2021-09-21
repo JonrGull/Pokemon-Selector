@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import PokemonList from "./data/PokemonList";
+import PokemonLibrary from "./data/PokemonList.json";
 
 export default function App() {
   const [pokemonData, setPokemonData] = React.useState(null);
 
   React.useEffect(() => {
-    setPokemonData(PokemonList.runways[0].name);
+    setPokemonData(PokemonLibrary.pokemon);
   }, []);
+
   return (
-    <div>
-      <h1>Pokemon Selector</h1>
+    <div className="App">
+      <h1>Pokemon Selector!</h1>
+      {pokemonData &&
+        pokemonData.map((poke) => <p key={poke.id}>{poke.name}</p>)}
     </div>
   );
 }
