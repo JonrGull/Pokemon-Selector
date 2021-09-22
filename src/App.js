@@ -9,7 +9,8 @@ export default function App() {
     setPokemonData(PokemonLibrary.pokemon);
   }, []);
 
-  function filterPokemon(library) { // filter first 50 pokemon
+  function filterPokemon(library) {
+    // filter first 50 pokemon
     let result = [];
     for (let value of library) {
       let newValue = parseInt(value.num);
@@ -26,7 +27,9 @@ export default function App() {
     <div className="App">
       <h1>Pokemon Selector!</h1>
       <div>
-        <button onClick={filterPokemon}> Filter me </button>
+        <button onClick={filterPokemon(PokemonLibrary.pokemon)}>
+          Filter me
+        </button>
       </div>
       {pokemonData &&
         pokemonData.map((poke) => (
