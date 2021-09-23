@@ -3,33 +3,33 @@ import "./App.css";
 import PokemonLibrary from "./data/PokemonList.json";
 
 export default function App() {
-  const [pokemonData, setPokemonData] = React.useState(null);
+  const [pokemonData, setPokemonData] = React.useState(PokemonLibrary.pokemon);
+  // const [pokemonData, setPokemonData] = PokemonLibrary.pokemon;
+
+  const toDisplay = PokemonLibrary.pokemon;
 
   React.useEffect(() => {
     setPokemonData(PokemonLibrary.pokemon);
   }, []);
 
-  function filterPokemon(library) {
-    // filter first 50 pokemon
-    let result = [];
-    for (let value of library) {
-      let newValue = parseInt(value.num);
-      if (newValue <= 50) {
-        result.push(newValue);
+  const filterPokemon = (e) => {
+    const myFilteredPoke = toDisplay.filter((f) => {
+      if (f.type[1] === "Grass") {
+        //maybe use .includes to check both index spots ["grass","poison"] vs ["poison","grass"]
+        //if dealing with an array here you need the index
+        return true;
+      } else {
+        return false;
       }
-    }
-    return result;
-  }
-
-  console.log(filterPokemon(PokemonLibrary.pokemon));
+    });
+    setPokemonData(myFilteredPoke); //always need this. This re-renders to update state.
+  };
 
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
       <div>
-        <button onClick={filterPokemon(PokemonLibrary.pokemon)}>
-          Filter me
-        </button>
+        <button onClick={filterPokemon}>Filter me</button>
       </div>
       {pokemonData &&
         pokemonData.map((poke) => (
