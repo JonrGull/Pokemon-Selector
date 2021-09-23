@@ -14,7 +14,7 @@ export default function App() {
 
   const filterPokemon = (e) => {
     const myFilteredPoke = toDisplay.filter((f) => {
-      if (f.type[1] === "Grass") {
+      if (f.type[1] === "Water") {
         //maybe use .includes to check both index spots ["grass","poison"] vs ["poison","grass"]
         //if dealing with an array here you need the index
         return true;
