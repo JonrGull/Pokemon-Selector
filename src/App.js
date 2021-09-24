@@ -22,11 +22,9 @@ export default function App() {
   }); 
   */
 
-  const filterTypeOne = (e) => {
+  const filterTypeOne = () => {
     const myFilteredPoke = pokeListCopy.filter((pokeType) => {
-      //myFilteredPoke should be an ARRAY of OBJECTS
-
-      return pokeType.type.includes("Water");
+      return pokeType.type.includes("Grass");
     });
     console.log(myFilteredPoke); // shows array of objects of left over pokemon
 
@@ -34,9 +32,9 @@ export default function App() {
   };
 
   // we need to have one global array to pass to all the functions
-  const filterTypeTwo = (e) => {
+  const filterWeakness = () => {
     const myFilteredPoke = pokeListCopy.filter((pokeType) => {
-      return pokeType.type.includes("Poison");
+      return pokeType.weaknesses.includes("Ice");
     });
     console.log(myFilteredPoke); // shows array of objects of left over pokemon
 
@@ -47,8 +45,8 @@ export default function App() {
     <div className="App">
       <h1>Pokemon Selector!</h1>
       <div>
-        <button onClick={filterTypeOne}>Filter water</button>
-        <button onClick={filterTypeTwo}>Filter poison</button>
+        <button onClick={filterTypeOne}>Filter Grass</button>
+        <button onClick={filterWeakness}>Weak to Ice</button>
       </div>
       {pokemonData &&
         pokemonData.map((poke) => (
@@ -62,24 +60,18 @@ export default function App() {
 }
 
 /* 
+This function doesn't return anything. It just modifies the array
 
-const globalArray = [1,2,3,4,5,6,7,8,9,10]
-
-<button> filter even            </button>
-<button> filters numbers over 6 </button>
-
-function filterEvens(){
-  let results = []
-
-  for(let nums of globalArray){
-    if(nums % 2 === 0){
-      result.push(nums)
+function removeEven(arr, invert = false) {
+    for (let i = 0; i < arr.length; ++i) {
+        const even = arr[i] !== "Fire"
+        if (even ^ invert) {
+            arr.splice(i--, 1)
+        }
     }
-  }
-  return results // this results should be a array of all evens
 }
 
-
-
-
+const arr = ["Fire", "Fire", "Water", "Grass", "Fire", "Poison", "Flying"]
+removeEven(arr)
+console.log(arr)
 */
