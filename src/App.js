@@ -4,7 +4,6 @@ import PokemonLibrary from "./data/PokemonList.json";
 
 export default function App() {
   const [pokemonData, setPokemonData] = React.useState(PokemonLibrary.pokemon);
-  // const [pokemonData, setPokemonData] = PokemonLibrary.pokemon;
 
   const toDisplay = PokemonLibrary.pokemon;
 
