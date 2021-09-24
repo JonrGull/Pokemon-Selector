@@ -22,23 +22,44 @@ export default function App() {
   }); 
   */
 
+  /* 
+we have our global array. checks if new array is empty. If it does, it will modify from the new array. But if it is undefined, it will be the first call.
+If it doesn't have a value at the global level, it filters the original. After it filters the original array, it reassigns it. 
+But if it does have a value, it needs to filter the in progress array and reassign it's value.
+
+*/
+
+  let inProgress = undefined;
+
   const filterTypeOne = () => {
     const myFilteredPoke = pokeListCopy.filter((pokeType) => {
       return pokeType.type.includes("Grass");
     });
     console.log(myFilteredPoke); // shows array of objects of left over pokemon
+    inProgress = myFilteredPoke;
+    console.log(inProgress);
 
-    setPokemonData(myFilteredPoke); //always need this. This re-renders to update state.
+    setPokemonData(inProgress); //always need this. This re-renders to update state.
   };
 
   // we need to have one global array to pass to all the functions
   const filterWeakness = () => {
-    const myFilteredPoke = pokeListCopy.filter((pokeType) => {
-      return pokeType.weaknesses.includes("Ice");
-    });
-    console.log(myFilteredPoke); // shows array of objects of left over pokemon
+    console.log(inProgress); // WHY ARE YOU UNDEFINED
 
-    setPokemonData(myFilteredPoke);
+    if (inProgress === undefined) {
+      const myFilteredPoke = pokeListCopy.filter((pokeType) => {
+        return pokeType.weaknesses.includes("Ice");
+      });
+      inProgress = myFilteredPoke;
+      setPokemonData(inProgress);
+    } else {
+      //this else isn't running.
+      inProgress = inProgress.filter((pokeType) => {
+        return pokeType.weaknesses.includes("Ice");
+      });
+      setPokemonData(inProgress);
+    }
+    console.log(inProgress); // shows array of objects of left over pokemon
   };
 
   return (
