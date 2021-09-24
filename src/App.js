@@ -5,7 +5,7 @@ import PokemonLibrary from "./data/PokemonList.json";
 export default function App() {
   const [pokemonData, setPokemonData] = React.useState(PokemonLibrary.pokemon); //exact  same value as myFilteredPoke. Just the starting value
 
-  const libraryCopy = PokemonLibrary.pokemon; //toDisplay
+  const pokeListCopy = PokemonLibrary.pokemon; //toDisplay
 
   React.useEffect(() => {
     setPokemonData(PokemonLibrary.pokemon);
@@ -22,22 +22,20 @@ export default function App() {
   }); 
   */
 
-  let myFilteredPoke = libraryCopy;
-
   const filterTypeOne = (e) => {
-    myFilteredPoke = libraryCopy.filter((pokeType) => {
+    const myFilteredPoke = pokeListCopy.filter((pokeType) => {
       //myFilteredPoke should be an ARRAY of OBJECTS
 
       return pokeType.type.includes("Water");
     });
-    console.log(myFilteredPoke.splice); // shows array of objects of left over pokemon
+    console.log(myFilteredPoke); // shows array of objects of left over pokemon
 
     setPokemonData(myFilteredPoke); //always need this. This re-renders to update state.
   };
 
   // we need to have one global array to pass to all the functions
   const filterTypeTwo = (e) => {
-    myFilteredPoke = libraryCopy.filter((pokeType) => {
+    const myFilteredPoke = pokeListCopy.filter((pokeType) => {
       return pokeType.type.includes("Poison");
     });
     console.log(myFilteredPoke); // shows array of objects of left over pokemon
