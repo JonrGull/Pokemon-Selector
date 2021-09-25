@@ -1,83 +1,101 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import PokemonLibrary from "./data/PokemonList.json";
+// import React, { useState, useEffect } from 'react';
+import React from 'react';
+import './App.css';
+import PokemonLibrary from './data/PokemonList.json';
 
 export default function App() {
-  const [pokemonData, setPokemonData] = React.useState(PokemonLibrary.pokemon); //exact  same value as myFilteredPoke. Just the starting value
+	const [pokemonData, setPokemonData] = React.useState(PokemonLibrary.pokemon); //exact  same value as myFilteredPoke. Just the starting value
 
-  const pokeListCopy = PokemonLibrary.pokemon; //toDisplay
+	const pokeListCopy = PokemonLibrary.pokemon; //toDisplay
 
-  React.useEffect(() => {
-    setPokemonData(PokemonLibrary.pokemon);
-  }, []);
+	React.useEffect(() => {
+		setPokemonData(PokemonLibrary.pokemon);
+	}, []);
 
-  //const globalArray = giant array of pokemon objects
-  // have functions that mutate globalArray and returns the array to global memory
-  // so other functions call pass this mutated array and spit out the mutated array a 2nd time
+	//const globalArray = giant array of pokemon objects
+	// have functions that mutate globalArray and returns the array to global memory
+	// so other functions call pass this mutated array and spit out the mutated array a 2nd time
 
-  //how do we make a global array, that can be modified and saved
+	//how do we make a global array, that can be modified and saved
 
-  /*   let arr = PokemonLibrary.pokemon.filter(function (e) {
+	/*   let arr = PokemonLibrary.pokemon.filter(function (e) {
     console.log(e.type.indexOf(type) >= 0);
   }); 
   */
 
-  /* 
+	/* 
 we have our global array. checks if new array is empty. If it does, it will modify from the new array. But if it is undefined, it will be the first call.
 If it doesn't have a value at the global level, it filters the original. After it filters the original array, it reassigns it. 
 But if it does have a value, it needs to filter the in progress array and reassign it's value.
 
 */
 
-  let inProgress = undefined;
+	let inProgress = [];
 
-  const filterTypeOne = () => {
-    const myFilteredPoke = pokeListCopy.filter((pokeType) => {
-      return pokeType.type.includes("Grass");
-    });
-    console.log(myFilteredPoke); // shows array of objects of left over pokemon
-    inProgress = myFilteredPoke;
-    console.log(inProgress);
+	const filterTypeOne = () => {
+		// if (inProgress.length === 0) {
+		// 	inProgress = pokeListCopy.filter((pokeType) => {
+		// 		return pokeType.type.includes('Grass');
+		// 	});
+		// } else {
+		// 	inProgress = inProgress.filter((pokeType) => {
+		// 		return pokeType.type.includes('Grass');
+		// 	});
+		// }
+		// console.log(myFilteredPoke); // shows array of objects of left over pokemon
+		inProgress = (inProgress.length === 0 ? pokeListCopy : inProgress).filter(
+			(pokeType) => {
+				return pokeType.type.includes('Grass');
+			}
+		);
+		console.log('inProgress', inProgress);
+		setPokemonData(inProgress); //always need this. This re-renders to update state.
+	};
 
-    setPokemonData(inProgress); //always need this. This re-renders to update state.
-  };
+	// we need to have one global array to pass to all the functions
+	const filterWeakness = () => {
+		// if (inProgress.length === 0) {
+		// 	inProgress = pokeListCopy.filter((pokeType) => {
+		// 		return pokeType.weaknesses.includes('Ice');
+		// 	});
+		// 	setPokemonData(inProgress);
+		// } else {
+		// 	//this else isn't running.
+		// 	inProgress = inProgress.filter((pokeType) => {
+		// 		return pokeType.weaknesses.includes('Ice');
+		// 	});
+		// 	setPokemonData(inProgress);
+		// }
 
-  // we need to have one global array to pass to all the functions
-  const filterWeakness = () => {
-    console.log(inProgress); // WHY ARE YOU UNDEFINED
+		console.log('inProgress @ Start of second call', inProgress);
+		console.log('inProgress @ Start of second call', inProgress);
+		console.log('inProgress @ Start of second call', inProgress);
+		inProgress = (inProgress.length === 0 ? pokeListCopy : inProgress).filter(
+			(pokeType) => {
+				return pokeType.weaknesses.includes('Ice');
+			}
+		);
+		console.log('inProgress @ End of second call', inProgress);
+		setPokemonData(inProgress);
+		// console.log(inProgress); // shows array of objects of left over pokemon
+	};
 
-    if (inProgress === undefined) {
-      const myFilteredPoke = pokeListCopy.filter((pokeType) => {
-        return pokeType.weaknesses.includes("Ice");
-      });
-      inProgress = myFilteredPoke;
-      setPokemonData(inProgress);
-    } else {
-      //this else isn't running.
-      inProgress = inProgress.filter((pokeType) => {
-        return pokeType.weaknesses.includes("Ice");
-      });
-      setPokemonData(inProgress);
-    }
-    console.log(inProgress); // shows array of objects of left over pokemon
-  };
-
-  return (
-    <div className="App">
-      <h1>Pokemon Selector!</h1>
-      <div>
-        <button onClick={filterTypeOne}>Filter Grass</button>
-        <button onClick={filterWeakness}>Weak to Ice</button>
-      </div>
-      {pokemonData &&
-        pokemonData.map((poke) => (
-          <p key={poke.id}>
-            #{poke.num} | {poke.name} | {poke.type[0]} {poke.type[1]}
-            <img src={poke.img} alt="Pokemon Images"></img>
-          </p>
-        ))}
-    </div>
-  );
+	return (
+		<div className="App">
+			<h1>Pokemon Selector!</h1>
+			<div>
+				<button onClick={filterTypeOne}>Filter Grass</button>
+				<button onClick={filterWeakness}>Weak to Ice</button>
+			</div>
+			{pokemonData &&
+				pokemonData.map((poke) => (
+					<p key={poke.id}>
+						#{poke.num} | {poke.name} | {poke.type[0]} {poke.type[1]}
+						<img src={poke.img} alt="Pokemon Images"></img>
+					</p>
+				))}
+		</div>
+	);
 }
 
 /* 
