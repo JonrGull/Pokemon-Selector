@@ -7,9 +7,9 @@ export default function App() {
 
   const pokeListCopy = PokemonLibrary.pokemon; //toDisplay
 
-  React.useEffect(() => {
+  /*   React.useEffect(() => { //still works without this, so let's remove it for now.
     setPokemonData(PokemonLibrary.pokemon);
-  }, []);
+  }, []); */
 
   //const globalArray = giant array of pokemon objects
   // have functions that mutate globalArray and returns the array to global memory
@@ -29,37 +29,21 @@ But if it does have a value, it needs to filter the in progress array and reassi
 
 */
 
-  let inProgress = undefined;
-
   const filterTypeOne = () => {
     const myFilteredPoke = pokeListCopy.filter((pokeType) => {
       return pokeType.type.includes("Grass");
     });
     console.log(myFilteredPoke); // shows array of objects of left over pokemon
-    inProgress = myFilteredPoke;
-    console.log(inProgress);
 
-    setPokemonData(inProgress); //always need this. This re-renders to update state.
+    setPokemonData(myFilteredPoke); //always need this? This re-renders to update state.
   };
 
   // we need to have one global array to pass to all the functions
   const filterWeakness = () => {
-    console.log(inProgress); // WHY ARE YOU UNDEFINED
-
-    if (inProgress === undefined) {
-      const myFilteredPoke = pokeListCopy.filter((pokeType) => {
-        return pokeType.weaknesses.includes("Ice");
-      });
-      inProgress = myFilteredPoke;
-      setPokemonData(inProgress);
-    } else {
-      //this else isn't running.
-      inProgress = inProgress.filter((pokeType) => {
-        return pokeType.weaknesses.includes("Ice");
-      });
-      setPokemonData(inProgress);
-    }
-    console.log(inProgress); // shows array of objects of left over pokemon
+    const myFilteredPoke = pokeListCopy.filter((pokeType) => {
+      return pokeType.weaknesses.includes("Ice");
+    });
+    setPokemonData(myFilteredPoke);
   };
 
   return (
