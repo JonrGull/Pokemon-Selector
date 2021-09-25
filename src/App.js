@@ -43,6 +43,8 @@ But if it does have a value, it needs to filter the in progress array and reassi
     const myFilteredPoke = pokeListCopy.filter((pokeType) => {
       return pokeType.weaknesses.includes("Ice");
     });
+    console.log(myFilteredPoke); // shows array of objects of left over pokemon
+
     setPokemonData(myFilteredPoke);
   };
 
