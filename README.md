@@ -8,4 +8,4 @@ A JSON file holds all of the pokemon data that we plan to use. Using a combinati
 
 Start date: August 2021
 
-https://jonrgull.github.io/Pokemon-Selector/
+<a href="https://jonrgull.github.io/Pokemon-Selector/">Live demo!</a>
