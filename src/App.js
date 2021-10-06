@@ -51,6 +51,7 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
   }
 
+  console.log(pokemonData);
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
@@ -75,3 +76,9 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
   );
 }
 //removed pokemonData && before on line51. Idk what that did.
+
+/* 
+How can I get this idea to work?
+if (pokemonData.length < 0) {
+  <h2>No more Pokemon are left :(</h2>;
+  } */
