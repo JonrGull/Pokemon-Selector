@@ -53,7 +53,11 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
 
   //Error message and my terrible button. This should probably be it's own state.
   if (pokemonData.length <= 0) {
-    return <button onClick={reset}>There's no more Pokemon! Try again!</button>;
+    return (
+      <div className="error-box">
+        <button onClick={reset}>There's no more Pokemon! Try again!</button>
+      </div>
+    );
   }
 
   //logging array each button press
