@@ -6,6 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* No more pokemon left msg */
+h2 {
+  text-align: center;
+}
+
 .displayPokemon {
   display: flex;
   flex-direction: column;
@@ -32,6 +38,7 @@ button {
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
+  justify-content: center;
 }
 
 button:hover {

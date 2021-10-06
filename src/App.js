@@ -51,6 +51,12 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
   }
 
+  //Error message and my terrible button. This should probably be it's own state.
+  if (pokemonData.length <= 0) {
+    return <button onClick={reset}>There's no more Pokemon! Try again!</button>;
+  }
+
+  //logging array each button press
   console.log(pokemonData);
   return (
     <div className="App">
@@ -76,9 +82,3 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
   );
 }
 //removed pokemonData && before on line51. Idk what that did.
-
-/* 
-How can I get this idea to work?
-if (pokemonData.length < 0) {
-  <h2>No more Pokemon are left :(</h2>;
-  } */
