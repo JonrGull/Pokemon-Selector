@@ -6,11 +6,15 @@ export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //exact  same value as myFilteredPoke. Just the starting value
 
   // const pokeListCopy = PokemonLibrary.pokemon; //toDisplay
-  //do i need a prevArray or something? Like the count example? State is modified with the button. Right now, they are both using the same array!
 
   /* React.useEffect(() => { //still works without this, so let's remove it for now.
     setPokemonData(PokemonLibrary.pokemon);
   }, []); */
+
+  /* 
+created prevArray which starts out as PokemonLibrary.pokemon. Each time a button is clicked, it sets the new state (setPokemonData) to
+the new filtered array (prevPokeArray). Since we never hit two buttons at the same time, prevPokeArray remains consistent.
+*/
 
   const filterTypeOne = () => {
     setPokemonData((prevPokeArray) =>
