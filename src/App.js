@@ -61,21 +61,22 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
     <div className="App">
       <h1>Pokemon Selector!</h1>
       <div className="filterTypeButtons">
-        <button onClick={() => filterTypeOne("Bug")}>Bug</button>
-        <button onClick={() => filterTypeOne("Dragon")}>Dragon</button>
-        <button onClick={() => filterTypeOne("Electric")}>Electric</button>
-        <button onClick={() => filterTypeOne("Fighting")}>Fighting</button>
+        {/* We could TRY to use the pictures from the card game...but that would require pictures, not emojis */}
+        <button onClick={() => filterTypeOne("Bug")}>Bug 🐛</button>
+        <button onClick={() => filterTypeOne("Dragon")}>Dragon 🐲</button>
+        <button onClick={() => filterTypeOne("Electric")}>Electric ⚡</button>
+        <button onClick={() => filterTypeOne("Fighting")}>Fighting 🥊</button>
         <button onClick={() => filterTypeOne("Fire")}>Fire 🔥</button>
-        <button onClick={() => filterTypeOne("Flying")}>Flying</button>
-        <button onClick={() => filterTypeOne("Ghost")}>Ghost</button>
-        <button onClick={() => filterTypeOne("Grass")}>Grass</button>
-        <button onClick={() => filterTypeOne("Ground")}>Ground</button>
-        <button onClick={() => filterTypeOne("Ice")}>Ice</button>
-        <button onClick={() => filterTypeOne("Normal")}>Normal</button>
-        <button onClick={() => filterTypeOne("Poison")}>Poison</button>
-        <button onClick={() => filterTypeOne("Psychic")}>Psychic</button>
-        <button onClick={() => filterTypeOne("Rock")}>Rock</button>
-        <button onClick={() => filterTypeOne("Water")}>Water</button>
+        <button onClick={() => filterTypeOne("Flying")}>Flying 🕊️</button>
+        <button onClick={() => filterTypeOne("Ghost")}>Ghost 👻</button>
+        <button onClick={() => filterTypeOne("Grass")}>Grass 🍃</button>
+        <button onClick={() => filterTypeOne("Ground")}>Ground 🕳️</button>
+        <button onClick={() => filterTypeOne("Ice")}>Ice 🧊</button>
+        <button onClick={() => filterTypeOne("Normal")}>Normal ⭐</button>
+        <button onClick={() => filterTypeOne("Poison")}>Poison ☠️</button>
+        <button onClick={() => filterTypeOne("Psychic")}>Psychic 🔮</button>
+        <button onClick={() => filterTypeOne("Rock")}>Rock 🧱</button>
+        <button onClick={() => filterTypeOne("Water")}>Water 💧</button>
       </div>
       <div>
         <button onClick={filterWeakness}>Weak to Ice</button>
