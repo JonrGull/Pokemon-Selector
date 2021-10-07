@@ -6,15 +6,13 @@ export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //exact  same value as myFilteredPoke. Just the starting value
   // const [languageState, SetLanguageState] = useState();
 
-  // const pokeListCopy = PokemonLibrary.pokemon; //toDisplay
 
   /* React.useEffect(() => { //still works without this, so let's remove it for now.
     setPokemonData(PokemonLibrary.pokemon);
   }, []); */
 
   /* 
-created prevArray which starts out as PokemonLibrary.pokemon. Each time a button is clicked, it sets the new state (setPokemonData) to
-the new filtered array (prevPokeArray). Since we never hit two buttons at the same time, prevPokeArray remains consistent.
+Put all these functions in useEffect?
 */
 
   const filterTypeOne = (typeButtonInput) => {
@@ -34,14 +32,7 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
     );
   };
 
-  const filterBug = () => {
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokeType) => {
-        return pokeType.type.includes("Bug");
-      })
-    );
-  };
-
+  //Reset State
   function reset() {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
   }
@@ -62,6 +53,7 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
       <h1>Pokemon Selector!</h1>
       <div className="filterTypeButtons">
         {/* We could TRY to use the pictures from the card game...but that would require pictures, not emojis */}
+        {/* Also I'd like to remove buttons if no Pokemon*/}
         <button onClick={() => filterTypeOne("Bug")}>Bug 🐛</button>
         <button onClick={() => filterTypeOne("Dragon")}>Dragon 🐲</button>
         <button onClick={() => filterTypeOne("Electric")}>Electric ⚡</button>
@@ -80,7 +72,6 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
       </div>
       <div>
         <button onClick={filterWeakness}>Weak to Ice</button>
-        <button onClick={filterBug}>Bug Type</button>
 
         <button onClick={reset}>Reset</button>
       </div>
