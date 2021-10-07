@@ -16,10 +16,11 @@ created prevArray which starts out as PokemonLibrary.pokemon. Each time a button
 the new filtered array (prevPokeArray). Since we never hit two buttons at the same time, prevPokeArray remains consistent.
 */
 
-  const filterTypeOne = () => {
+  const filterTypeOne = (typeButtonInput) => {
+    // can i use array destructuring here?
     setPokemonData((prevPokeArray) =>
       prevPokeArray.filter((pokeType) => {
-        return pokeType.type.includes("Grass");
+        return pokeType.type.includes(`${typeButtonInput}`);
       })
     );
   };
@@ -40,13 +41,6 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
     );
   };
 
-  const filterFire = () => {
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokeType) => {
-        return pokeType.type.includes("Flying");
-      })
-    );
-  };
   function reset() {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
   }
@@ -65,11 +59,20 @@ the new filtered array (prevPokeArray). Since we never hit two buttons at the sa
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
-      <div className="filterButtons">
-        <button onClick={filterTypeOne}>Filter Grass</button>
+      <div className="filterTypeButtons">
+        <button onClick={() => filterTypeOne("Bug")}>Bug</button>
+        <button onClick={() => filterTypeOne("Dragon")}>Dragon</button>
+        <button onClick={() => filterTypeOne("Electric")}>Electric</button>
+        <button onClick={() => filterTypeOne("Fighting")}>Fighting</button>
+        <button onClick={() => filterTypeOne("Fire")}>Fire</button>
+        <button onClick={() => filterTypeOne("Flying")}>Flying</button>
+
+        <button onClick={() => filterTypeOne("Bug")}>Bug</button>
+        <button onClick={() => filterTypeOne("Bug")}>Bug</button>
+        <button onClick={() => filterTypeOne("Bug")}>Bug</button>
+
         <button onClick={filterWeakness}>Weak to Ice</button>
         <button onClick={filterBug}>Bug Type</button>
-        <button onClick={filterFire}>Flying Type</button>
 
         <button onClick={reset}>Reset</button>
       </div>

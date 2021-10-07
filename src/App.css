@@ -26,9 +26,7 @@ h1 {
 }
 .error-box {
   display: flex;
-
   justify-content: center;
-  height: 100vh;
 }
 
 /* Pokemon Display */
