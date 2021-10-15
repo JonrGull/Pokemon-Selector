@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
+import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
 import PokemonLibrary from "./data/PokemonList.json";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
+
+  /* 
+Put each question inside its own separate component that App pulls from to render each group of buttons and functions????
+*/
+
   // const [languageState, SetLanguageState] = useState();
 
   /* React.useEffect(() => { //still works without this, so let's remove it for now.
@@ -14,6 +20,7 @@ export default function App() {
 Put all these functions in useEffect?
 */
 
+  // I believe this all works, unsure if we can use it tho?
   /*   const { typeArray = pokemonData.map((getType) => getType.type) } =
     pokemonData;
   // console.log(typeArray);
@@ -100,7 +107,7 @@ Put all these functions in useEffect?
         </span>
       </div>
       <div>
-        <button onClick={filterWeakness}>Weak to Ice</button>
+        <button onClick={() => filterWeakness("Ice")}>Weak to Ice</button>
 
         <button onClick={() => filterWeight("6.9 kg")}>
           Weight equal to 6.9kg
@@ -110,41 +117,12 @@ Put all these functions in useEffect?
           Reset
         </button>
       </div>
+
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
-          <p key={pokeObj.id}>
-            # #{pokeObj.num} | {pokeObj.name} | {pokeObj.type[0]}{" "}
-            {pokeObj.type[1]}
-            <img src={pokeObj.img} alt="Pokemon Images"></img>
-          </p>
+          <DisplayPokemon poke={pokeObj} />
         ))}
       </div>
     </div>
   );
 }
-
-// if color 5 exists, print 'color 5 exists. if not, color 5 does not exist
-// if pokeObj.type[1] exists, print the type. If not, null
-
-// `${result['color 5'] ? 'color 5 exists!' : 'color 5 does not exist!'`
-//removed pokemonData && before on line51. Idk what that did.
-
-/*
-I'll keep this for now but I think it's worthless. This is using array destructuring but it only works for Bulbasaur
-I think I would have to loop it for it to work, but it would have to look at each object, destructure to get
-the array of types, then pass that in to includes. So I think it would basically be doing what .filter is already
-doing.
-
-OR USE MAP TWICE?
-
-const {typeArray = pokemonData[0].type.map(ele => ele  ) } = pokemonData;
-console.log(typeArray);
-
-const filterTypeOne = (typeButtonInput) => {
-  // can i use array destructuring here?
-  setPokemonData((prevPokeArray) =>
-    prevPokeArray.filter(() => {
-      return typeArray.includes(`${typeButtonInput}`);
-    })
-  );
-}; */
