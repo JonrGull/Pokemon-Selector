@@ -120,7 +120,7 @@ Put all these functions in useEffect?
 
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
-          <DisplayPokemon poke={pokeObj} />
+          <DisplayPokemon pokeObj={pokeObj} />
         ))}
       </div>
     </div>

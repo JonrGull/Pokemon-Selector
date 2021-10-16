@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DisplayPokemon(pokeObj) {
+export default function DisplayPokemon({ pokeObj }) {
   return (
     <div>
       <p key={pokeObj.id}>
