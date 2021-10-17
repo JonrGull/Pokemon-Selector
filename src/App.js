@@ -36,7 +36,7 @@ Put all these functions in useEffect?
     );
   }; */
 
-  const filterTypeOne = (typeButtonInput) => {
+  const filterType = (typeButtonInput) => {
     setPokemonData((prevPokeArray) =>
       prevPokeArray.filter((pokeType) => {
         return pokeType.type.includes(`${typeButtonInput}`);
@@ -89,7 +89,7 @@ Put all these functions in useEffect?
           What Pokemon type do you like? *Just to save time Ice -> Electricity
           works
         </p>
-        <TypeButtons handleClick={filterTypeOne} />
+        <TypeButtons handleClick={filterType} />
       </div>
       <div>
         <p>What type is your Pokemon weak too?</p>
