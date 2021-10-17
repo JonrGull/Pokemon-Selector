@@ -85,24 +85,21 @@ Put all these functions in useEffect?
     <div className="App">
       <h1>Pokemon Selector!</h1>
       <div className="ButtonGroup">
+        <p>What Pokemon type do you like?</p>
         <TypeButtons filterTypeOne={filterTypeOne} />
       </div>
       <div>
-
-        <button onClick={() => filterWeakness("Ice")}>Weak to Ice</button>
-        <button onClick={() => filterWeight("6.9 kg")}>
-          Weight equal to 6.9kg
-        </button>
-
-        <button className="resetBtn" onClick={reset}>
-          Reset
-        </button>
+        <p>What type is your Pokemon weak too?</p>
+        <TypeButtons filterWeakness={filterWeakness} />
       </div>
 
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
           <DisplayPokemon pokeObj={pokeObj} />
         ))}
+        <button className="resetBtn" onClick={reset}>
+          Reset
+        </button>
       </div>
     </div>
   );

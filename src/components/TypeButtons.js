@@ -1,4 +1,5 @@
-export default function TypeButtons({filterTypeOne}) { //so here we would need to pass in different functions if we want to reuse these buttons
+export default function TypeButtons({ filterTypeOne, filterWeakness }) {
+  //so here we would need to pass in different functions if we want to reuse these buttons
   return (
     <div>
       {/* prettier-ignore */}
