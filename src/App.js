@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DisplayPokemon from "./components/DisplayPokemon";
 import TypeButtons from "./components/TypeButtons";
 import "./App.css";
