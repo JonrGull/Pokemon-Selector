@@ -85,12 +85,15 @@ Put all these functions in useEffect?
     <div className="App">
       <h1>Pokemon Selector!</h1>
       <div className="ButtonGroup">
-        <p>What Pokemon type do you like?</p>
-        <TypeButtons filterTypeOne={filterTypeOne} />
+        <p>
+          What Pokemon type do you like? *Just to save time Ice -> Electricity
+          works
+        </p>
+        <TypeButtons handleClick={filterTypeOne} />
       </div>
       <div>
         <p>What type is your Pokemon weak too?</p>
-        <TypeButtons filterWeakness={filterWeakness} />
+        <TypeButtons handleClick={filterWeakness} />
       </div>
 
       <div className="displayPokemon">
