@@ -95,7 +95,9 @@ Put all these functions in useEffect?
         <p>What type is your Pokemon weak too?</p>
         <TypeButtons handleClick={filterWeakness} />
       </div>
-
+      <h2>
+        <strong>Here is your Pokemon!</strong>
+      </h2>
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
           <DisplayPokemon pokeObj={pokeObj} />
