@@ -26,3 +26,8 @@ export default function TypeButtons({ handleClick }) {
     </div>
   );
 }
+
+
+/* 
+what if we make a component that houses ALL the questions and it is importing all of the typeButtons (for at least 2 of those questions)
+*/
