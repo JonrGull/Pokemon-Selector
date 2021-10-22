@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-
+import Stack from "@mui/material/Stack";
 export default function TypeButtons({ onClick }) {
   //so here we would need to pass in different functions if we want to reuse these buttons
 
@@ -9,7 +9,7 @@ export default function TypeButtons({ onClick }) {
       <span>
         {/* We could TRY to use the pictures from the card game...but that would require pictures, not emojis */}
         {/* Also I'd like to remove buttons if no Pokemon are left*/}
-        {/* Is it possible to have a function make buttons for us? They all have a different parameter, unsure if possible */}
+        <Stack spacing={1} direction="row">{/* Is it possible to have a function make buttons for us? They all have a different parameter, unsure if possible */}
         <Button variant="contained" onClick={() => onClick("Bug")}>Bug 🐛</Button>
         <Button variant="contained" onClick={() => onClick("Dragon")}>Dragon 🐲</Button>
         <Button variant="contained" onClick={() => onClick("Electric")}>Electric ⚡</Button>
@@ -25,6 +25,7 @@ export default function TypeButtons({ onClick }) {
         <Button variant="contained" onClick={() => onClick("Psychic")}>Psychic 🔮</Button>
         <Button variant="contained" onClick={() => onClick("Rock")}>Rock 🧱</Button>
         <Button variant="contained" onClick={() => onClick("Water")}>Water 💧</Button>
+        </Stack>
         </span>
     </div>
   );
