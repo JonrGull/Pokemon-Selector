@@ -93,12 +93,12 @@ Put all these functions in useEffect?
     <div className="App">
       <h1>Pokemon Selector!</h1>
       {!type && (
-        <div>
-          <strong>Select Type</strong> <TypeButtons onClick={typeAssign} />
+        <div style={{ fontSize: 50 }}>
+          <strong> Select Type</strong> <TypeButtons onClick={typeAssign} />
         </div>
       )}
       {type && !weakness && (
-        <div>
+        <div style={{ fontSize: 50 }}>
           <strong>Select Weakness</strong>
           <TypeButtons onClick={weaknessAssign} />
         </div>
