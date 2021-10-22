@@ -3,10 +3,11 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import "./App.css";
 import App from "./App";
+import { StyledEngineProvider } from "@mui/material/styles";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <StyledEngineProvider injectFirst>
     <App />
-  </React.StrictMode>,
+  </StyledEngineProvider>,
   document.getElementById("root")
 );

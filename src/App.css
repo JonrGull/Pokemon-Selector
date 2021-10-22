@@ -44,22 +44,7 @@ h1 {
   -o-user-select: none;
 }
 
-/* Weakness button css */
-.filterTypeBtns {
-  background-color: #2699ab;
-  border: 1px solid rgb(255, 255, 255);
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  justify-content: center;
-}
 
-.filterTypeBtns:hover {
-  background-color: #04a7f3;
-}
 
 /* reset button css */
 .resetBtn {

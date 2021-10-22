@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/* import React, { useState } from "react";
 import TypeButtons from "./TypeButtons";
 
 export default function Questions({ handleClick }) {
