@@ -28,6 +28,15 @@ export default function App() {
     );
   };
 
+  const heightAssign = (typeButtonInput) => {
+    setHeight(typeButtonInput);
+    setPokemonData((prevPokeArray) =>
+      prevPokeArray.filter((pokeType) => {
+        return pokeType.type.includes(`${typeButtonInput}`);
+      })
+    );
+  };
+
   /* 
 Put each question inside its own separate component that App pulls from to render each group of buttons and functions????
 */
@@ -74,10 +83,11 @@ Put all these functions in useEffect?
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
     setType(null);
     setWeakness(null);
+    setHeight(null);
     //would need to include all other states that we declared
   }
 
-  //Error message and my terrible button. This should probably be it's own state?
+  //Error message and my terrible button.
   if (pokemonData.length <= 0) {
     return (
       <div className="error-box">
