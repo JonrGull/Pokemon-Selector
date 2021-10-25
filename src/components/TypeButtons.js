@@ -30,3 +30,6 @@ export default function TypeButtons({ onClick }) {
     </div>
   );
 }
+/* 
+Could i make a component that takes an array of text, and a function to pass, and map them so I can remove these giant walls of buttons?
+*/

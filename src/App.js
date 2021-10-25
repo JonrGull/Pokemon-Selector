@@ -3,12 +3,15 @@ import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
 import PokemonLibrary from "./data/PokemonList.json";
 import TypeButtons from "./components/TypeButtons";
+import HeightBtn from "./components/HeightBtn";
+import WeightBtn from "./components/WeightBtn";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [height, setHeight] = useState(null);
+  const [weight, setWeight] = useState(null);
 
   // assigns type of pokemon
   const typeAssign = (typeButtonInput) => {
@@ -19,23 +22,48 @@ export default function App() {
       })
     );
   };
+
   const weaknessAssign = (typeButtonInput) => {
     setWeakness(typeButtonInput);
     setPokemonData((prevPokeArray) =>
       prevPokeArray.filter((pokeType) => {
-        return pokeType.type.includes(`${typeButtonInput}`);
+        return pokeType.weaknesses.includes(`${typeButtonInput}`);
       })
     );
   };
 
-  const heightAssign = (typeButtonInput) => {
-    setHeight(typeButtonInput);
+  const heightAssign = (minHeight, maxHeight) => {
+    setHeight(maxHeight);
     setPokemonData((prevPokeArray) =>
       prevPokeArray.filter((pokeType) => {
-        return pokeType.type.includes(`${typeButtonInput}`);
+        return (
+          pokeType.height > `${minHeight}` && pokeType.height < `${maxHeight}`
+        );
       })
     );
   };
+
+  const weightAssign = (minWeight, maxWeight) => {
+    setWeight(maxWeight);
+    setPokemonData((prevPokeArray) =>
+      prevPokeArray.filter((pokeType) => {
+        return (
+          pokeType.weight > `${minWeight}` && pokeType.weight < `${maxWeight}`
+        );
+      })
+    );
+  };
+
+  //   const canEvolveAssign = () => {
+  //   setWeight(maxWeight);
+  //   setPokemonData((prevPokeArray) =>
+  //     prevPokeArray.filter((pokeType) => {
+  //       return (
+  //         pokeType.weight > `${minWeight}` && pokeType.weight < `${maxWeight}`
+  //       );
+  //     })
+  //   );
+  // };
 
   /* 
 Put each question inside its own separate component that App pulls from to render each group of buttons and functions????
@@ -66,24 +94,13 @@ Put all these functions in useEffect?
     );
   }; */
 
-  /* 
-  Weight may be tricky because it is written as a string - kg. Maybe I can just remove the kg part from the json to make it easier. 
-  Then just turn it into a number. Is there a function that can take off the kg? 
-  */
-  const filterWeight = (weightButtonInput) => {
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokeType) => {
-        return pokeType.weight.includes(`${weightButtonInput}`);
-      })
-    );
-  };
-
-  //Reset State
+  //Reset ALL data in states
   function reset() {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
     setType(null);
     setWeakness(null);
     setHeight(null);
+    setWeight(null);
     //would need to include all other states that we declared
   }
 
@@ -111,6 +128,23 @@ Put all these functions in useEffect?
         <div style={{ fontSize: 50 }}>
           <strong>Select Weakness</strong>
           <TypeButtons onClick={weaknessAssign} />
+        </div>
+      )}
+      {type && weakness && !height && (
+        <div style={{ fontSize: 50 }}>
+          <strong>Select Height</strong>
+          <HeightBtn onClick={heightAssign} />
+        </div>
+      )}
+      {type && weakness && height && !weight && (
+        <div style={{ fontSize: 50 }}>
+          <strong>Select Weight</strong>
+          <WeightBtn onClick={weightAssign} />
+        </div>
+      )}
+      {type && weakness && height && weight && (
+        <div style={{ fontSize: 55 }}>
+          <strong>Here is your Pokemon!</strong>
         </div>
       )}
       <div className="displayPokemon">
