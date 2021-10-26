@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
 import PokemonLibrary from "./data/PokemonList.json";
-import TypeButtons from "./components/TypeButtons";
-import HeightBtn from "./components/HeightBtn";
-import WeightBtn from "./components/WeightBtn";
+import TypeButtons from "./components/buttons/TypeButtons";
+import HeightBtn from "./components/buttons/HeightBtn";
+import WeightBtn from "./components/buttons/WeightBtn";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
+  const [history, setHistory] = useState([Array(4).fill(null)]); //4 for 4 questions. Will need up increase this number if add more questions. Holds our choices?
+  const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [height, setHeight] = useState(null);
@@ -54,6 +56,20 @@ export default function App() {
     );
   };
 
+  /*   const jumpTo = (step) => {
+    setStepNumber(step);
+    setPokemonData();
+  };
+  const renderChoices = () =>
+    history.map((_step, move) => {
+      const destination = move ? `Go to move #${move}` : "Go to Start";
+      return (
+        <li key={move}>
+          <button onClick={() => jumpTo(move)}>{destination}</button>
+        </li>
+      );
+    });
+ */
   //   const canEvolveAssign = () => {
   //   setWeight(maxWeight);
   //   setPokemonData((prevPokeArray) =>
@@ -113,8 +129,28 @@ Put all these functions in useEffect?
     );
   }
 
+  // if only one pokemon is left in the array, just return that pokemon
+  if (pokemonData.length === 1) {
+    return (
+      <div className="error-box">
+        <button onClick={reset}>Here's your pokemon</button>
+        {pokemonData.map((pokeObj) => (
+          <DisplayPokemon pokeObj={pokeObj} />
+        ))}
+      </div>
+    );
+  }
+
   //logging array each button press
-  console.log(pokemonData);
+  // console.log(pokemonData);
+
+  // Maybe not here (maybe in another component), but I want to map the buttons using the weakness arrays.
+  // Loop that logs all weaknesses in separate arrays within ONE GIANT ARRAY
+  const mapWeaknesses = pokemonData.map((pokeObj) => pokeObj.weaknesses);
+  const mergedWeaknessArray = mapWeaknesses.flat(1);
+  let uniqueWeaknessArray = [...new Set(mergedWeaknessArray)];
+
+  console.log(uniqueWeaknessArray);
 
   return (
     <div className="App">
@@ -151,9 +187,12 @@ Put all these functions in useEffect?
         {pokemonData.map((pokeObj) => (
           <DisplayPokemon pokeObj={pokeObj} />
         ))}
+
         <button className="resetBtn" onClick={reset}>
           Reset
         </button>
+        {/* <h3>History</h3>
+        {renderChoices()} */}
       </div>
     </div>
   );
@@ -189,3 +228,11 @@ Move questions into app.js for now?
 
 //   return newPokemonArray;
 // }
+
+/* 
+Eventually we want to map the available buttons that match the pokemon's weakness. Instead of showing all of the buttons all the time. This works for type/weakness
+
+For weight and height. We need to say 
+if no pokemon are under 1m or over 3m, then don't show those buttons?
+
+*/
