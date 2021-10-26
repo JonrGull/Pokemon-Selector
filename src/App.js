@@ -145,7 +145,8 @@ Put all these functions in useEffect?
   // console.log(pokemonData);
 
   // Maybe not here (maybe in another component), but I want to map the buttons using the weakness arrays.
-  // Loop that logs all weaknesses in separate arrays within ONE GIANT ARRAY
+  // Loop that logs all weaknesses
+  // Can I apply this to height/weight as well? Remove buttons that don't fit within a range?
   const mapWeaknesses = pokemonData.map((pokeObj) => pokeObj.weaknesses);
   const mergedWeaknessArray = mapWeaknesses.flat(1);
   let uniqueWeaknessArray = [...new Set(mergedWeaknessArray)];
