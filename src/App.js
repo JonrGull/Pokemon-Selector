@@ -114,15 +114,19 @@ export default function App() {
   }
 
   //Logging pokemon array each render
-  // console.log(pokemonData);
+  console.log(pokemonData);
 
   // Logs all weaknesses
   const mapWeaknesses = pokemonData.flatMap((pokeObj) => pokeObj.weaknesses);
   const uniqueWeaknessArray = [...new Set(mapWeaknesses)];
 
   //Get all weight and height of all pokemon, sort, and pass variable to weightBtn/heightBtn. If weight/height is within ranges, show button.
-  const mapWeight = pokemonData.map((pokeObj) => pokeObj.weight).sort();
-  const mapHeight = pokemonData.map((pokeObj) => pokeObj.height).sort();
+  const mapWeight = pokemonData
+    .map((pokeObj) => pokeObj.weight)
+    .sort((a, b) => a - b);
+  const mapHeight = pokemonData
+    .map((pokeObj) => pokeObj.height)
+    .sort((a, b) => a - b); //do i need to sort at all?
 
   return (
     <div className="App">
