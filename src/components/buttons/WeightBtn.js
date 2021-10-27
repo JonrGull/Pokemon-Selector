@@ -5,7 +5,7 @@ export default function WeightBtn({ mapWeight, onClick }) {
   console.log(mapWeight);
   //pokemon less than 5kg
   const lessThanFive =
-    Math.min(...mapWeight) < 5 ? ( //is the max number less than 5? if true, show the button
+    Math.min(...mapWeight) <= 5 ? ( //is the max number less than 5? if true, show the button
       <Button variant="contained" onClick={() => onClick(0, 5)}>
         ~ 5kg
       </Button>
@@ -44,6 +44,10 @@ export default function WeightBtn({ mapWeight, onClick }) {
 }
 
 /* 
+cant get flareon, 25.0 kg what about a pokemon who is like 25.2kg? I can't start the count at 26.
+
+
+
 Logging mapWeight will not log until this component is rendered in the questions! 
 
 Make the range checker into func?

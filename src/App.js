@@ -40,7 +40,7 @@ export default function App() {
     setPokemonData((prevPokeArray) =>
       prevPokeArray.filter((pokeType) => {
         return (
-          pokeType.height > `${minHeight}` && pokeType.height < `${maxHeight}`
+          pokeType.height >= `${minHeight}` && pokeType.height <= `${maxHeight}`
         );
       })
     );
@@ -51,7 +51,7 @@ export default function App() {
     setPokemonData((prevPokeArray) =>
       prevPokeArray.filter((pokeType) => {
         return (
-          pokeType.weight > `${minWeight}` && pokeType.weight < `${maxWeight}`
+          pokeType.weight >= `${minWeight}` && pokeType.weight <= `${maxWeight}`
         );
       })
     );
