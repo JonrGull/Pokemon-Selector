@@ -4,7 +4,7 @@ export default function HeightBtn({ mapHeight, onClick }) {
   console.log(mapHeight);
   //pokemon less than 1m
   const lessThanOne =
-    Math.max(...mapHeight) < 1 ? (
+    Math.min(...mapHeight) < 1 ? (
       <Button variant="contained" onClick={() => onClick(0, 1)}>
         ~ 1m
       </Button>
@@ -12,7 +12,7 @@ export default function HeightBtn({ mapHeight, onClick }) {
 
   //pokemon between 1m and 3m
   const betweenOneAndThree =
-    Math.max(...mapHeight) > 1 && Math.min(...mapHeight) < 3 ? (
+    Math.min(...mapHeight) > 1 && Math.max(...mapHeight) < 3 ? (
       <Button variant="contained" onClick={() => onClick(1, 3)}>
         1m ~ 3m
       </Button>
@@ -34,3 +34,7 @@ export default function HeightBtn({ mapHeight, onClick }) {
     </div>
   );
 }
+
+/* 
+executor but only ~1m is showing??
+*/
