@@ -44,24 +44,3 @@ h1 {
   user-select: none;
   -o-user-select: none;
 }
-
-/* reset button css */
-.resetBtn {
-  background-color: #fc2828;
-  border: 1px solid rgb(255, 255, 255);
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  justify-content: center;
-}
-.resetBtn:hover {
-  background-color: #aa2302;
-}
-
-/* 
-  We may need to use tailwind so we don't hurt ourselves!
-  buttons work weird. 
-  */
