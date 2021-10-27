@@ -92,7 +92,7 @@ export default function App() {
     //would need to include all other states that we declared
   }
 
-  //Error message and my terrible button.
+  //Error message and my terrible button. Should be able to delete!
   if (pokemonData.length <= 0) {
     return (
       <div className="error-box">

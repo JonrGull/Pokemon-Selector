@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import Stack from "@mui/material/Stack";
 
 export default function HeightBtn({ mapHeight, onClick }) {
   console.log(mapHeight);
@@ -27,14 +28,16 @@ export default function HeightBtn({ mapHeight, onClick }) {
 
   return (
     <div>
-      {lessThanOne}
-      {betweenOneAndThree}
-      {overThree}
+      <Stack
+        spacing={2}
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        {lessThanOne}
+        {betweenOneAndThree}
+        {overThree}
+      </Stack>
     </div>
   );
 }
-
-/* 
-executor but only ~1m is showing??
-
-*/

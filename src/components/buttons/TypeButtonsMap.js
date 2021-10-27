@@ -9,7 +9,12 @@ export default function TypeButtonsMap({ uniqueWeaknessArray, onClick }) {
   ));
   return (
     <div>
-      <Stack spacing={2} direction="row">
+      <Stack
+        spacing={2}
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
         {mapButtons}
       </Stack>
     </div>

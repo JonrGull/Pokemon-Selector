@@ -1,4 +1,5 @@
 import { Button } from "@mui/material";
+import Stack from "@mui/material/Stack";
 
 export default function WeightBtn({ mapWeight, onClick }) {
   console.log(mapWeight);
@@ -28,9 +29,16 @@ export default function WeightBtn({ mapWeight, onClick }) {
   // I could make this range checker its  own function and just pass values?
   return (
     <div>
-      {lessThanFive}
-      {betweenFiveAndTwentyFive}
-      {overTwentyFive}
+      <Stack
+        spacing={2}
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        {lessThanFive}
+        {betweenFiveAndTwentyFive}
+        {overTwentyFive}
+      </Stack>
     </div>
   );
 }
