@@ -44,16 +44,6 @@ export default function WeightBtn({ mapWeight, onClick }) {
 }
 
 /* 
-I THINK HEIGHT AND WEIGHT ARE SUPER BROKEN */
-
-/* 
-water - electric - 1 - 3m to test. the ~5 should be gone
-water - eletric less than 1m only 25KG???? HOW DO I GET SQUIRTLE?? he is 0.51m and 9kg something is wrong with the 2nd option the middle button should be appear
-
-GASTLY? HAUNTER? they are 0.1kg but only 25KG is showing up?? [0.1, 0.1, 40.5] gengar is fat maybe its okay now? wtf?
-
-
-
 Logging mapWeight will not log until this component is rendered in the questions! 
 
 Make the range checker into func?
@@ -64,13 +54,4 @@ function between(x, min, max) {
 if (between(x, 0.001, 0.009)) {
   // something
 }
-
-
-
-  const betweenFiveAndTwentyFive =
-    Math.min(...mapWeight) > 5 && Math.max(...mapWeight) < 25 ? ( // this is wrong.  this is looking at 4, the first value in the array and turning false. and the max weight is not less than 25 so double false
-      <Button variant="contained" onClick={() => onClick(5, 25)}>
-        5kg ~ 25kg
-      </Button>
-    ) : null;
 */
