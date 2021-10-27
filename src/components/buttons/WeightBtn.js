@@ -7,21 +7,21 @@ export default function WeightBtn({ mapWeight, onClick }) {
   const lessThanFive =
     Math.min(...mapWeight) <= 5 ? ( //is the max number less than 5? if true, show the button
       <Button variant="contained" onClick={() => onClick(0, 5)}>
-        ~ 5kg
+       Light
       </Button>
     ) : null;
 
   //pokemon between 5kg and 25kg
   const betweenFiveAndTwentyFive = mapWeight.some((v) => v > 5 && v < 25) ? ( // as long as 1 number is between 5 and 25, show this button
     <Button variant="contained" onClick={() => onClick(5, 25)}>
-      5kg ~ 25kg
+      Medium
     </Button>
   ) : null;
 
   const overTwentyFive =
     Math.max(...mapWeight) > 25 ? (
       <Button variant="contained" onClick={() => onClick(25, 500)}>
-        25kg +
+        Heavy
       </Button>
     ) : null;
 
