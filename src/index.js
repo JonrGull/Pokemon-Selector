@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import "./App.css";
 import App from "./App";
-import { StyledEngineProvider } from "@mui/material/styles";
 
 ReactDOM.render(
-  <StyledEngineProvider injectFirst>
+  <React.StrictMode>
     <App />
-  </StyledEngineProvider>,
+  </React.StrictMode>,
   document.getElementById("root")
 );

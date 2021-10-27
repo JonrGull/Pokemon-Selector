@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
 import PokemonLibrary from "./data/PokemonList.json";
-import TypeButtons from "./components/buttons/TypeButtons";
 import HeightBtn from "./components/buttons/HeightBtn";
 import WeightBtn from "./components/buttons/WeightBtn";
+import TypeButtonsMap from "./components/buttons/TypeButtonsMap";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
@@ -147,6 +147,7 @@ Put all these functions in useEffect?
   // Maybe not here (maybe in another component), but I want to map the buttons using the weakness arrays. MAY NEED TO LOSE THE EMOJIS
   // Loop that logs all weaknesses
   // Can I apply this to height/weight as well? Remove buttons that don't fit within a range?
+  // ALSO may need remove dark,ghost,fairy because they might get mapped to buttons but will fail since it would be different from the original 15 types
   const mapWeaknesses = pokemonData.map((pokeObj) => pokeObj.weaknesses);
   const mergedWeaknessArray = mapWeaknesses.flat(1);
   let uniqueWeaknessArray = [...new Set(mergedWeaknessArray)];
@@ -158,13 +159,20 @@ Put all these functions in useEffect?
       <h1>Pokemon Selector!</h1>
       {!type && (
         <div style={{ fontSize: 50 }}>
-          <strong> Select Type</strong> <TypeButtons onClick={typeAssign} />
+          <strong> Select Type</strong>{" "}
+          <TypeButtonsMap
+            uniqueWeaknessArray={uniqueWeaknessArray}
+            onClick={typeAssign}
+          />
         </div>
       )}
       {type && !weakness && (
         <div style={{ fontSize: 50 }}>
           <strong>Select Weakness</strong>
-          <TypeButtons onClick={weaknessAssign} />
+          <TypeButtonsMap
+            uniqueWeaknessArray={uniqueWeaknessArray}
+            onClick={weaknessAssign}
+          />
         </div>
       )}
       {type && weakness && !height && (
@@ -231,9 +239,7 @@ Move questions into app.js for now?
 // }
 
 /* 
-Eventually we want to map the available buttons that match the pokemon's weakness. Instead of showing all of the buttons all the time. This works for type/weakness
 
 For weight and height. We need to say 
 if no pokemon are under 1m or over 3m, then don't show those buttons?
-
 */

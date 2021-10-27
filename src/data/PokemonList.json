@@ -1438,7 +1438,7 @@
       "avg_spawns": 92,
       "spawn_time": "12:52",
       "multipliers": [2.17, 2.28],
-      "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Flying", "Psychic"],
       "japanese_name": "マンキー",
       "next_evolution": [
         {
@@ -1461,7 +1461,7 @@
       "avg_spawns": 3.1,
       "spawn_time": "12:33",
       "multipliers": null,
-      "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Flying", "Psychic"],
       "japanese_name": "オコリザル",
       "prev_evolution": [
         {
@@ -1589,7 +1589,7 @@
       "avg_spawns": 1.1,
       "spawn_time": "01:32",
       "multipliers": null,
-      "weaknesses": ["Electric", "Grass", "Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Electric", "Grass", "Flying", "Psychic"],
       "japanese_name": "ニョロボン",
       "prev_evolution": [
         {
@@ -1617,7 +1617,7 @@
       "avg_spawns": 42,
       "spawn_time": "04:30",
       "multipliers": [1.36, 1.95],
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "ケーシィ",
       "next_evolution": [
         {
@@ -1645,7 +1645,7 @@
       "avg_spawns": 2.7,
       "spawn_time": "11:25",
       "multipliers": [1.4],
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "ユンゲラー",
       "prev_evolution": [
         {
@@ -1674,7 +1674,7 @@
       "avg_spawns": 0.73,
       "spawn_time": "12:33",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "フーディン",
       "prev_evolution": [
         {
@@ -1702,7 +1702,7 @@
       "avg_spawns": 49,
       "spawn_time": "01:55",
       "multipliers": [1.64, 1.65],
-      "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Flying", "Psychic"],
       "japanese_name": "ワンリキー",
       "next_evolution": [
         {
@@ -1730,7 +1730,7 @@
       "avg_spawns": 3.4,
       "spawn_time": "10:32",
       "multipliers": [1.7],
-      "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Flying", "Psychic"],
       "japanese_name": "ゴーリキー",
       "prev_evolution": [
         {
@@ -1759,7 +1759,7 @@
       "avg_spawns": 0.68,
       "spawn_time": "02:55",
       "multipliers": null,
-      "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Flying", "Psychic"],
       "japanese_name": "カイリキー",
       "prev_evolution": [
         {
@@ -2051,7 +2051,7 @@
       "avg_spawns": 105,
       "spawn_time": "07:12",
       "multipliers": [2.21],
-      "weaknesses": ["Electric", "Grass", "Bug", "Ghost", "Dark"],
+      "weaknesses": ["Electric", "Grass", "Bug", "Ghost"],
       "japanese_name": "ヤドン",
       "next_evolution": [
         {
@@ -2074,7 +2074,7 @@
       "avg_spawns": 3.6,
       "spawn_time": "02:56",
       "multipliers": null,
-      "weaknesses": ["Electric", "Grass", "Bug", "Ghost", "Dark"],
+      "weaknesses": ["Electric", "Grass", "Bug", "Ghost"],
       "japanese_name": "ヤドラン",
       "prev_evolution": [
         {
@@ -2350,7 +2350,7 @@
       "avg_spawns": 79,
       "spawn_time": "04:21",
       "multipliers": [1.78],
-      "weaknesses": ["Ground", "Psychic", "Ghost", "Dark"],
+      "weaknesses": ["Ground", "Psychic", "Ghost"],
       "japanese_name": "ゴース",
       "next_evolution": [
         {
@@ -2378,7 +2378,7 @@
       "avg_spawns": 5.2,
       "spawn_time": "00:10",
       "multipliers": [1.56, 1.8],
-      "weaknesses": ["Ground", "Psychic", "Ghost", "Dark"],
+      "weaknesses": ["Ground", "Psychic", "Ghost"],
       "japanese_name": "ゴースト",
       "prev_evolution": [
         {
@@ -2407,7 +2407,7 @@
       "avg_spawns": 0.67,
       "spawn_time": "03:55",
       "multipliers": null,
-      "weaknesses": ["Ground", "Psychic", "Ghost", "Dark"],
+      "weaknesses": ["Ground", "Psychic", "Ghost"],
       "japanese_name": "ゲンガー",
       "prev_evolution": [
         {
@@ -2452,7 +2452,7 @@
       "avg_spawns": 321,
       "spawn_time": "01:51",
       "multipliers": [2.08, 2.09],
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "スリープ",
       "next_evolution": [
         {
@@ -2475,7 +2475,7 @@
       "avg_spawns": 10,
       "spawn_time": "02:17",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "スリーパー",
       "prev_evolution": [
         {
@@ -2593,7 +2593,7 @@
       "avg_spawns": 78,
       "spawn_time": "09:09",
       "multipliers": [2.7, 3.18],
-      "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Ghost", "Dark"],
+      "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Ghost"],
       "japanese_name": "タマタマ",
       "next_evolution": [
         {
@@ -2616,7 +2616,7 @@
       "avg_spawns": 1.4,
       "spawn_time": "12:34",
       "multipliers": null,
-      "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Ghost", "Dark"],
+      "weaknesses": ["Fire", "Ice", "Poison", "Flying", "Bug", "Ghost"],
       "japanese_name": "ナッシー",
       "prev_evolution": [
         {
@@ -2686,7 +2686,7 @@
       "avg_spawns": 2,
       "spawn_time": "03:59",
       "multipliers": null,
-      "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Flying", "Psychic"],
       "japanese_name": "サワムラー"
     },
     {
@@ -2703,7 +2703,7 @@
       "avg_spawns": 2.2,
       "spawn_time": "05:58",
       "multipliers": null,
-      "weaknesses": ["Flying", "Psychic", "Fairy"],
+      "weaknesses": ["Flying", "Psychic"],
       "japanese_name": "エビワラー"
     },
     {
@@ -3000,7 +3000,7 @@
       "avg_spawns": 3.4,
       "spawn_time": "06:57",
       "multipliers": null,
-      "weaknesses": ["Electric", "Grass", "Bug", "Ghost", "Dark"],
+      "weaknesses": ["Electric", "Grass", "Bug", "Ghost"],
       "japanese_name": "スターミー",
       "prev_evolution": [
         {
@@ -3023,7 +3023,7 @@
       "avg_spawns": 0.31,
       "spawn_time": "01:51",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "バリヤード"
     },
     {
@@ -3057,7 +3057,7 @@
       "avg_spawns": 35,
       "spawn_time": "05:41",
       "multipliers": null,
-      "weaknesses": ["Fire", "Bug", "Rock", "Ghost", "Dark", "Steel"],
+      "weaknesses": ["Fire", "Bug", "Rock", "Ghost", "Steel"],
       "japanese_name": "ルージュラ"
     },
     {
@@ -3521,7 +3521,7 @@
       "avg_spawns": 30,
       "spawn_time": "06:41",
       "multipliers": [1.83, 1.84],
-      "weaknesses": ["Ice", "Dragon", "Fairy"],
+      "weaknesses": ["Ice", "Dragon"],
       "japanese_name": "ミニリュウ",
       "next_evolution": [
         {
@@ -3549,7 +3549,7 @@
       "avg_spawns": 2,
       "spawn_time": "11:57",
       "multipliers": [2.05],
-      "weaknesses": ["Ice", "Dragon", "Fairy"],
+      "weaknesses": ["Ice", "Dragon"],
       "japanese_name": "ハクリュー",
       "prev_evolution": [
         {
@@ -3578,7 +3578,7 @@
       "avg_spawns": 0.11,
       "spawn_time": "23:38",
       "multipliers": null,
-      "weaknesses": ["Ice", "Rock", "Dragon", "Fairy"],
+      "weaknesses": ["Ice", "Rock", "Dragon"],
       "japanese_name": "カイリュー",
       "prev_evolution": [
         {
@@ -3605,7 +3605,7 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "ミュウツー"
     },
     {
@@ -3622,7 +3622,7 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Bug", "Ghost", "Dark"],
+      "weaknesses": ["Bug", "Ghost"],
       "japanese_name": "ミュウ"
     }
   ]
