@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
+import { Button } from "@mui/material";
 import PokemonLibrary from "./data/PokemonList.json";
 import HeightBtn from "./components/buttons/HeightBtn";
 import WeightBtn from "./components/buttons/WeightBtn";
@@ -93,19 +94,21 @@ export default function App() {
   }
 
   //Error message and my terrible button. Should be able to delete!
-  if (pokemonData.length <= 0) {
-    return (
-      <div className="error-box">
-        <button onClick={reset}>There's no more Pokemon! Try again!</button>
-      </div>
-    );
-  }
+  // if (pokemonData.length <= 0) {
+  //   return (
+  //     <div>
+  //       <Button onClick={reset}>There's no more Pokemon! Try again!</Button>
+  //     </div>
+  //   );
+  // }
 
   // if only one pokemon is left in the array, just return that pokemon
   if (pokemonData.length === 1) {
     return (
       <div className="error-box">
-        <button onClick={reset}>Here's your pokemon</button>
+        <Button variant="contained" onClick={reset}>
+          Here's your pokemon
+        </Button>
         {pokemonData.map((pokeObj) => (
           <DisplayPokemon pokeObj={pokeObj} />
         ))}
