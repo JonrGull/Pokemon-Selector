@@ -144,14 +144,11 @@ Put all these functions in useEffect?
   //logging array each button press
   // console.log(pokemonData);
 
-  // Maybe not here (maybe in another component), but I want to map the buttons using the weakness arrays. MAY NEED TO LOSE THE EMOJIS
   // Loop that logs all weaknesses
   // Can I apply this to height/weight as well? Remove buttons that don't fit within a range?
-  // ALSO may need remove dark,ghost,fairy because they might get mapped to buttons but will fail since it would be different from the original 15 types
-  const mapWeaknesses = pokemonData.map((pokeObj) => pokeObj.weaknesses);
-  const mergedWeaknessArray = mapWeaknesses.flat(1);
-  let uniqueWeaknessArray = [...new Set(mergedWeaknessArray)];
 
+  const mapWeaknesses = pokemonData.flatMap((pokeObj) => pokeObj.weaknesses);
+  const uniqueWeaknessArray = [...new Set(mapWeaknesses)];
   console.log(uniqueWeaknessArray);
 
   return (
@@ -194,7 +191,7 @@ Put all these functions in useEffect?
       )}
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
-          <DisplayPokemon pokeObj={pokeObj} />
+          <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
         ))}
 
         <button className="resetBtn" onClick={reset}>

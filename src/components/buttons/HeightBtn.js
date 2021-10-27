@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 export default function HeightBtn({ onClick }) {
+
   return (
     <div>
       <Button variant="contained" onClick={() => onClick(0, 1)}>
