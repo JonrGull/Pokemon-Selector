@@ -8,8 +8,8 @@ import TypeButtonsMap from "./components/buttons/TypeButtonsMap";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
-  const [history, setHistory] = useState([Array(4).fill(null)]); //4 for 4 questions. Will need up increase this number if add more questions. Holds our choices?
-  const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
+  // const [history, setHistory] = useState([Array(4).fill(null)]); //4 for 4 questions. Will need up increase this number if add more questions. Holds our choices?
+  // const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [height, setHeight] = useState(null);
@@ -24,7 +24,7 @@ export default function App() {
       })
     );
   };
-
+  // assigns weakness of pokemon
   const weaknessAssign = (typeButtonInput) => {
     setWeakness(typeButtonInput);
     setPokemonData((prevPokeArray) =>
@@ -34,6 +34,7 @@ export default function App() {
     );
   };
 
+  // assigns height of pokemon
   const heightAssign = (minHeight, maxHeight) => {
     setHeight(maxHeight);
     setPokemonData((prevPokeArray) =>
@@ -44,7 +45,7 @@ export default function App() {
       })
     );
   };
-
+  // assigns weight of pokemon
   const weightAssign = (minWeight, maxWeight) => {
     setWeight(maxWeight);
     setPokemonData((prevPokeArray) =>
@@ -112,19 +113,21 @@ export default function App() {
     );
   }
 
-  //logging array each button press
+  //Logging pokemon array each render
   // console.log(pokemonData);
 
-  // Loop that logs all weaknesses
-  // Can I apply this to height/weight as well? Remove buttons that don't fit within a range?
-
+  // Logs all weaknesses
   const mapWeaknesses = pokemonData.flatMap((pokeObj) => pokeObj.weaknesses);
   const uniqueWeaknessArray = [...new Set(mapWeaknesses)];
-  console.log(uniqueWeaknessArray);
+
+  //Get all weight and height of all pokemon, sort, and pass variable to weightBtn/heightBtn. If weight/height is within ranges, show button.
+  const mapWeight = pokemonData.map((pokeObj) => pokeObj.weight).sort();
+  const mapHeight = pokemonData.map((pokeObj) => pokeObj.height).sort();
 
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
+      {/* if type hasn't been chosen, show this question - logic is the same for other questions */}
       {!type && (
         <div style={{ fontSize: 50 }}>
           <strong> Select Type</strong>{" "}
@@ -146,13 +149,13 @@ export default function App() {
       {type && weakness && !height && (
         <div style={{ fontSize: 50 }}>
           <strong>Select Height</strong>
-          <HeightBtn onClick={heightAssign} />
+          <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
         </div>
       )}
       {type && weakness && height && !weight && (
         <div style={{ fontSize: 50 }}>
           <strong>Select Weight</strong>
-          <WeightBtn onClick={weightAssign} />
+          <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
         </div>
       )}
       {type && weakness && height && weight && (

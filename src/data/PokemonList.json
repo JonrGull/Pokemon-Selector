@@ -1919,7 +1919,7 @@
       "avg_spawns": 119,
       "spawn_time": "12:40",
       "multipliers": [1.75, 1.76],
-      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground"],
       "japanese_name": "イシツブテ",
       "next_evolution": [
         {
@@ -1947,7 +1947,7 @@
       "avg_spawns": 7.1,
       "spawn_time": "04:53",
       "multipliers": [1.64, 1.72],
-      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground"],
       "japanese_name": "ゴローン",
       "prev_evolution": [
         {
@@ -1976,7 +1976,7 @@
       "avg_spawns": 0.47,
       "spawn_time": "12:16",
       "multipliers": null,
-      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground"],
       "japanese_name": "ゴローニャ",
       "prev_evolution": [
         {
@@ -2434,7 +2434,7 @@
       "avg_spawns": 10,
       "spawn_time": "01:18",
       "multipliers": null,
-      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground"],
       "japanese_name": "イワーク"
     },
     {
@@ -2785,7 +2785,7 @@
       "avg_spawns": 63,
       "spawn_time": "03:21",
       "multipliers": [1.91],
-      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground"],
       "japanese_name": "サイホーン",
       "next_evolution": [
         {
@@ -2808,7 +2808,7 @@
       "avg_spawns": 2.2,
       "spawn_time": "05:50",
       "multipliers": null,
-      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground", "Steel"],
+      "weaknesses": ["Water", "Grass", "Ice", "Fighting", "Ground"],
       "japanese_name": "サイドン",
       "prev_evolution": [
         {
@@ -3057,7 +3057,7 @@
       "avg_spawns": 35,
       "spawn_time": "05:41",
       "multipliers": null,
-      "weaknesses": ["Fire", "Bug", "Rock", "Ghost", "Steel"],
+      "weaknesses": ["Fire", "Bug", "Rock", "Ghost"],
       "japanese_name": "ルージュラ"
     },
     {
@@ -3435,7 +3435,7 @@
       "avg_spawns": 1.8,
       "spawn_time": "23:40",
       "multipliers": null,
-      "weaknesses": ["Water", "Electric", "Ice", "Rock", "Steel"],
+      "weaknesses": ["Water", "Electric", "Ice", "Rock"],
       "japanese_name": "プテラ"
     },
     {
@@ -3469,7 +3469,7 @@
       "avg_spawns": 0,
       "spawn_time": "N/A",
       "multipliers": null,
-      "weaknesses": ["Fire", "Electric", "Rock", "Steel"],
+      "weaknesses": ["Fire", "Electric", "Rock"],
       "japanese_name": "フリーザー"
     },
     {
