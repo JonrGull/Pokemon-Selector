@@ -81,35 +81,6 @@ export default function App() {
   //   );
   // };
 
-  /* 
-Put each question inside its own separate component that App pulls from to render each group of buttons and functions????
-*/
-
-  // const [languageState, SetLanguageState] = useState();
-
-  /* React.useEffect(() => { //still works without this, so let's remove it for now.
-    setPokemonData(PokemonLibrary.pokemon);
-  }, []); */
-
-  /* 
-Put all these functions in useEffect?
-*/
-
-  // I believe this all works, unsure if we can use it tho?
-  /*   const { typeArray = pokemonData.map((getType) => getType.type) } =
-    pokemonData;
-  // console.log(typeArray);
-
-  // .map((ele) => ele) } = pokemonData;
-  const filterTypeOne = (typeButtonInput) => {
-    // can i use array destructuring here?
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter(() => {
-        return typeArray.includes(`${typeButtonInput}`);
-      })
-    );
-  }; */
-
   //Reset ALL data in states
   function reset() {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
