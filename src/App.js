@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
 import { Button } from "@mui/material";
+import Stack from "@mui/material/Stack";
 import PokemonLibrary from "./data/PokemonList.json";
 import HeightBtn from "./components/buttons/HeightBtn";
 import WeightBtn from "./components/buttons/WeightBtn";
@@ -105,13 +106,20 @@ export default function App() {
   // if only one pokemon is left in the array, just return that pokemon
   if (pokemonData.length === 1) {
     return (
-      <div className="error-box">
-        <Button variant="contained" onClick={reset}>
-          Here's your pokemon
-        </Button>
-        {pokemonData.map((pokeObj) => (
-          <DisplayPokemon pokeObj={pokeObj} />
-        ))}
+      <div>
+        <Stack
+          spacing={2}
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Button variant="contained" onClick={reset}>
+            Here's your pokemon
+          </Button>
+          {pokemonData.map((pokeObj) => (
+            <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
+          ))}
+        </Stack>
       </div>
     );
   }
@@ -134,6 +142,14 @@ export default function App() {
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
+      <Button
+        variant="contained"
+        color="error"
+        className="resetBtn"
+        onClick={reset}
+      >
+        Reset
+      </Button>
       {/* if type hasn't been chosen, show this question - logic is the same for other questions */}
       {!type && (
         <div style={{ fontSize: 50 }}>
@@ -144,6 +160,7 @@ export default function App() {
           />
         </div>
       )}
+
       {type && !weakness && (
         <div style={{ fontSize: 50 }}>
           <strong>Select Weakness</strong>
@@ -175,9 +192,6 @@ export default function App() {
           <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
         ))}
 
-        <button className="resetBtn" onClick={reset}>
-          Reset
-        </button>
         {/* <h3>History</h3>
         {renderChoices()} */}
       </div>
