@@ -2,6 +2,8 @@ import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 export default function EvolveBtn({ mapEvolutions, onClick }) {
+  //show both buttons if mapEvolutions has a mix of true and false.
+
   //pokemon that has a property prev_evolution or next_evolution
   const canEvolve = mapEvolutions.some((v) => v === true) ? (
     <Button variant="contained" onClick={() => onClick(true)}>
@@ -18,15 +20,8 @@ export default function EvolveBtn({ mapEvolutions, onClick }) {
 
   return (
     <div>
-      <Stack
-        spacing={2}
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        {canEvolve}
-        {cannotEvolve}
-      </Stack>
+      {canEvolve}
+      {cannotEvolve}
     </div>
   );
 }

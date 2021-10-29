@@ -3,6 +3,7 @@ import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import { makeStyles } from "@mui/styles";
 import PokemonLibrary from "./data/PokemonList.json";
 import HeightBtn from "./components/buttons/HeightBtn";
 import WeightBtn from "./components/buttons/WeightBtn";
@@ -15,9 +16,19 @@ export default function App() {
   // const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
+  const [evolve, setEvolve] = useState(null);
   const [height, setHeight] = useState(null);
   const [weight, setWeight] = useState(null);
-  const [evolve, setEvolve] = useState(null);
+
+  const useStyles = makeStyles({
+    root: {
+      spacing: 8,
+      direction: "row",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+  });
+  const classes = useStyles();
 
   /* QUESTION FUNCTIONS */
 
@@ -41,6 +52,20 @@ export default function App() {
     );
   };
 
+  // assigns true or false upon asking if pokemon can evolve
+  const evolveAssign = (canEvolveBoolean) => {
+    setEvolve(canEvolveBoolean);
+    setPokemonData((prevPokeArray) =>
+      prevPokeArray.filter((pokemon) => {
+        if (canEvolveBoolean === true) {
+          return pokemon.prev_evolution || pokemon.next_evolution;
+        } else {
+          return !pokemon.prev_evolution && !pokemon.next_evolution;
+        }
+      })
+    );
+    console.log(canEvolveBoolean);
+  };
   // assigns height of pokemon
   const heightAssign = (minHeight, maxHeight) => {
     setHeight(maxHeight);
@@ -65,28 +90,15 @@ export default function App() {
     );
   };
 
-  const evolveAssign = (canEvolveBoolean) => {
-    //if true(yes) return pokemon that have prev/next evo. If no(false) return pokemon that do not have the property
-    setEvolve(canEvolveBoolean);
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokemon) => {
-        if (canEvolveBoolean === true) {
-          return pokemon.prev_evolution || pokemon.next_evolution;
-        } else {
-          return !pokemon.prev_evolution && !pokemon.next_evolution;
-        }
-      })
-    );
-  };
-
   //Reset ALL data in states
   function reset() {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
     setType(null);
     setWeakness(null);
+    setEvolve(null);
     setHeight(null);
     setWeight(null);
-    setEvolve(null);
+
     //would need to include all other states that we declared
   }
 
@@ -105,7 +117,7 @@ export default function App() {
     });
  */
 
-  //ERROR message and my terrible button. Should be able to delete!
+  //ERROR message and my terrible button. Should be able to delete soon!
   // if (pokemonData.length <= 0) {
   //   return (
   //     <div>
@@ -126,7 +138,7 @@ export default function App() {
     .sort((a, b) => a - b);
   const mapHeight = pokemonData
     .map((pokeObj) => pokeObj.height)
-    .sort((a, b) => a - b); //do i need to sort at all?
+    .sort((a, b) => a - b);
 
   // Passes to child component to display Yes/No buttons which display if btns are displayed
   const mapEvolutions = pokemonData.map(
@@ -140,12 +152,7 @@ export default function App() {
   if (pokemonData.length === 1) {
     return (
       <div>
-        <Stack
-          spacing={2}
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-        >
+        <Stack className={classes.root}>
           <Button variant="contained" onClick={reset}>
             Here's your pokemon
           </Button>
@@ -163,68 +170,65 @@ export default function App() {
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
-      <Button
-        variant="contained"
-        color="error"
-        className="resetBtn"
-        onClick={reset}
-      >
+      <Button variant="contained" color="error" onClick={reset}>
         Reset
       </Button>
       {/* if type hasn't been chosen, show this question - logic is the same for other questions */}
 
       {/* Pokemon type? */}
-      {!type && (
-        <div style={{ fontSize: 50 }}>
-          <strong> Select Type</strong>{" "}
-          <TypeButtonsMap
-            uniqueWeaknessArray={uniqueWeaknessArray}
-            onClick={typeAssign}
-          />
-        </div>
-      )}
+      <Stack className="classes.root">
+        {!type && (
+          <div style={{ fontSize: 50 }}>
+            <strong> Select Type</strong>{" "}
+            <TypeButtonsMap
+              uniqueWeaknessArray={uniqueWeaknessArray}
+              onClick={typeAssign}
+            />
+          </div>
+        )}
 
-      {/* Pokemon weakness? */}
-      {type && !weakness && (
-        <div style={{ fontSize: 50 }}>
-          <strong>Select Weakness</strong>
-          <TypeButtonsMap
-            uniqueWeaknessArray={uniqueWeaknessArray}
-            onClick={weaknessAssign}
-          />
-        </div>
-      )}
+        {/* Pokemon weakness? */}
+        {type && !weakness && (
+          <div style={{ fontSize: 50 }}>
+            <strong>Select Weakness</strong>
+            <TypeButtonsMap
+              uniqueWeaknessArray={uniqueWeaknessArray}
+              onClick={weaknessAssign}
+            />
+          </div>
+        )}
 
-      {/* Can or can't evolve? */}
-      {type && weakness && !evolve && (
-        <div style={{ fontSize: 50 }}>
-          <strong>Can your Pokemon Evolve?</strong>
-          <EvolveBtn mapEvolutions={mapEvolutions} onClick={evolveAssign} />
-        </div>
-      )}
+        {/* Can or can't evolve? */}
+        {type && weakness && !evolve && (
+          <div style={{ fontSize: 50 }}>
+            <strong>Can your Pokemon Evolve?</strong>
+            <EvolveBtn mapEvolutions={mapEvolutions} onClick={evolveAssign} />
+          </div>
+        )}
 
-      {/* What height? */}
-      {type && weakness && evolve && !height && (
-        <div style={{ fontSize: 50 }}>
-          <strong>Select Height</strong>
-          <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
-        </div>
-      )}
+        {/* What height? */}
+        {type && weakness && evolve && !height && (
+          <div style={{ fontSize: 50 }}>
+            <strong>Select Height</strong>
+            <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
+          </div>
+        )}
 
-      {/* What weight? */}
-      {type && weakness && evolve && height && !weight && (
-        <div style={{ fontSize: 50 }}>
-          <strong>Select Weight</strong>
-          <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
-        </div>
-      )}
+        {/* What weight? */}
+        {type && weakness && evolve && height && !weight && (
+          <div style={{ fontSize: 50 }}>
+            <strong>Select Weight</strong>
+            <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
+          </div>
+        )}
 
-      {/* Result */}
-      {type && weakness && evolve && height && weight && (
-        <div style={{ fontSize: 55 }}>
-          <strong>Here is your Pokemon!</strong>
-        </div>
-      )}
+        {/* Result */}
+        {type && weakness && evolve && height && weight && (
+          <div style={{ fontSize: 55 }}>
+            <strong>Here is your Pokemon!</strong>
+          </div>
+        )}
+      </Stack>
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
           <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
@@ -238,38 +242,7 @@ export default function App() {
 }
 
 /* 
-Move questions into app.js for now? 
+ERROR WITH EVOLVE
+FLYING -> ROCK -> 'NO' and it gets stuck? State is being set but it is not progressing?
 
-        {pokemonMapper().map((pokeObj) => (
-          <DisplayPokemon pokeObj={pokeObj} />
-        ))}
-
-*/
-
-// function pokemonMapper() {
-//   //Set to base data
-//   //check each flag
-//   let newPokemonArray = pokemonData;
-//   if (flyingFilter) {
-//     newPokemonArray = newPokemonArray.filter((f) => {
-//       if (f.type.includes("flying")) {
-//         return true;
-//       }
-//     });
-//   }
-//   if (fireFilter) {
-//     newPokemonArray = newPokemonArray.filter((f) => {
-//       if (f.type.includes("fire")) {
-//         return true;
-//       }
-//     });
-//   }
-
-//   return newPokemonArray;
-// }
-
-/* 
-
-For weight and height. We need to say 
-if no pokemon are under 1m or over 3m, then don't show those buttons?
 */

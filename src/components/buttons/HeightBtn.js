@@ -28,16 +28,9 @@ export default function HeightBtn({ mapHeight, onClick }) {
 
   return (
     <div>
-      <Stack
-        spacing={2}
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        {lessThanOne}
-        {betweenOneAndThree}
-        {overThree}
-      </Stack>
+      {lessThanOne}
+      {betweenOneAndThree}
+      {overThree}
     </div>
   );
 }

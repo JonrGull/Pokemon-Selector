@@ -7,18 +7,7 @@ export default function TypeButtonsMap({ uniqueWeaknessArray, onClick }) {
       {type}
     </Button>
   ));
-  return (
-    <div>
-      <Stack
-        spacing={2}
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        {mapButtons}
-      </Stack>
-    </div>
-  );
+  return <div>{mapButtons}</div>;
 }
 
 /* 
