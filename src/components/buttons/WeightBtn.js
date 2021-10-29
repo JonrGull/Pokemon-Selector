@@ -2,12 +2,12 @@ import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 export default function WeightBtn({ mapWeight, onClick }) {
-  console.log(mapWeight);
+  // console.log(mapWeight);
   //pokemon less than 5kg
   const lessThanFive =
     Math.min(...mapWeight) <= 5 ? ( //is the max number less than 5? if true, show the button
       <Button variant="contained" onClick={() => onClick(0, 5)}>
-       Light
+        Light
       </Button>
     ) : null;
 

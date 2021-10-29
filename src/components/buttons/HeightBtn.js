@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 export default function HeightBtn({ mapHeight, onClick }) {
-  console.log(mapHeight);
+  // console.log(mapHeight);
   //pokemon less than 1m
   const lessThanOne =
     Math.min(...mapHeight) <= 1 ? (

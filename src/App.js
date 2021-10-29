@@ -7,6 +7,7 @@ import PokemonLibrary from "./data/PokemonList.json";
 import HeightBtn from "./components/buttons/HeightBtn";
 import WeightBtn from "./components/buttons/WeightBtn";
 import TypeButtonsMap from "./components/buttons/TypeButtonsMap";
+import EvolveBtn from "./components/buttons/EvolveBtn";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
@@ -16,22 +17,26 @@ export default function App() {
   const [weakness, setWeakness] = useState(null);
   const [height, setHeight] = useState(null);
   const [weight, setWeight] = useState(null);
+  const [evolve, setEvolve] = useState(null);
+
+  /* QUESTION FUNCTIONS */
 
   // assigns type of pokemon
   const typeAssign = (typeButtonInput) => {
     setType(typeButtonInput);
     setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokeType) => {
-        return pokeType.type.includes(`${typeButtonInput}`);
+      prevPokeArray.filter((pokemon) => {
+        return pokemon.type.includes(`${typeButtonInput}`);
       })
     );
   };
+
   // assigns weakness of pokemon
   const weaknessAssign = (typeButtonInput) => {
     setWeakness(typeButtonInput);
     setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokeType) => {
-        return pokeType.weaknesses.includes(`${typeButtonInput}`);
+      prevPokeArray.filter((pokemon) => {
+        return pokemon.weaknesses.includes(`${typeButtonInput}`);
       })
     );
   };
@@ -40,24 +45,50 @@ export default function App() {
   const heightAssign = (minHeight, maxHeight) => {
     setHeight(maxHeight);
     setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokeType) => {
+      prevPokeArray.filter((pokemon) => {
         return (
-          pokeType.height >= `${minHeight}` && pokeType.height <= `${maxHeight}`
+          pokemon.height >= `${minHeight}` && pokemon.height <= `${maxHeight}`
         );
       })
     );
   };
+
   // assigns weight of pokemon
   const weightAssign = (minWeight, maxWeight) => {
     setWeight(maxWeight);
     setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokeType) => {
+      prevPokeArray.filter((pokemon) => {
         return (
-          pokeType.weight >= `${minWeight}` && pokeType.weight <= `${maxWeight}`
+          pokemon.weight >= `${minWeight}` && pokemon.weight <= `${maxWeight}`
         );
       })
     );
   };
+
+  const evolveAssign = (canEvolveBoolean) => {
+    //if true(yes) return pokemon that have prev/next evo. If no(false) return pokemon that do not have the property
+    setEvolve(canEvolveBoolean);
+    setPokemonData((prevPokeArray) =>
+      prevPokeArray.filter((pokemon) => {
+        if (canEvolveBoolean === true) {
+          return pokemon.prev_evolution || pokemon.next_evolution;
+        } else {
+          return !pokemon.prev_evolution && !pokemon.next_evolution;
+        }
+      })
+    );
+  };
+
+  //Reset ALL data in states
+  function reset() {
+    setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
+    setType(null);
+    setWeakness(null);
+    setHeight(null);
+    setWeight(null);
+    setEvolve(null);
+    //would need to include all other states that we declared
+  }
 
   /*   const jumpTo = (step) => {
     setStepNumber(step);
@@ -73,28 +104,8 @@ export default function App() {
       );
     });
  */
-  //   const canEvolveAssign = () => {
-  //   setWeight(maxWeight);
-  //   setPokemonData((prevPokeArray) =>
-  //     prevPokeArray.filter((pokeType) => {
-  //       return (
-  //         pokeType.weight > `${minWeight}` && pokeType.weight < `${maxWeight}`
-  //       );
-  //     })
-  //   );
-  // };
 
-  //Reset ALL data in states
-  function reset() {
-    setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
-    setType(null);
-    setWeakness(null);
-    setHeight(null);
-    setWeight(null);
-    //would need to include all other states that we declared
-  }
-
-  //Error message and my terrible button. Should be able to delete!
+  //ERROR message and my terrible button. Should be able to delete!
   // if (pokemonData.length <= 0) {
   //   return (
   //     <div>
@@ -103,7 +114,29 @@ export default function App() {
   //   );
   // }
 
-  // if only one pokemon is left in the array, just return that pokemon
+  /* CHILD COMPONENT VARIABLES */
+
+  // Logs all weaknesses to pass to Btn components
+  const mapWeaknesses = pokemonData.flatMap((pokeObj) => pokeObj.weaknesses);
+  const uniqueWeaknessArray = [...new Set(mapWeaknesses)];
+
+  //Get all weight and height of all pokemon, sort, and pass variable to weightBtn/heightBtn. If weight/height is within ranges, show button.
+  const mapWeight = pokemonData
+    .map((pokeObj) => pokeObj.weight)
+    .sort((a, b) => a - b);
+  const mapHeight = pokemonData
+    .map((pokeObj) => pokeObj.height)
+    .sort((a, b) => a - b); //do i need to sort at all?
+
+  // Passes to child component to display Yes/No buttons which display if btns are displayed
+  const mapEvolutions = pokemonData.map(
+    (pokeObj) =>
+      Array.isArray(pokeObj.prev_evolution) ||
+      Array.isArray(pokeObj.next_evolution)
+  );
+  // console.log(mapEvolutions);
+
+  // If only one pokemon is left in the array, just return that pokemon
   if (pokemonData.length === 1) {
     return (
       <div>
@@ -125,19 +158,7 @@ export default function App() {
   }
 
   //Logging pokemon array each render
-  console.log(pokemonData);
-
-  // Logs all weaknesses
-  const mapWeaknesses = pokemonData.flatMap((pokeObj) => pokeObj.weaknesses);
-  const uniqueWeaknessArray = [...new Set(mapWeaknesses)];
-
-  //Get all weight and height of all pokemon, sort, and pass variable to weightBtn/heightBtn. If weight/height is within ranges, show button.
-  const mapWeight = pokemonData
-    .map((pokeObj) => pokeObj.weight)
-    .sort((a, b) => a - b);
-  const mapHeight = pokemonData
-    .map((pokeObj) => pokeObj.height)
-    .sort((a, b) => a - b); //do i need to sort at all?
+  // console.log(pokemonData);
 
   return (
     <div className="App">
@@ -151,6 +172,8 @@ export default function App() {
         Reset
       </Button>
       {/* if type hasn't been chosen, show this question - logic is the same for other questions */}
+
+      {/* Pokemon type? */}
       {!type && (
         <div style={{ fontSize: 50 }}>
           <strong> Select Type</strong>{" "}
@@ -161,6 +184,7 @@ export default function App() {
         </div>
       )}
 
+      {/* Pokemon weakness? */}
       {type && !weakness && (
         <div style={{ fontSize: 50 }}>
           <strong>Select Weakness</strong>
@@ -170,19 +194,33 @@ export default function App() {
           />
         </div>
       )}
-      {type && weakness && !height && (
+
+      {/* Can or can't evolve? */}
+      {type && weakness && !evolve && (
+        <div style={{ fontSize: 50 }}>
+          <strong>Can your Pokemon Evolve?</strong>
+          <EvolveBtn mapEvolutions={mapEvolutions} onClick={evolveAssign} />
+        </div>
+      )}
+
+      {/* What height? */}
+      {type && weakness && evolve && !height && (
         <div style={{ fontSize: 50 }}>
           <strong>Select Height</strong>
           <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
         </div>
       )}
-      {type && weakness && height && !weight && (
+
+      {/* What weight? */}
+      {type && weakness && evolve && height && !weight && (
         <div style={{ fontSize: 50 }}>
           <strong>Select Weight</strong>
           <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
         </div>
       )}
-      {type && weakness && height && weight && (
+
+      {/* Result */}
+      {type && weakness && evolve && height && weight && (
         <div style={{ fontSize: 55 }}>
           <strong>Here is your Pokemon!</strong>
         </div>
