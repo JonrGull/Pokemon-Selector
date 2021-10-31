@@ -1,4 +1,4 @@
-let theID, theNumber, theName;
+/* let theID, theNumber, theName;
 
 //Connects API file!
 fetch("/data/pokemonData.json") // fetch creates a Promise
@@ -25,4 +25,5 @@ fetch("/data/pokemonData.json") // fetch creates a Promise
 /* fetch("data/pokemonAPI.json")
   .then((response) => response.json()) // fetch creates a Promise
   .then((data) => console.log(data)) // makes the entire object show up in the log
-  .catch((error) => console.log(error)); */
+  .catch((error) => console.log(error)); 
+  */

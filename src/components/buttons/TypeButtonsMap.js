@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import Stack from "@mui/material/Stack";
+// import Stack from "@mui/material/Stack";
 
 export default function TypeButtonsMap({ uniqueWeaknessArray, onClick }) {
   const mapButtons = uniqueWeaknessArray.sort().map((type) => (

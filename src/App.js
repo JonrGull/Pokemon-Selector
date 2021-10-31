@@ -16,7 +16,7 @@ export default function App() {
   // const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
-  const [evolve, setEvolve] = useState(null);
+  const [evolve, setEvolve] = useState(null); // so null is inherently FALSE, so technically this will always be false. Which is why true works.
   const [height, setHeight] = useState(null);
   const [weight, setWeight] = useState(null);
 
@@ -30,6 +30,7 @@ export default function App() {
   });
   const classes = useStyles();
 
+  //#region Questions
   /* QUESTION FUNCTIONS */
 
   // assigns type of pokemon
@@ -53,18 +54,17 @@ export default function App() {
   };
 
   // assigns true or false upon asking if pokemon can evolve
-  const evolveAssign = (canEvolveBoolean) => {
-    setEvolve(canEvolveBoolean);
+  const evolveAssign = (canEvolve) => {
+    setEvolve(canEvolve); // is it okay if this is a boolean with using !evolve?
     setPokemonData((prevPokeArray) =>
       prevPokeArray.filter((pokemon) => {
-        if (canEvolveBoolean === true) {
+        if (canEvolve) {
           return pokemon.prev_evolution || pokemon.next_evolution;
         } else {
           return !pokemon.prev_evolution && !pokemon.next_evolution;
         }
       })
     );
-    console.log(canEvolveBoolean);
   };
   // assigns height of pokemon
   const heightAssign = (minHeight, maxHeight) => {
@@ -89,6 +89,7 @@ export default function App() {
       })
     );
   };
+  //#endregion
 
   //Reset ALL data in states
   function reset() {
@@ -165,7 +166,7 @@ export default function App() {
   }
 
   //Logging pokemon array each render
-  // console.log(pokemonData);
+  console.log(pokemonData);
 
   return (
     <div className="App">
@@ -177,7 +178,7 @@ export default function App() {
 
       {/* Pokemon type? */}
       <Stack className="classes.root">
-        {!type && (
+        {type === null && (
           <div style={{ fontSize: 50 }}>
             <strong> Select Type</strong>{" "}
             <TypeButtonsMap
@@ -188,7 +189,7 @@ export default function App() {
         )}
 
         {/* Pokemon weakness? */}
-        {type && !weakness && (
+        {type !== null && weakness === null && (
           <div style={{ fontSize: 50 }}>
             <strong>Select Weakness</strong>
             <TypeButtonsMap
@@ -199,7 +200,7 @@ export default function App() {
         )}
 
         {/* Can or can't evolve? */}
-        {type && weakness && !evolve && (
+        {type !== null && weakness !== null && evolve === null && (
           <div style={{ fontSize: 50 }}>
             <strong>Can your Pokemon Evolve?</strong>
             <EvolveBtn mapEvolutions={mapEvolutions} onClick={evolveAssign} />
@@ -207,27 +208,38 @@ export default function App() {
         )}
 
         {/* What height? */}
-        {type && weakness && evolve && !height && (
-          <div style={{ fontSize: 50 }}>
-            <strong>Select Height</strong>
-            <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
-          </div>
-        )}
+        {type !== null &&
+          weakness !== null &&
+          evolve !== null &&
+          height === null && (
+            <div style={{ fontSize: 50 }}>
+              <strong>Select Height</strong>
+              <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
+            </div>
+          )}
 
         {/* What weight? */}
-        {type && weakness && evolve && height && !weight && (
-          <div style={{ fontSize: 50 }}>
-            <strong>Select Weight</strong>
-            <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
-          </div>
-        )}
+        {type !== null &&
+          weakness !== null &&
+          evolve !== null &&
+          height !== null &&
+          weight === null && (
+            <div style={{ fontSize: 50 }}>
+              <strong>Select Weight</strong>
+              <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
+            </div>
+          )}
 
         {/* Result */}
-        {type && weakness && evolve && height && weight && (
-          <div style={{ fontSize: 55 }}>
-            <strong>Here is your Pokemon!</strong>
-          </div>
-        )}
+        {type !== null &&
+          weakness !== null &&
+          evolve !== null &&
+          height !== null &&
+          weight !== null && (
+            <div style={{ fontSize: 55 }}>
+              <strong>Here is your Pokemon!</strong>
+            </div>
+          )}
       </Stack>
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
@@ -243,6 +255,9 @@ export default function App() {
 
 /* 
 ERROR WITH EVOLVE
+EVOLVE IS NOT BEING DEFINED WITH YES OR NO, BUT NO STOPS EVERYTHING, SINCE EVOLVE IS UNDEFINED, IT GETS STUCK ON THE QUESTION
+but why does it only get stuck on 'no'?
+
 FLYING -> ROCK -> 'NO' and it gets stuck? State is being set but it is not progressing?
 
 */
