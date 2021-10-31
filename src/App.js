@@ -174,7 +174,8 @@ export default function App() {
       <Button variant="contained" color="error" onClick={reset}>
         Reset
       </Button>
-      {/* if type hasn't been chosen, show this question - logic is the same for other questions */}
+      {/* All states are set to null initially. Since null evaluates to false, we want to check specifically that they are not null. Due to the boolean in the evolve question.
+      I could just check it for the evolve question, since it is the only boolean, but I want to keep do apply the same logic to the other questions in case I add more in the future. */}
 
       {/* Pokemon type? */}
       <Stack className="classes.root">
