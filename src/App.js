@@ -202,7 +202,7 @@ export default function App() {
         {/* Can or can't evolve? */}
         {type !== null && weakness !== null && evolve === null && (
           <div style={{ fontSize: 50 }}>
-            <strong>Can your Pokemon Evolve?</strong>
+            <strong>Does your Pokemon evolve?</strong>
             <EvolveBtn mapEvolutions={mapEvolutions} onClick={evolveAssign} />
           </div>
         )}
