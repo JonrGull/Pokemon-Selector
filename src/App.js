@@ -254,11 +254,4 @@ export default function App() {
   );
 }
 
-/* 
-ERROR WITH EVOLVE
-EVOLVE IS NOT BEING DEFINED WITH YES OR NO, BUT NO STOPS EVERYTHING, SINCE EVOLVE IS UNDEFINED, IT GETS STUCK ON THE QUESTION
-but why does it only get stuck on 'no'?
 
-FLYING -> ROCK -> 'NO' and it gets stuck? State is being set but it is not progressing?
-
-*/
