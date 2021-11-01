@@ -11,5 +11,5 @@ export default function TypeButtonsMap({ uniqueWeaknessArray, onClick }) {
 }
 
 /* 
-Sort then map allows the buttons to always be alphabetical
+Sorting then mapping allows the buttons to always be alphabetical
 */

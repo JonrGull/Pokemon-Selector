@@ -166,7 +166,7 @@ export default function App() {
   }
 
   //Logging pokemon array each render
-  console.log(pokemonData);
+  // console.log(pokemonData);
 
   return (
     <div className="App">
@@ -175,7 +175,8 @@ export default function App() {
         Reset
       </Button>
       {/* All states are set to null initially. Since null evaluates to false, we want to check specifically that they are not null. Due to the boolean in the evolve question.
-      I could just check it for the evolve question, since it is the only boolean, but I want to keep do apply the same logic to the other questions in case I add more in the future. */}
+      I could just check it for the evolve question, since it is the only boolean, but I want to keep do apply the same logic to the other questions 
+      in case I add more in the future. */}
 
       {/* Pokemon type? */}
       <Stack className="classes.root">
@@ -253,5 +254,3 @@ export default function App() {
     </div>
   );
 }
-
-
