@@ -11,5 +11,7 @@ export default function TypeButtonsMap({ uniqueWeaknessArray, onClick }) {
 }
 
 /* 
+If I want to change the buttons to have Japanese text, could I do something with the replace method?
+
 Sorting then mapping allows the buttons to always be alphabetical
 */

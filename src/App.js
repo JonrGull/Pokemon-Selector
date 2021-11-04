@@ -12,8 +12,8 @@ import EvolveBtn from "./components/buttons/EvolveBtn";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
-  // const [history, setHistory] = useState([Array(4).fill(null)]); //4 for 4 questions. Will need up increase this number if add more questions. Holds our choices?
-  // const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
+  const [history, setHistory] = useState([Array(5).fill(null)]); //5 for 5 questions. Will need up increase this number if add more questions. Holds our states?
+  const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [evolve, setEvolve] = useState(null); // so null is inherently FALSE, so technically this will always be false. Which is why true works.
@@ -103,10 +103,16 @@ export default function App() {
     //would need to include all other states that we declared
   }
 
-  /*   const jumpTo = (step) => {
+  const jumpTo = (step) => {
+    setPokemonData(PokemonLibrary.pokemon);
     setStepNumber(step);
-    setPokemonData();
+    setType(null);
+    setWeakness(null);
+    setEvolve(null);
+    setHeight(null);
+    setWeight(null);
   };
+
   const renderChoices = () =>
     history.map((_step, move) => {
       const destination = move ? `Go to move #${move}` : "Go to Start";
@@ -116,7 +122,6 @@ export default function App() {
         </li>
       );
     });
- */
 
   //ERROR message and my terrible button. Should be able to delete soon!
   // if (pokemonData.length <= 0) {
@@ -248,8 +253,8 @@ export default function App() {
           <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
         ))}
 
-        {/* <h3>History</h3>
-        {renderChoices()} */}
+        <h1>History</h1>
+        {renderChoices()}
       </div>
     </div>
   );
