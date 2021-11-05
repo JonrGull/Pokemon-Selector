@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-// import Stack from "@mui/material/Stack";
+import { Stack } from "@mui/material";
 
 export default function EvolveBtn({ mapEvolutions, onClick }) {
   //.some() is used to show both buttons if mapEvolutions has a mix of true and false.
@@ -19,9 +19,15 @@ export default function EvolveBtn({ mapEvolutions, onClick }) {
   ) : null;
 
   return (
-    <div>
+    <Stack
+      justifyContent="center"
+      gap={2}
+      flexDirection="row"
+      width={1.0}
+      flexWrap="wrap"
+    >
       {canEvolve}
       {cannotEvolve}
-    </div>
+    </Stack>
   );
 }

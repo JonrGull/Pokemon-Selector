@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-// import Stack from "@mui/material/Stack";
+import Stack from "@mui/material/Stack";
 
 export default function HeightBtn({ mapHeight, onClick }) {
   // console.log(mapHeight);
@@ -27,10 +27,16 @@ export default function HeightBtn({ mapHeight, onClick }) {
     ) : null;
 
   return (
-    <div>
+    <Stack
+      justifyContent="center"
+      gap={2}
+      flexDirection="row"
+      width={1.0}
+      flexWrap="wrap"
+    >
       {lessThanOne}
       {betweenOneAndThree}
       {overThree}
-    </div>
+    </Stack>
   );
 }

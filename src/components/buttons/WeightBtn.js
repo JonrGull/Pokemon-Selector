@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-// import Stack from "@mui/material/Stack";
+import Stack from "@mui/material/Stack";
 
 export default function WeightBtn({ mapWeight, onClick }) {
   // console.log(mapWeight);
@@ -28,13 +28,17 @@ export default function WeightBtn({ mapWeight, onClick }) {
   // can I further reduce this? Can I go to the function and do math.max/min over there and bring those two values here go show buttons?
   // I could make this range checker its  own function and just pass values?
   return (
-    <div>
-
-        {lessThanFive}
-        {betweenFiveAndTwentyFive}
-        {overTwentyFive}
-
-    </div>
+    <Stack
+      justifyContent="center"
+      gap={2}
+      flexDirection="row"
+      width={1.0}
+      flexWrap="wrap"
+    >
+      {lessThanFive}
+      {betweenFiveAndTwentyFive}
+      {overTwentyFive}
+    </Stack>
   );
 }
 
