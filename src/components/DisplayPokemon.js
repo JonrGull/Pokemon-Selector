@@ -1,7 +1,6 @@
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { rgbToHex } from "@mui/system";
 
 export default function DisplayPokemon({ pokeObj }) {
   return (
