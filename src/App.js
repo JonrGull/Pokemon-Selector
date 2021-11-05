@@ -3,6 +3,7 @@ import DisplayPokemon from "./components/DisplayPokemon";
 import "./App.css";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import { styled } from "@mui/styles";
 import { makeStyles } from "@mui/styles";
 import PokemonLibrary from "./data/PokemonList.json";
 import HeightBtn from "./components/buttons/HeightBtn";
@@ -12,23 +13,13 @@ import EvolveBtn from "./components/buttons/EvolveBtn";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
-  const [history, setHistory] = useState([Array(5).fill(null)]); //5 for 5 questions. Will need up increase this number if add more questions. Holds our states?
-  const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
+  // const [history, setHistory] = useState([Array(5).fill(null)]); //5 for 5 questions. Will need up increase this number if add more questions. Holds our states?
+  // const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [evolve, setEvolve] = useState(null); // so null is inherently FALSE, so technically this will always be false. Which is why true works.
   const [height, setHeight] = useState(null);
   const [weight, setWeight] = useState(null);
-
-  const useStyles = makeStyles({
-    root: {
-      spacing: 8,
-      direction: "row",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-  });
-  const classes = useStyles();
 
   //#region Questions
   /* QUESTION FUNCTIONS */
@@ -103,35 +94,27 @@ export default function App() {
     //would need to include all other states that we declared
   }
 
-  const jumpTo = (step) => {
-    setPokemonData(PokemonLibrary.pokemon);
-    setStepNumber(step);
-    setType(null);
-    setWeakness(null);
-    setEvolve(null);
-    setHeight(null);
-    setWeight(null);
-  };
+  // const jumpTo = (step) => {
+  //   setPokemonData(PokemonLibrary.pokemon);
+  //   setStepNumber(step);
+  //   setType(null);
+  //   setWeakness(null);
+  //   setEvolve(null);
+  //   setHeight(null);
+  //   setWeight(null);
+  // };
 
-  const renderChoices = () =>
-    history.map((_step, move) => {
-      const destination = move ? `Go to move #${move}` : "Go to Start";
-      return (
-        <li key={move}>
-          <button onClick={() => jumpTo(move)}>{destination}</button>
-        </li>
-      );
-    });
+  // const renderChoices = () =>
+  //   history.map((_step, move) => {
+  //     const destination = move ? `Go to move #${move}` : "Go to Start";
+  //     return (
+  //       <li key={move}>
+  //         <button onClick={() => jumpTo(move)}>{destination}</button>
+  //       </li>
+  //     );
+  //   });
 
-  //ERROR message and my terrible button. Should be able to delete soon!
-  // if (pokemonData.length <= 0) {
-  //   return (
-  //     <div>
-  //       <Button onClick={reset}>There's no more Pokemon! Try again!</Button>
-  //     </div>
-  //   );
-  // }
-
+  //#region Child Component
   /* CHILD COMPONENT VARIABLES */
 
   // Logs all weaknesses to pass to Btn components
@@ -158,7 +141,7 @@ export default function App() {
   if (pokemonData.length === 1) {
     return (
       <div>
-        <Stack className={classes.root}>
+        <Stack>
           <Button variant="contained" onClick={reset}>
             Here's your pokemon
           </Button>
@@ -169,6 +152,7 @@ export default function App() {
       </div>
     );
   }
+  //#endregion Child Component
 
   //Logging pokemon array each render
   // console.log(pokemonData);
@@ -253,8 +237,8 @@ export default function App() {
           <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
         ))}
 
-        <h1>History</h1>
-        {renderChoices()}
+        {/*         <h1>History</h1>
+        {renderChoices()} */}
       </div>
     </div>
   );

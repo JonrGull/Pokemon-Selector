@@ -1,10 +1,16 @@
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+
 export default function DisplayPokemon({ pokeObj }) {
   return (
-    <div>
-      #{pokeObj.num} | {pokeObj.name} | {pokeObj.type[0]} {pokeObj.type[1]} |
-      Weaknesses - {pokeObj.weaknesses}
-      {/* added weaknesses here temporarily just to help narrow it down */}
-      <img src={pokeObj.img} alt="Pokemon Images"></img>
-    </div>
+    <Card sx={{ minWidth: 400, m: 1 }}>
+      <CardContent>
+        <Typography variant="h5" component="div">
+          #{pokeObj.num} {pokeObj.name} | {pokeObj.type[0]} {pokeObj.type[1]}
+        </Typography>
+        <img src={pokeObj.img} alt="Pokemon Images"></img>
+      </CardContent>
+    </Card>
   );
 }
