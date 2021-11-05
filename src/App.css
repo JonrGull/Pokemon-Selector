@@ -7,11 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* No more pokemon left msg */
-h2 {
-  text-align: center;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -20,15 +15,6 @@ code {
 .App {
   text-align: center;
   justify-content: center;
-}
-
-h1 {
-  text-align: center;
-}
-.error-box {
-  display: flex;
-  justify-content: center;
-  padding-top: 400px;
 }
 
 /* Pokemon Display */

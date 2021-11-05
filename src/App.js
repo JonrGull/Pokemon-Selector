@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import DisplayPokemon from "./components/DisplayPokemon";
-import "./App.css";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
-import { styled } from "@mui/styles";
-import { makeStyles } from "@mui/styles";
 import PokemonLibrary from "./data/PokemonList.json";
 import HeightBtn from "./components/buttons/HeightBtn";
 import WeightBtn from "./components/buttons/WeightBtn";
 import TypeButtonsMap from "./components/buttons/TypeButtonsMap";
 import EvolveBtn from "./components/buttons/EvolveBtn";
+import "./App.css";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
@@ -168,7 +166,7 @@ export default function App() {
       in case I add more in the future. */}
 
       {/* Pokemon type? */}
-      <Stack className="classes.root">
+      <div>
         {type === null && (
           <div style={{ fontSize: 50 }}>
             <strong> Select Type</strong>{" "}
@@ -231,12 +229,11 @@ export default function App() {
               <strong>Here is your Pokemon!</strong>
             </div>
           )}
-      </Stack>
+      </div>
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
           <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
         ))}
-
         {/*         <h1>History</h1>
         {renderChoices()} */}
       </div>

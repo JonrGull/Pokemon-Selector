@@ -1,11 +1,14 @@
-import { Button } from "@mui/material";
-// import Stack from "@mui/material/Stack";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import { Box } from "@mui/system";
 
 export default function TypeButtonsMap({ uniqueWeaknessArray, onClick }) {
   const mapButtons = uniqueWeaknessArray.sort().map((type) => (
-    <Button key={type} variant="contained" onClick={() => onClick(type)}>
-      {type}
-    </Button>
+    <Box display="flex" justifyContent="space-between" flexDirection="row">
+      <Button key={type} variant="contained" onClick={() => onClick(type)}>
+        {type}
+      </Button>
+    </Box>
   ));
   return <div>{mapButtons}</div>;
 }
