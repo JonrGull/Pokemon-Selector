@@ -183,81 +183,92 @@ export default function App() {
             </h2>
           </div>
         )}
-
-        {/* Pokemon type? */}
-        {type === null && (
-          <div style={{ fontSize: 50 }}>
-            <strong> Select Type</strong>{" "}
-            <TypeButtonsMap
-              uniqueWeaknessArray={uniqueWeaknessArray}
-              onClick={typeAssign}
-            />
-          </div>
-        )}
-
-        {/* Pokemon weakness? */}
-        {type !== null && weakness === null && (
-          <div style={{ fontSize: 50 }}>
-            <strong>Select Weakness</strong>
-            <TypeButtonsMap
-              uniqueWeaknessArray={uniqueWeaknessArray}
-              onClick={weaknessAssign}
-            />
-          </div>
-        )}
-
-        {/* Can or can't evolve? */}
-        {type !== null && weakness !== null && evolve === null && (
-          <div style={{ fontSize: 50 }}>
-            <strong>Does your Pokemon evolve?</strong>
-            <EvolveBtn mapEvolutions={mapEvolutions} onClick={evolveAssign} />
-          </div>
-        )}
-
-        {/* What height? */}
-        {type !== null &&
-          weakness !== null &&
-          evolve !== null &&
-          height === null && (
-            <div style={{ fontSize: 50 }}>
-              <strong>Select Height</strong>
-              <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
-            </div>
-          )}
-
-        {/* What weight? */}
-        {type !== null &&
-          weakness !== null &&
-          evolve !== null &&
-          height !== null &&
-          weight === null && (
-            <div style={{ fontSize: 50 }}>
-              <strong>Select Weight</strong>
-              <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
-            </div>
-          )}
-
-        {/* Result */}
-        {type !== null &&
-          weakness !== null &&
-          evolve !== null &&
-          height !== null &&
-          weight !== null && (
-            <div style={{ fontSize: 55 }}>
-              <strong>Here is your Pokemon!</strong>
-            </div>
-          )}
       </div>
-      <div className="displayPokemon">
-        {pokemonData.map((pokeObj) => (
-          <DisplayPokemon
-            key={pokeObj.id}
-            pokeObj={pokeObj}
-            selectPoke={selectPoke}
-          />
-        ))}
-        {/*         <h1>History</h1>
+
+      <div>
+        {/* bandaid solution of preventing both of these from rendering. Can I make it into an else? */}
+        {pokemonData.length !== 1 && (
+          <div>
+            {/* Pokemon type? */}
+            {type === null && (
+              <div style={{ fontSize: 50 }}>
+                <strong> Select Type</strong>{" "}
+                <TypeButtonsMap
+                  uniqueWeaknessArray={uniqueWeaknessArray}
+                  onClick={typeAssign}
+                />
+              </div>
+            )}
+
+            {/* Pokemon weakness? */}
+            {type !== null && weakness === null && (
+              <div style={{ fontSize: 50 }}>
+                <strong>Select Weakness</strong>
+                <TypeButtonsMap
+                  uniqueWeaknessArray={uniqueWeaknessArray}
+                  onClick={weaknessAssign}
+                />
+              </div>
+            )}
+
+            {/* Can or can't evolve? */}
+            {type !== null && weakness !== null && evolve === null && (
+              <div style={{ fontSize: 50 }}>
+                <strong>Does your Pokemon evolve?</strong>
+                <EvolveBtn
+                  mapEvolutions={mapEvolutions}
+                  onClick={evolveAssign}
+                />
+              </div>
+            )}
+
+            {/* What height? */}
+            {type !== null &&
+              weakness !== null &&
+              evolve !== null &&
+              height === null && (
+                <div style={{ fontSize: 50 }}>
+                  <strong>Select Height</strong>
+                  <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
+                </div>
+              )}
+
+            {/* What weight? */}
+            {type !== null &&
+              weakness !== null &&
+              evolve !== null &&
+              height !== null &&
+              weight === null && (
+                <div style={{ fontSize: 50 }}>
+                  <strong>Select Weight</strong>
+                  <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
+                </div>
+              )}
+
+            {/* Result */}
+            {type !== null &&
+              weakness !== null &&
+              evolve !== null &&
+              height !== null &&
+              weight !== null && (
+                <div style={{ fontSize: 55 }}>
+                  <strong>Here is your Pokemon!</strong>
+                </div>
+              )}
+
+            <div className="displayPokemon">
+              {pokemonData.map((pokeObj) => (
+                <DisplayPokemon
+                  key={pokeObj.id}
+                  pokeObj={pokeObj}
+                  selectPoke={selectPoke}
+                />
+              ))}
+              {/*<h1>History</h1>
         {renderChoices()} */}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
