@@ -21,6 +21,8 @@ export default function TypeButtonsMap({ uniqueWeaknessArray, onClick }) {
 }
 
 /* 
+All my button components have the same Stack styling. Can I put that info on the main page and pass it to all the components?
+
 Button is created in the function and then returned. I used to have it so the button was created in the return, but this just returned all buttons at once
 without styling them properly.
 

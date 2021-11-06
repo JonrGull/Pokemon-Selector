@@ -136,20 +136,21 @@ export default function App() {
   // console.log(mapEvolutions);
 
   // If only one pokemon is left in the array, just return that pokemon
-  if (pokemonData.length === 1) {
-    return (
-      <div>
-        <Stack>
-          <Button variant="contained" onClick={reset}>
-            Here's your pokemon
-          </Button>
-          {pokemonData.map((pokeObj) => (
-            <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
-          ))}
-        </Stack>
-      </div>
-    );
-  }
+  //may delete these two variables
+  // let lastPokeBtn = (
+  //   <Button variant="contained" onClick={reset}>
+  //     Here's your Pokemon
+  //   </Button>
+  // );
+  let lastPoke = pokemonData.map((pokeObj) => (
+    <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
+  ));
+
+  //If user clicks on card to select pokemon, return the pokemon in array so that it can be mapped.
+  const selectPoke = (poke) => {
+    setPokemonData([poke]);
+  };
+
   //#endregion Child Component
 
   //Logging pokemon array each render
@@ -165,8 +166,25 @@ export default function App() {
       I could just check it for the evolve question, since it is the only boolean, but I want to keep do apply the same logic to the other questions 
       in case I add more in the future. */}
 
-      {/* Pokemon type? */}
       <div>
+        {pokemonData.length === 1 && (
+          <div>
+            <h1> Here is your Pokemon!</h1>
+            <h2>
+              <Stack
+                justifyContent="center"
+                gap={2}
+                flexDirection="row"
+                width={1.0}
+                flexWrap="wrap"
+              >
+                {lastPoke}
+              </Stack>
+            </h2>
+          </div>
+        )}
+
+        {/* Pokemon type? */}
         {type === null && (
           <div style={{ fontSize: 50 }}>
             <strong> Select Type</strong>{" "}
@@ -232,7 +250,11 @@ export default function App() {
       </div>
       <div className="displayPokemon">
         {pokemonData.map((pokeObj) => (
-          <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
+          <DisplayPokemon
+            key={pokeObj.id}
+            pokeObj={pokeObj}
+            selectPoke={selectPoke}
+          />
         ))}
         {/*         <h1>History</h1>
         {renderChoices()} */}
