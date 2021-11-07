@@ -147,9 +147,11 @@ export default function App() {
   ));
 
   //If user clicks on card to select pokemon, return the pokemon in array so that it can be mapped.
+
   const selectPoke = (poke) => {
     setPokemonData([poke]);
   };
+  console.log(selectPoke);
 
   //#endregion Child Component
 
@@ -169,7 +171,7 @@ export default function App() {
       <div>
         {pokemonData.length === 1 && (
           <div>
-            <h1> Here is your Pokemon!</h1>
+            <h1>Nice choice!</h1>
             <h2>
               <Stack
                 justifyContent="center"
@@ -255,7 +257,7 @@ export default function App() {
                   <strong>Here is your Pokemon!</strong>
                 </div>
               )}
-
+            <h1>See one you like? Choose it!</h1>
             <div className="displayPokemon">
               {pokemonData.map((pokeObj) => (
                 <DisplayPokemon
