@@ -3,16 +3,19 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-export default function DisplayPokemon({ pokeObj, selectPoke }) {
+export default function DisplayPokemon({ pokeObj, selectPoke, pokemonData }) {
   return (
     <Card sx={{ minWidth: 300, m: 1, backgroundColor: "#b3e5fc" }}>
       <CardActionArea
         onClick={() => {
-          selectPoke(pokeObj);
+          console.log(pokemonData);
+          if (pokemonData !== undefined) {
+            selectPoke(pokeObj);
+          }
         }}
       >
         <CardContent>
-          <Typography variant="h5" component="div">
+          <Typography variant="h5" component="div" id={pokeObj.name}>
             #{pokeObj.num} {pokeObj.name}
           </Typography>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
@@ -29,5 +32,5 @@ export default function DisplayPokemon({ pokeObj, selectPoke }) {
 }
 
 /* 
-Currently it breaks if the card is clicked again after selected as it tries to select the poke again?
+pokemonData becomes undefined after selecting a pokemon. So we can use that to run selectPoke only once time.
 */

@@ -151,11 +151,10 @@ export default function App() {
   const selectPoke = (poke) => {
     setPokemonData([poke]);
   };
-  console.log(selectPoke);
 
   //#endregion Child Component
 
-  //Logging pokemon array each render
+  //Logs pokemon array each render
   // console.log(pokemonData);
 
   return (
@@ -264,6 +263,7 @@ export default function App() {
                   key={pokeObj.id}
                   pokeObj={pokeObj}
                   selectPoke={selectPoke}
+                  pokemonData={pokemonData}
                 />
               ))}
               {/*<h1>History</h1>
