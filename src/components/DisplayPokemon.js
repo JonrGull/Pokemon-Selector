@@ -12,6 +12,8 @@ export default function DisplayPokemon({ pokeObj, selectPoke, pokemonData }) {
           if (pokemonData !== undefined) {
             selectPoke(pokeObj);
             GetPokemonCries(pokeObj.id);
+          } else {
+            GetPokemonCries(pokeObj.id);
           }
         }}
       >

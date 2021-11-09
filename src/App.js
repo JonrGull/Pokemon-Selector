@@ -148,7 +148,6 @@ export default function App() {
   ));
 
   //If user clicks on card to select pokemon, return the pokemon in array so that it can be mapped.
-
   const selectPoke = (poke) => {
     setPokemonData([poke]);
   };
