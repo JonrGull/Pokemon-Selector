@@ -1,7 +1,6 @@
-
 export default function GetPokemonCries(pokeID) {
   const PKMN_API_KEY =
-    "Bearer NRtdH2aconl34vnZ8EvT9hB6ZQbv9RWXcHvaCnH5QUx6eWqkVvnrDYMRScqysFA2";
+    "Bearer NRtdH2aconl34vnZ8EvT9hB6ZQbv9RWXcHvaCnH5QUx6eWqkVvnrDYMRScqysFA2"; //plz don't steal
   let pokeURL = "https://api.pkmnapi.com/v1/pokemon/cries";
 
   var audio = document.getElementById("myAudioElement") || new Audio();
