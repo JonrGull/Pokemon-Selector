@@ -2,20 +2,16 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import GetPokemonCries from "./GetPokemonCries";
 
-export default function DisplayPokemon({
-  pokeObj,
-  selectPoke,
-  pokemonData,
-  // GetPokemonCries,
-}) {
+export default function DisplayPokemon({ pokeObj, selectPoke, pokemonData }) {
   return (
     <Card sx={{ minWidth: 300, m: 1, backgroundColor: "#b3e5fc" }}>
       <CardActionArea
         onClick={() => {
           if (pokemonData !== undefined) {
             selectPoke(pokeObj);
-            // GetPokemonCries(pokeObj.id);
+            GetPokemonCries(pokeObj.id);
           }
         }}
       >
