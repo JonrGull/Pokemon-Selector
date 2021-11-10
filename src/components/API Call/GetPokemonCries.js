@@ -2,7 +2,7 @@ export default function GetPokemonCries(pokeID) {
   // I'm aware this isn't best practice, but since I'm making this project without any server-side features
   //and this key doesn't give access to any secret information, I figured this was fine.
   const PKMN_API_KEY =
-    "Bearer NRtdH2aconl34vnZ8EvT9hB6ZQbv9RWXcHvaCnH5QUx6eWqkVvnrDYMRScqysFA2";
+    "Bearer blzBMltQM8O5UGD4uywLAxASOQRP3V81VbOAaLY53WG5f386H9WDih5C1Q0vzDjx";
   let pokeURL = "https://api.pkmnapi.com/v1/pokemon/cries";
 
   var audio = document.getElementById("myAudioElement") || new Audio();
