@@ -1,18 +1,18 @@
 export default function GetPokemonCries(pokeID) {
+  // I'm aware this isn't best practice, but since I'm making this project without any server-side features
+  //and this key doesn't give access to any secret information, I figured this was fine.
   const PKMN_API_KEY =
-    "Bearer NRtdH2aconl34vnZ8EvT9hB6ZQbv9RWXcHvaCnH5QUx6eWqkVvnrDYMRScqysFA2"; //plz don't steal
+    "Bearer NRtdH2aconl34vnZ8EvT9hB6ZQbv9RWXcHvaCnH5QUx6eWqkVvnrDYMRScqysFA2";
   let pokeURL = "https://api.pkmnapi.com/v1/pokemon/cries";
 
   var audio = document.getElementById("myAudioElement") || new Audio();
-  // audio.src = "";
   const xhr = new XMLHttpRequest();
 
   xhr.addEventListener("load", () => {
     console.log(xhr.response);
   });
 
-  const PokeURL = pokeURL + "/" + pokeID; //just to keep the next line more tidy.
-  xhr.open("GET", PokeURL, true); // can't use a template literal?
+  xhr.open("GET", `${pokeURL}/${pokeID} `, true);
   xhr.setRequestHeader("Authorization", PKMN_API_KEY);
   xhr.setRequestHeader("Accept", "audio/wav");
   xhr.send(null);
@@ -29,3 +29,8 @@ export default function GetPokemonCries(pokeID) {
     audio.play();
   };
 }
+
+/* 
+NO CRY? WHY?
+#6,#9,#15 
+*/

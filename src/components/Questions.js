@@ -44,3 +44,5 @@ export default function Questions({ handleClick }) {
   questionText: "What is your Pokemon weak to?",
   answerOptions: <TypeButtons handleClick={filterWeakness} />,
 }, */
+
+/* MAY DELETE */

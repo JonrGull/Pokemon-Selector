@@ -1,19 +1,17 @@
 import React, { useState } from "react";
-import DisplayPokemon from "./components/DisplayPokemon";
+import DisplayPokemon from "./components/UI/DisplayPokemon";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import PokemonLibrary from "./data/PokemonList.json";
-import HeightBtn from "./components/buttons/HeightBtn";
-import WeightBtn from "./components/buttons/WeightBtn";
-import TypeButtonsMap from "./components/buttons/TypeButtonsMap";
-import EvolveBtn from "./components/buttons/EvolveBtn";
+import HeightBtn from "./components/UI/buttons/HeightBtn";
+import WeightBtn from "./components/UI/buttons/WeightBtn";
+import TypeButtonsMap from "./components/UI/buttons/TypeButtonsMap";
+import EvolveBtn from "./components/UI/buttons/EvolveBtn";
 import "./App.css";
-// import GetPokemonCries from "./components/GetPokemonCries";
+import GetPokemonCries from "./components/API Call/GetPokemonCries";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
-  // const [history, setHistory] = useState([Array(5).fill(null)]); //5 for 5 questions. Will need up increase this number if add more questions. Holds our states?
-  // const [stepNumber, setStepNumber] = useState(0); // will show question state buttons
   const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [evolve, setEvolve] = useState(null); // so null is inherently FALSE, so technically this will always be false. Which is why true works.
@@ -89,29 +87,8 @@ export default function App() {
     setEvolve(null);
     setHeight(null);
     setWeight(null);
-
     //would need to include all other states that we declared
   }
-
-  // const jumpTo = (step) => {
-  //   setPokemonData(PokemonLibrary.pokemon);
-  //   setStepNumber(step);
-  //   setType(null);
-  //   setWeakness(null);
-  //   setEvolve(null);
-  //   setHeight(null);
-  //   setWeight(null);
-  // };
-
-  // const renderChoices = () =>
-  //   history.map((_step, move) => {
-  //     const destination = move ? `Go to move #${move}` : "Go to Start";
-  //     return (
-  //       <li key={move}>
-  //         <button onClick={() => jumpTo(move)}>{destination}</button>
-  //       </li>
-  //     );
-  //   });
 
   //#region Child Component
   /* CHILD COMPONENT VARIABLES */
@@ -136,13 +113,6 @@ export default function App() {
   );
   // console.log(mapEvolutions);
 
-  // If only one pokemon is left in the array, just return that pokemon
-  //may delete these two variables
-  // let lastPokeBtn = (
-  //   <Button variant="contained" onClick={reset}>
-  //     Here's your Pokemon
-  //   </Button>
-  // );
   let lastPoke = pokemonData.map((pokeObj) => (
     <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
   ));
@@ -180,6 +150,7 @@ export default function App() {
                 flexWrap="wrap"
               >
                 {lastPoke}
+                {/* {GetPokemonCries()} */}
               </Stack>
             </h2>
           </div>
@@ -275,3 +246,18 @@ export default function App() {
     </div>
   );
 }
+
+/* 
+PROBLEM - if only one pokemon is left after going through questions, it does not play the sound. But clicking it works
+
+*/
+
+// const testArray = [
+//   {
+//     "id": 1,
+//     "num": "001",
+//     "name": "Bulbasaur",
+// }]
+// ;
+// let newArray = testArray.shift()
+// console.log(newArray.id);
