@@ -32,5 +32,5 @@ export default function GetPokemonCries(pokeID) {
 
 /* 
 NO CRY? WHY?
-#6,#9,#15 
+#6,#9,#15 , #71, gotta check 101+
 */
