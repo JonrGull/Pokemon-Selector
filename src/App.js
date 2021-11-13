@@ -113,10 +113,6 @@ export default function App() {
   );
   // console.log(mapEvolutions);
 
-  let lastPoke = pokemonData.map((pokeObj) => (
-    <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
-  ));
-
   //If user clicks on card to select pokemon, return the pokemon in array so that it can be mapped.
   const selectPoke = (poke) => {
     setPokemonData([poke]);
@@ -126,7 +122,6 @@ export default function App() {
 
   //Logs pokemon array each render
   // console.log(pokemonData);
-
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
@@ -149,8 +144,13 @@ export default function App() {
                 width={1.0}
                 flexWrap="wrap"
               >
-                {lastPoke}
-                {/* {GetPokemonCries()} */}
+                {/* map last pokemon. This does not interfere with the component from below.*/}
+                {pokemonData.map((pokeObj) => (
+                  <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
+                ))}
+
+                {/* {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))} */}
+                {/* play cry if last poke is chosen for user */}
               </Stack>
             </h2>
           </div>
@@ -237,8 +237,6 @@ export default function App() {
                   pokemonData={pokemonData}
                 />
               ))}
-              {/*<h1>History</h1>
-        {renderChoices()} */}
             </div>
           </div>
         )}
