@@ -121,7 +121,7 @@ export default function App() {
   //#endregion Child Component
 
   //Logs pokemon array each render
-  // console.log(pokemonData);
+  console.log(pokemonData);
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
@@ -148,9 +148,7 @@ export default function App() {
                 {pokemonData.map((pokeObj) => (
                   <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
                 ))}
-
-                {/* {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))} */}
-                {/* play cry if last poke is chosen for user */}
+                {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))}
               </Stack>
             </h2>
           </div>
@@ -247,15 +245,7 @@ export default function App() {
 
 /* 
 PROBLEM - if only one pokemon is left after going through questions, it does not play the sound. But clicking it works
+ 
+DOES NOT WORK {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))} plays 3 times if clicked, but sound does play upon final choice twice.
 
 */
-
-// const testArray = [
-//   {
-//     "id": 1,
-//     "num": "001",
-//     "name": "Bulbasaur",
-// }]
-// ;
-// let newArray = testArray.shift()
-// console.log(newArray.id);
