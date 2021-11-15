@@ -87,7 +87,6 @@ export default function App() {
     setEvolve(null);
     setHeight(null);
     setWeight(null);
-    runCryOnce = false;
     //would need to include all other states that we declared
   }
 
@@ -123,6 +122,7 @@ export default function App() {
 
   //Solution to help prevent Pokemon cries from duplicating. Without this, I had trouble getting the cries to play upon a Pokemon being chosen for the user.
   //This variable helps control the request being sent twice. I am still unsure why it was being sent twice in the first place.
+  // Could I have tried useEffect?
   let runCryOnce = false;
 
   //Logs pokemon array each render
