@@ -87,6 +87,7 @@ export default function App() {
     setEvolve(null);
     setHeight(null);
     setWeight(null);
+    runCryOnce = false;
     //would need to include all other states that we declared
   }
 
@@ -120,11 +121,14 @@ export default function App() {
 
   //#endregion Child Component
 
+  //Solution to help prevent Pokemon cries from duplicating
+  let runCryOnce = false;
+
   //Logs pokemon array each render
   // console.log(pokemonData);
   return (
     <div className="App">
-      <h1>Pokemon Selector!</h1>
+      <h1>Pokémon Selector!</h1>
       <Button variant="contained" color="error" onClick={reset}>
         Reset
       </Button>
