@@ -5,7 +5,7 @@ import { CardActionArea } from "@mui/material";
 import GetPokemonCries from "../API Call/GetPokemonCries";
 
 export default function DisplayPokemon({ pokeObj, selectPoke, pokemonData }) {
-  // console.log(pokeObj);
+  console.log(pokeObj);
   // console.log(pokemonData);
 
   return (
@@ -15,6 +15,7 @@ export default function DisplayPokemon({ pokeObj, selectPoke, pokemonData }) {
         <CardActionArea
           onClick={() => {
             if (pokemonData !== undefined) {
+              // even if this is gone, sounds still play twice???
               selectPoke(pokeObj);
             } else {
               GetPokemonCries(pokeObj.id); // lets you click on pokemon card to play sound again

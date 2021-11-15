@@ -121,7 +121,7 @@ export default function App() {
   //#endregion Child Component
 
   //Logs pokemon array each render
-  console.log(pokemonData);
+  // console.log(pokemonData);
   return (
     <div className="App">
       <h1>Pokemon Selector!</h1>
@@ -148,6 +148,7 @@ export default function App() {
                 {pokemonData.map((pokeObj) => (
                   <DisplayPokemon key={pokeObj.id} pokeObj={pokeObj} />
                 ))}
+                {/* plays sound of last remaining pokemon */}
                 {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))}
               </Stack>
             </h2>
@@ -162,7 +163,7 @@ export default function App() {
             {/* Pokemon type? */}
             {type === null && (
               <div style={{ fontSize: 50 }}>
-                <strong> Select Type</strong>{" "}
+                <strong> Select Type</strong>
                 <TypeButtonsMap
                   uniqueWeaknessArray={uniqueWeaknessArray}
                   onClick={typeAssign}
@@ -246,6 +247,8 @@ export default function App() {
 /* 
 PROBLEM - if only one pokemon is left after going through questions, it does not play the sound. But clicking it works
  
-DOES NOT WORK {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))} plays 3 times if clicked, but sound does play upon final choice twice.
+DOES NOT WORK {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))} plays 2 times if clicked, but sound does play upon final choice twice.
+Is it because state is being updated? Maybe would be better to useEffect?
+
 
 */
