@@ -16,7 +16,7 @@ The Pokémon sounds are called using an AJAX call to a PokémonAPI database that
 # Turn down your speakers a little!
 
 <a href="https://jonrgull.github.io/Pokémon-Selector/">Live demo!</a>
-For now, some P
+For now, some Pokémon (such as #6, #9, and #15) do not return a cry. This is due to the API I used to query the cries. I am uncertain as to why these cries don't work and may implement a local sound solution in the future.
 
 # Future features
 
