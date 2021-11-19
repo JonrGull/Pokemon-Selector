@@ -228,7 +228,7 @@ export default function App() {
               height !== null &&
               weight !== null && (
                 <div style={{ fontSize: 55 }}>
-                  <strong>Here is your Pokemon!</strong>
+                  <strong>Here are your Pokemon!</strong>
                 </div>
               )}
             <h1>See one you like? Choose it!</h1>
