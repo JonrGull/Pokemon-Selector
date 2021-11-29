@@ -30,3 +30,4 @@ There are several ideas that we had when designing this program.
 - Japanese language support that would change the buttons and questions into Japanese.
 - Animations
 - Somehow fix the Pokémon that don't make cries. Unfortunately this may be an issue with the API provider itself.
+- Add Pokédex information on final card.
