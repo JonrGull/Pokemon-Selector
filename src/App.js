@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import DisplayPokemon from "./components/UI/DisplayPokemon";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
+
+import DisplayPokemon from "./components/UI/DisplayPokemon";
 import PokemonLibrary from "./data/PokemonList.json";
 import HeightBtn from "./components/UI/buttons/HeightBtn";
 import WeightBtn from "./components/UI/buttons/WeightBtn";
 import TypeButtonsMap from "./components/UI/buttons/TypeButtonsMap";
 import EvolveBtn from "./components/UI/buttons/EvolveBtn";
 import "./App.css";
-import GetPokemonCries from "./components/API Call/GetPokemonCries";
+import GetPokemonCries from "./components/API/GetPokemonCries";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
