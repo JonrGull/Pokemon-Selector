@@ -20,7 +20,7 @@ code {
 }
 
 /* Pokemon Display */
-.displayPokemon {
+.display-pokemon {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
