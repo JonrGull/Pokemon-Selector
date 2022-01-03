@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
@@ -23,73 +23,82 @@ export default function App() {
   /* QUESTION FUNCTIONS */
 
   // assigns type of pokemon
-  const typeAssign = (typeButtonInput) => {
-    setType(typeButtonInput);
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokemon) => {
-        return pokemon.type.includes(`${typeButtonInput}`);
-      })
-    );
-  };
+  const typeAssign = useCallback(
+    (typeInput) => {
+      setType(typeInput);
+      setPokemonData((prevPokeArray) =>
+        prevPokeArray.filter((pokemon) => pokemon.type.includes(`${typeInput}`))
+      );
+    },
+    [setType]
+  );
 
   // assigns weakness of pokemon
-  const weaknessAssign = (typeButtonInput) => {
-    setWeakness(typeButtonInput);
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokemon) => {
-        return pokemon.weaknesses.includes(`${typeButtonInput}`);
-      })
-    );
-  };
+  const weaknessAssign = useCallback(
+    (typeWeaknessInput) => {
+      setWeakness(typeWeaknessInput);
+      setPokemonData((prevPokeArray) =>
+        prevPokeArray.filter((pokemon) =>
+          pokemon.weaknesses.includes(`${typeWeaknessInput}`)
+        )
+      );
+    },
+    [setWeakness]
+  );
 
   // assigns true or false upon asking if pokemon can evolve
-  const evolveAssign = (canEvolve) => {
-    setEvolve(canEvolve); // is it okay if this is a boolean with using !evolve?
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokemon) => {
-        if (canEvolve) {
-          return pokemon.prev_evolution || pokemon.next_evolution;
-        } else {
-          return !pokemon.prev_evolution && !pokemon.next_evolution;
-        }
-      })
-    );
-  };
+  const evolveAssign = useCallback(
+    (canEvolve) => {
+      setEvolve(canEvolve); // is it okay if this is a boolean with using !evolve?
+      setPokemonData((prevPokeArray) =>
+        prevPokeArray.filter((pokemon) => {
+          if (canEvolve)
+            return pokemon.prev_evolution || pokemon.next_evolution;
+          else return !pokemon.prev_evolution && !pokemon.next_evolution;
+        })
+      );
+    },
+    [setEvolve]
+  );
   // assigns height of pokemon
-  const heightAssign = (minHeight, maxHeight) => {
-    setHeight(maxHeight);
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokemon) => {
-        return (
-          pokemon.height >= `${minHeight}` && pokemon.height <= `${maxHeight}`
-        );
-      })
-    );
-  };
+  const heightAssign = useCallback(
+    (minHeight, maxHeight) => {
+      setHeight(maxHeight);
+      setPokemonData((prevPokeArray) =>
+        prevPokeArray.filter(
+          (pokemon) =>
+            pokemon.height >= `${minHeight}` && pokemon.height <= `${maxHeight}`
+        )
+      );
+    },
+    [setHeight]
+  );
 
   // assigns weight of pokemon
-  const weightAssign = (minWeight, maxWeight) => {
-    setWeight(maxWeight);
-    setPokemonData((prevPokeArray) =>
-      prevPokeArray.filter((pokemon) => {
-        return (
-          pokemon.weight >= `${minWeight}` && pokemon.weight <= `${maxWeight}`
-        );
-      })
-    );
-  };
+  const weightAssign = useCallback(
+    (minWeight, maxWeight) => {
+      setWeight(maxWeight);
+      setPokemonData((prevPokeArray) =>
+        prevPokeArray.filter(
+          (pokemon) =>
+            pokemon.weight >= `${minWeight}` && pokemon.weight <= `${maxWeight}`
+        )
+      );
+    },
+    [setWeight]
+  );
   //#endregion
 
   //Reset ALL data in states
-  function reset() {
+  const reset = () => {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
     setType(null);
     setWeakness(null);
     setEvolve(null);
     setHeight(null);
     setWeight(null);
-    //would need to include all other states that we declared
-  }
+  };
+  //would need to include all other states that we declared
 
   //#region Child Component
   /* CHILD COMPONENT VARIABLES */
@@ -120,11 +129,6 @@ export default function App() {
   };
 
   //#endregion Child Component
-
-  //Solution to help prevent Pokemon cries from duplicating. Without this, I had trouble getting the cries to play upon a Pokemon being chosen for the user.
-  //This variable helps control the request being sent twice. I am still unsure why it was being sent twice in the first place.
-  // Could I have tried useEffect?
-  let runCryOnce = false;
 
   //Logs pokemon array each render
   // console.log(pokemonData);
@@ -233,7 +237,7 @@ export default function App() {
                 </div>
               )}
             <h1>See one you like? Choose it!</h1>
-            <div className="displayPokemon">
+            <div className="display-pokemon">
               {pokemonData.map((pokeObj) => (
                 <DisplayPokemon
                   key={pokeObj.id}
