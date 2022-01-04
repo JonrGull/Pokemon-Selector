@@ -30,7 +30,7 @@ export default function App() {
         prevPokeArray.filter((pokemon) => pokemon.type.includes(`${typeInput}`))
       );
     },
-    [setType]
+    [setType, setPokemonData]
   );
 
   // assigns weakness of pokemon
@@ -43,7 +43,7 @@ export default function App() {
         )
       );
     },
-    [setWeakness]
+    [setWeakness, setPokemonData]
   );
 
   // assigns true or false upon asking if pokemon can evolve
@@ -58,7 +58,7 @@ export default function App() {
         })
       );
     },
-    [setEvolve]
+    [setEvolve, setPokemonData]
   );
   // assigns height of pokemon
   const heightAssign = useCallback(
@@ -71,7 +71,7 @@ export default function App() {
         )
       );
     },
-    [setHeight]
+    [setHeight, setPokemonData]
   );
 
   // assigns weight of pokemon
@@ -85,7 +85,7 @@ export default function App() {
         )
       );
     },
-    [setWeight]
+    [setWeight, setPokemonData]
   );
   //#endregion
 
