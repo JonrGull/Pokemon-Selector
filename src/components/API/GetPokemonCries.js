@@ -1,12 +1,11 @@
 import App from "../../App";
 
+const PKMN_API_KEY = `${process.env.REACT_APP_PKMN_API_KEY}`;
+
 export default function GetPokemonCries(pokeID) {
   if (!App.runCryOnce) {
     App.runCryOnce = true;
-    // I'm aware this isn't best practice, but since I'm making this project without any server-side features
-    //and this key doesn't give access to any secret information, I figured this was fine.
-    const PKMN_API_KEY =
-      "Bearer blzBMltQM8O5UGD4uywLAxASOQRP3V81VbOAaLY53WG5f386H9WDih5C1Q0vzDjx";
+
     let pokeURL = "https://api.pkmnapi.com/v1/pokemon/cries";
 
     var audio = new Audio();
@@ -53,6 +52,6 @@ export default function GetPokemonCries(pokeID) {
 }
 
 /* 
-NO CRY? WHY?
-#6,#9,#15 , #71, gotta check 101+
+NO CRY? 
+#6,#9,#15,#71
 */
