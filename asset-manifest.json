@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Pokemon-Selector/static/css/main.b0596ad6.chunk.css",
-    "main.js": "/Pokemon-Selector/static/js/main.7f206a0c.chunk.js",
-    "main.js.map": "/Pokemon-Selector/static/js/main.7f206a0c.chunk.js.map",
+    "main.css": "/Pokemon-Selector/static/css/main.e532c95f.chunk.css",
+    "main.js": "/Pokemon-Selector/static/js/main.24f79247.chunk.js",
+    "main.js.map": "/Pokemon-Selector/static/js/main.24f79247.chunk.js.map",
     "runtime-main.js": "/Pokemon-Selector/static/js/runtime-main.80dd74b7.js",
     "runtime-main.js.map": "/Pokemon-Selector/static/js/runtime-main.80dd74b7.js.map",
     "static/js/2.d8519d74.chunk.js": "/Pokemon-Selector/static/js/2.d8519d74.chunk.js",
     "static/js/2.d8519d74.chunk.js.map": "/Pokemon-Selector/static/js/2.d8519d74.chunk.js.map",
     "index.html": "/Pokemon-Selector/index.html",
-    "static/css/main.b0596ad6.chunk.css.map": "/Pokemon-Selector/static/css/main.b0596ad6.chunk.css.map",
+    "static/css/main.e532c95f.chunk.css.map": "/Pokemon-Selector/static/css/main.e532c95f.chunk.css.map",
     "static/js/2.d8519d74.chunk.js.LICENSE.txt": "/Pokemon-Selector/static/js/2.d8519d74.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.80dd74b7.js",
     "static/js/2.d8519d74.chunk.js",
-    "static/css/main.b0596ad6.chunk.css",
-    "static/js/main.7f206a0c.chunk.js"
+    "static/css/main.e532c95f.chunk.css",
+    "static/js/main.24f79247.chunk.js"
   ]
 }
