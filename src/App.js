@@ -13,7 +13,7 @@ import GetPokemonCries from "./components/API/GetPokemonCries";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
-  const [PokemonAttributes, setPokemonAttributes] = useState({ type: null });
+  const [PokemonAttributes, setPokemonAttributes] = useState({ type: "" });
   // const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [evolve, setEvolve] = useState(null); // so null is inherently FALSE, so technically this will always be false. Which is why true works.
@@ -24,7 +24,7 @@ export default function App() {
   /* QUESTION FUNCTIONS */
 
   // assigns type of pokemon
-  /*   const typeAssign = useCallback(
+    const typeAssign = useCallback(
     (typeInput) => {
       setType(typeInput);
       setPokemonData((prevPokeArray) =>
@@ -32,17 +32,17 @@ export default function App() {
       );
     },
     [setType, setPokemonData]
-  ); */
+  );
 
   const typeAssign = useCallback(
     (e, key) => {
       const { value } = e.target;
-
+      console.log(e);
       setPokemonAttributes((prev) => ({ ...prev, [key]: value }));
     },
     [setPokemonAttributes, setPokemonData]
   );
-  PokemonAttributes.type = "Fire";
+  // PokemonAttributes.type = "Fire";
   console.log(PokemonAttributes);
 
   // assigns weakness of pokemon
@@ -104,7 +104,7 @@ export default function App() {
   //Reset ALL data in states
   const reset = () => {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
-    setType(null); 
+    setPokemonAttributes.type = "";
     setWeakness(null);
     setEvolve(null);
     setHeight(null);
@@ -179,11 +179,11 @@ export default function App() {
       </div>
 
       <div>
-        {/* bandaid solution of preventing both of these from rendering. Can I make it into an else? */}
+        {/* bandaid solution of preventing both of these from rendering.*/}
         {pokemonData.length !== 1 && (
           <div>
             {/* Pokemon type? */}
-            {type === null && (
+            {PokemonAttributes.type === null && (
               <div style={{ fontSize: 50 }}>
                 <strong> Select Type</strong>
                 <TypeButtonsMap
@@ -194,7 +194,7 @@ export default function App() {
             )}
 
             {/* Pokemon weakness? */}
-            {type !== null && weakness === null && (
+            {PokemonAttributes.type !== null && weakness === null && (
               <div style={{ fontSize: 50 }}>
                 <strong>Select Weakness</strong>
                 <TypeButtonsMap
@@ -205,18 +205,20 @@ export default function App() {
             )}
 
             {/* Can or can't evolve? */}
-            {type !== null && weakness !== null && evolve === null && (
-              <div style={{ fontSize: 50 }}>
-                <strong>Does your Pokemon evolve?</strong>
-                <EvolveBtn
-                  mapEvolutions={mapEvolutions}
-                  onClick={evolveAssign}
-                />
-              </div>
-            )}
+            {PokemonAttributes.type !== null &&
+              weakness !== null &&
+              evolve === null && (
+                <div style={{ fontSize: 50 }}>
+                  <strong>Does your Pokemon evolve?</strong>
+                  <EvolveBtn
+                    mapEvolutions={mapEvolutions}
+                    onClick={evolveAssign}
+                  />
+                </div>
+              )}
 
             {/* What height? */}
-            {type !== null &&
+            {PokemonAttributes.type !== null &&
               weakness !== null &&
               evolve !== null &&
               height === null && (
@@ -227,7 +229,7 @@ export default function App() {
               )}
 
             {/* What weight? */}
-            {type !== null &&
+            {PokemonAttributes.type !== null &&
               weakness !== null &&
               evolve !== null &&
               height !== null &&
@@ -239,7 +241,7 @@ export default function App() {
               )}
 
             {/* Result */}
-            {type !== null &&
+            {PokemonAttributes.type !== null &&
               weakness !== null &&
               evolve !== null &&
               height !== null &&
