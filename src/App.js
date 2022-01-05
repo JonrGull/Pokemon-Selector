@@ -13,7 +13,8 @@ import GetPokemonCries from "./components/API/GetPokemonCries";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
-  const [type, setType] = useState(null);
+  const [PokemonAttributes, setPokemonAttributes] = useState({ type: null });
+  // const [type, setType] = useState(null);
   const [weakness, setWeakness] = useState(null);
   const [evolve, setEvolve] = useState(null); // so null is inherently FALSE, so technically this will always be false. Which is why true works.
   const [height, setHeight] = useState(null);
@@ -23,7 +24,7 @@ export default function App() {
   /* QUESTION FUNCTIONS */
 
   // assigns type of pokemon
-  const typeAssign = useCallback(
+  /*   const typeAssign = useCallback(
     (typeInput) => {
       setType(typeInput);
       setPokemonData((prevPokeArray) =>
@@ -31,7 +32,18 @@ export default function App() {
       );
     },
     [setType, setPokemonData]
+  ); */
+
+  const typeAssign = useCallback(
+    (e, key) => {
+      const { value } = e.target;
+
+      setPokemonAttributes((prev) => ({ ...prev, [key]: value }));
+    },
+    [setPokemonAttributes, setPokemonData]
   );
+  PokemonAttributes.type = "Fire";
+  console.log(PokemonAttributes);
 
   // assigns weakness of pokemon
   const weaknessAssign = useCallback(
@@ -92,7 +104,7 @@ export default function App() {
   //Reset ALL data in states
   const reset = () => {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
-    setType(null);
+    setType(null); 
     setWeakness(null);
     setEvolve(null);
     setHeight(null);

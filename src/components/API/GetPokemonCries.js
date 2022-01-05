@@ -1,21 +1,22 @@
 import App from "../../App";
 
+
 const PKMN_API_KEY = `${process.env.REACT_APP_PKMN_API_KEY}`;
 
 export default function GetPokemonCries(pokeID) {
   if (!App.runCryOnce) {
     App.runCryOnce = true;
 
-    let pokeURL = "https://api.pkmnapi.com/v1/pokemon/cries";
+    let pokeURL = "https://api.pkmnapi.com/v1/pokemon/cries"; // just to keep the GET shorter
 
     var audio = new Audio();
     const xhr = new XMLHttpRequest();
 
-    xhr.addEventListener("load", () => {
-      console.log(xhr.response);
-    });
+    /*     xhr.addEventListener("load", () => {
+      console.log(xhr.response); // for logging
+    }); */
 
-    xhr.open("GET", `${pokeURL}/${pokeID} `, true);
+    xhr.open("GET", `${pokeURL}/${pokeID}`);
     xhr.setRequestHeader("Authorization", PKMN_API_KEY);
     xhr.setRequestHeader("Accept", "audio/wav");
     xhr.send(null);
@@ -55,3 +56,15 @@ export default function GetPokemonCries(pokeID) {
 NO CRY? 
 #6,#9,#15,#71
 */
+
+/* 
+
+const { data } = await axios.get(url, {
+  responseType: 'arraybuffer',
+  headers: {
+      'Content-Type': 'audio/wav'
+  }
+});
+const blob = new Blob([data], {
+    type: 'audio/wav'
+}); */
