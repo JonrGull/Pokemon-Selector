@@ -11,6 +11,7 @@ export default function ResetBtn({
   function resetAll() {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
     setPokemonAttributes(() => ({
+      // we don't need to spread here because we don't need to copy anything. We are just overwriting the state.
       type: null,
       weakness: null,
       evolve: null,
