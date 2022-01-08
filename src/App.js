@@ -13,70 +13,59 @@ import GetPokemonCries from "./components/API/GetPokemonCries";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
-  const [PokemonAttributes, setPokemonAttributes] = useState({
+  const [pokemonAttributes, setPokemonAttributes] = useState({
     type: null,
     weakness: null,
+    evolve: null,
+    height: null,
+    weight: null,
   });
-  // const [type, setType] = useState(null);
-  // const [weakness, setWeakness] = useState(null);
-  const [evolve, setEvolve] = useState(null); // so null is inherently FALSE, so technically this will always be false. Which is why true works.
-  const [height, setHeight] = useState(null);
-  const [weight, setWeight] = useState(null);
 
   //#region Questions
   /* QUESTION FUNCTIONS */
 
   // assigns type of pokemon
-  /*   const typeAssign = useCallback(
-    (typeInput) => {
-      setType(typeInput);
-      setPokemonData((prevPokeArray) =>
-        prevPokeArray.filter((pokemon) => pokemon.type.includes(`${typeInput}`))
-      );
-    },
-    [setType, setPokemonData]
-  ); */
-  //! Make sure it is the first question when testing
-
   const typeAssign = useCallback(
     (typeInput) => {
-      PokemonAttributes.type = `${typeInput}`;
+      setPokemonAttributes((prevState) => ({
+        // take the values in the state and spread them, change the type
+        ...prevState,
+        type: `${typeInput}`,
+      }));
+
       setPokemonData((prevPokeArray) =>
         prevPokeArray.filter((pokemon) => pokemon.type.includes(`${typeInput}`))
       );
     },
-    [PokemonAttributes, setPokemonData]
+    [setPokemonAttributes, setPokemonData]
   );
 
   // assigns weakness of pokemon
   const weaknessAssign = useCallback(
     (typeWeaknessInput) => {
-      PokemonAttributes.weakness = `${typeWeaknessInput}`;
-      setPokemonData((prevPokeArray) =>
-        prevPokeArray.filter((pokemon) =>
-          pokemon.weaknesses.includes(`${typeWeaknessInput}`)
-        )
-      );
-    },
-    [PokemonAttributes, setPokemonData]
-  );
-  console.log(PokemonAttributes);
-  /*//! OLD  const weaknessAssign = useCallback(
-    (typeWeaknessInput) => {
-      setWeakness(typeWeaknessInput);
-      setPokemonData((prevPokeArray) =>
-        prevPokeArray.filter((pokemon) =>
-          pokemon.weaknesses.includes(`${typeWeaknessInput}`)
-        )
-      );
-    },
-    [setWeakness, setPokemonData]
-  ); */
+      setPokemonAttributes((prevState) => ({
+        ...prevState,
+        weakness: `${typeWeaknessInput}`,
+      }));
 
-  // assigns true or false upon asking if pokemon can evolve
+      setPokemonData((prevPokeArray) =>
+        prevPokeArray.filter((pokemon) =>
+          pokemon.weaknesses.includes(`${typeWeaknessInput}`)
+        )
+      );
+    },
+    [setPokemonAttributes, setPokemonData]
+  );
+  console.log(pokemonAttributes);
+
+  // assigns boolean upon asking if pokemon can evolve
   const evolveAssign = useCallback(
     (canEvolve) => {
-      setEvolve(canEvolve); // is it okay if this is a boolean with using !evolve?
+      setPokemonAttributes((prevState) => ({
+        ...prevState,
+        evolve: canEvolve,
+      }));
+
       setPokemonData((prevPokeArray) =>
         prevPokeArray.filter((pokemon) => {
           if (canEvolve)
@@ -85,12 +74,17 @@ export default function App() {
         })
       );
     },
-    [setEvolve, setPokemonData]
+    [setPokemonAttributes, setPokemonData]
   );
+
   // assigns height of pokemon
   const heightAssign = useCallback(
     (minHeight, maxHeight) => {
-      setHeight(maxHeight);
+      setPokemonAttributes((prevState) => ({
+        ...prevState,
+        height: maxHeight,
+      }));
+
       setPokemonData((prevPokeArray) =>
         prevPokeArray.filter(
           (pokemon) =>
@@ -98,13 +92,17 @@ export default function App() {
         )
       );
     },
-    [setHeight, setPokemonData]
+    [setPokemonAttributes, setPokemonData]
   );
 
   // assigns weight of pokemon
   const weightAssign = useCallback(
     (minWeight, maxWeight) => {
-      setWeight(maxWeight);
+      setPokemonAttributes((prevState) => ({
+        ...prevState,
+        weight: maxWeight,
+      }));
+
       setPokemonData((prevPokeArray) =>
         prevPokeArray.filter(
           (pokemon) =>
@@ -112,18 +110,17 @@ export default function App() {
         )
       );
     },
-    [setWeight, setPokemonData]
+    [setPokemonAttributes, setPokemonData]
   );
+
   //#endregion
 
   //Reset ALL data in states
   const reset = () => {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
-    PokemonAttributes.type = null;
-    PokemonAttributes.weakness = null;
-    setEvolve(null);
-    setHeight(null);
-    setWeight(null);
+    setPokemonAttributes.forEach((value) => [
+      (pokemonAttributes[value] = null),
+    ]);
   };
   //would need to include all other states that we declared
 
@@ -198,7 +195,7 @@ export default function App() {
         {pokemonData.length !== 1 && (
           <div>
             {/* Pokemon type? */}
-            {PokemonAttributes.type === null && (
+            {pokemonAttributes.type === null && (
               <div style={{ fontSize: 50 }}>
                 <strong> Select Type</strong>
                 <TypeButtonsMap
@@ -209,8 +206,8 @@ export default function App() {
             )}
 
             {/* Pokemon weakness? */}
-            {PokemonAttributes.type !== null &&
-              PokemonAttributes.weakness === null && (
+            {pokemonAttributes.type !== null &&
+              pokemonAttributes.weakness === null && (
                 <div style={{ fontSize: 50 }}>
                   <strong>Select Weakness</strong>
                   <TypeButtonsMap
@@ -221,9 +218,9 @@ export default function App() {
               )}
 
             {/* Can or can't evolve? */}
-            {PokemonAttributes.type !== null &&
-              PokemonAttributes.weakness !== null &&
-              evolve === null && (
+            {pokemonAttributes.type !== null &&
+              pokemonAttributes.weakness !== null &&
+              pokemonAttributes.evolve === null && (
                 <div style={{ fontSize: 50 }}>
                   <strong>Does your Pokemon evolve?</strong>
                   <EvolveBtn
@@ -234,10 +231,10 @@ export default function App() {
               )}
 
             {/* What height? */}
-            {PokemonAttributes.type !== null &&
-              PokemonAttributes.weakness !== null &&
-              evolve !== null &&
-              height === null && (
+            {pokemonAttributes.type !== null &&
+              pokemonAttributes.weakness !== null &&
+              pokemonAttributes.evolve !== null &&
+              pokemonAttributes.height === null && (
                 <div style={{ fontSize: 50 }}>
                   <strong>Select Height</strong>
                   <HeightBtn mapHeight={mapHeight} onClick={heightAssign} />
@@ -245,11 +242,11 @@ export default function App() {
               )}
 
             {/* What weight? */}
-            {PokemonAttributes.type !== null &&
-              PokemonAttributes.weakness !== null &&
-              evolve !== null &&
-              height !== null &&
-              weight === null && (
+            {pokemonAttributes.type !== null &&
+              pokemonAttributes.weakness !== null &&
+              pokemonAttributes.evolve !== null &&
+              pokemonAttributes.height !== null &&
+              pokemonAttributes.weight === null && (
                 <div style={{ fontSize: 50 }}>
                   <strong>Select Weight</strong>
                   <WeightBtn mapWeight={mapWeight} onClick={weightAssign} />
@@ -257,11 +254,11 @@ export default function App() {
               )}
 
             {/* Result */}
-            {PokemonAttributes.type !== null &&
-              PokemonAttributes.weakness !== null &&
-              evolve !== null &&
-              height !== null &&
-              weight !== null && (
+            {pokemonAttributes.type !== null &&
+              pokemonAttributes.weakness !== null &&
+              pokemonAttributes.evolve !== null &&
+              pokemonAttributes.height !== null &&
+              pokemonAttributes.weight !== null && (
                 <div style={{ fontSize: 55 }}>
                   <strong>Here are your Pokemon!</strong>
                 </div>
