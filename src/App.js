@@ -1,8 +1,5 @@
 import React, { useState, useCallback } from "react";
-<<<<<<< HEAD
-=======
-// import { Button } from "@mui/material";
->>>>>>> main
+
 import Stack from "@mui/material/Stack";
 
 import DisplayPokemon from "./components/UI/DisplayPokemon";
