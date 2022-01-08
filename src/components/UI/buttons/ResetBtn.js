@@ -10,7 +10,7 @@ export default function ResetBtn({
   //Reset ALL data in states
   function resetAll() {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
-    setPokemonAttributes((prevState) => ({
+    setPokemonAttributes(() => ({
       type: null,
       weakness: null,
       evolve: null,

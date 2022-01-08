@@ -1,6 +1,5 @@
 import App from "../../App";
 
-
 const PKMN_API_KEY = `${process.env.REACT_APP_PKMN_API_KEY}`;
 
 export default function GetPokemonCries(pokeID) {
