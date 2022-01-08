@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-import { Button } from "@mui/material";
+// import { Button } from "@mui/material";
 import Stack from "@mui/material/Stack";
 
 import DisplayPokemon from "./components/UI/DisplayPokemon";
@@ -10,6 +10,7 @@ import TypeButtonsMap from "./components/UI/buttons/TypeButtonsMap";
 import EvolveBtn from "./components/UI/buttons/EvolveBtn";
 import "./App.css";
 import GetPokemonCries from "./components/API/GetPokemonCries";
+import ResetBtn from "./components/UI/buttons/ResetBtn";
 
 export default function App() {
   const [pokemonData, setPokemonData] = useState(PokemonLibrary.pokemon); //The giant array of pokemon with pokemon nested in individual obj
@@ -29,7 +30,7 @@ export default function App() {
   const typeAssign = useCallback(
     (typeInput) => {
       setPokemonAttributes((prevState) => ({
-        // take the values in the state and spread them, change the type
+        // copy the values in the entire object and spread them, change "type", "weakness" etc.
         ...prevState,
         type: `${typeInput}`,
       }));
@@ -116,13 +117,17 @@ export default function App() {
   //#endregion
 
   //Reset ALL data in states
-  const reset = () => {
+  /*   const reset = () => {
     setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
-    setPokemonAttributes.forEach((value) => [
-      (pokemonAttributes[value] = null),
-    ]);
+    setPokemonAttributes((prevState) => ({
+      type: null,
+      weakness: null,
+      evolve: null,
+      height: null,
+      weight: null,
+    }));
   };
-  //would need to include all other states that we declared
+  //would need to include all other states that we declared */
 
   //#region Child Component
   /* CHILD COMPONENT VARIABLES */
@@ -159,9 +164,11 @@ export default function App() {
   return (
     <div className="App">
       <h1>Pokémon Selector!</h1>
-      <Button variant="contained" color="error" onClick={reset}>
-        Reset
-      </Button>
+      <ResetBtn
+        setPokemonData={setPokemonData}
+        PokemonLibrary={PokemonLibrary}
+        setPokemonAttributes={setPokemonAttributes}
+      ></ResetBtn>
       {/* All states are set to null initially. Since null evaluates to false, we want to check specifically that they are not null. Due to the boolean in the evolve question.
       I could just check it for the evolve question, since it is the only boolean, but I want to keep do apply the same logic to the other questions 
       in case I add more in the future. */}
