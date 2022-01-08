@@ -24,6 +24,7 @@ export default function App() {
   //#region Questions
   /* QUESTION FUNCTIONS */
 
+  console.log(pokemonAttributes);
   // assigns type of pokemon
   const typeAssign = useCallback(
     (typeInput) => {
@@ -56,7 +57,6 @@ export default function App() {
     },
     [setPokemonAttributes, setPokemonData]
   );
-  console.log(pokemonAttributes);
 
   // assigns boolean upon asking if pokemon can evolve
   const evolveAssign = useCallback(
