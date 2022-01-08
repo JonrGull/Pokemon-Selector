@@ -116,19 +116,6 @@ export default function App() {
 
   //#endregion
 
-  //Reset ALL data in states
-  /*   const reset = () => {
-    setPokemonData((prevPokeArray) => (prevPokeArray = PokemonLibrary.pokemon));
-    setPokemonAttributes((prevState) => ({
-      type: null,
-      weakness: null,
-      evolve: null,
-      height: null,
-      weight: null,
-    }));
-  };
-  //would need to include all other states that we declared */
-
   //#region Child Component
   /* CHILD COMPONENT VARIABLES */
 
