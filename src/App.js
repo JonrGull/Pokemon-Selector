@@ -25,7 +25,6 @@ export default function App() {
   //#region Questions
   /* QUESTION FUNCTIONS */
 
-  console.log(pokemonAttributes);
   // assigns type of pokemon
   const typeAssign = useCallback(
     (typeInput) => {
