@@ -273,12 +273,3 @@ export default function App() {
     </div>
   );
 }
-
-/* 
-PROBLEM - if only one pokemon is left after going through questions, it does not play the sound. But clicking it works
- 
-DOES NOT WORK {GetPokemonCries(pokemonData.map((pokeObj) => pokeObj.id))} plays 2 times if clicked, but sound does play upon final choice twice.
-Is it because state is being updated? Maybe would be better to useEffect?
-
-
-*/
