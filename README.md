@@ -4,6 +4,8 @@ This is a collaboration project with mikemasatsugu && tristach
 
 # What it does
 
+![Pokedemo](https://user-images.githubusercontent.com/25947147/203794503-c3c8f8f3-2f51-48f6-b1e4-58e560c787be.gif)
+
 It is a work in progress where the user will be able to answer several questions that narrow down their choice of Pokémon to a single or similar Pokémon that match that criteria. If you find one that you're looking for, click on it! Or you can answer all the questions and a few may be chosen for you!
 
 # How it works
